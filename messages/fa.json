@@ -1,0 +1,20 @@
+{
+    "NavbarLinks": {
+        "home": "خانه",
+        "homeTitle": "صفحه خانه",
+        "about": "درباره",
+        "aboutTitle": "صفحه درباره",
+        "profile": "پروفایل",
+        "profileTitle": "صفحه پروفایل"
+    },
+    "HomePage": {
+        "title": "صفحه اصلی",
+        "isEnglish": "false"
+    },
+    "AboutPage": {
+        "title": "درباره"
+    },
+    "ProfilePage": {
+        "title": "پروفایل"
+    }
+}
