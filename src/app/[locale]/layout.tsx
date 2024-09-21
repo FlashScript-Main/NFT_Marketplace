@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import "@/app/globals.css";
 import { Providers } from "@/providers/next-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-
-const geistSans = localFont({
-    src: "./fonts/GeistVF.woff",
-    variable: "--font-geist-sans",
-    weight: "100 900",
-});
-const geistMono = localFont({
-    src: "./fonts/GeistMonoVF.woff",
-    variable: "--font-geist-mono",
-    weight: "100 900",
-});
+import { Footer, Header } from "@/components";
+import { workSans } from "@/utils/fonts";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -33,8 +23,8 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale}>
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <html lang={locale} className={` |  |  | scroll-smooth overflow-x-hidden`}>
+            <body className={`relative | bg-nftCustom-bg ${workSans} |  | overflow-x-hidden`}>
                 <NextIntlClientProvider messages={messages}>
                     <ThemeProvider 
                         attribute="class"
@@ -44,7 +34,11 @@ export default async function RootLayout({
                         themes={["nftDefault", "red", "green", "blue"]}
                     >
                         <Providers>
-                            {children}
+                            <div>
+                                <Header locale={locale} />
+                                {children}
+                                <Footer />
+                            </div>
                         </Providers>
                     </ThemeProvider>
                 </NextIntlClientProvider>

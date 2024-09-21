@@ -1,11 +1,13 @@
 {
-    "NavbarLinks": {
-        "home": "خانه",
-        "homeTitle": "صفحه خانه",
-        "about": "درباره",
-        "aboutTitle": "صفحه درباره",
-        "profile": "پروفایل",
-        "profileTitle": "صفحه پروفایل"
+    "language": {
+        "isEnglish": "false"
+    },
+    "Header": {
+        "logo": "NFT فروشگاه",
+        "marketplace": "فروشگاه",
+        "rankings": "رتبه بندی",
+        "connect-wallet": "کیف پول",
+        "button": "ثبت نام"
     },
     "HomePage": {
         "title": "صفحه اصلی",

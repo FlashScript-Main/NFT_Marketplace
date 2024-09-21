@@ -13,8 +13,17 @@ const config: Config = {
   	extend: {
   		colors: {
 			nftCustom: {
-				bg: "var(--nft-bg)",
-				text: "var(--nft-text)"
+				bg: "var(--nft-main-bg)",
+				text: "var(--nft-main-text)",
+				svg_fill: "var(--nft-svg-fill)",
+				navbar_text: "var(--nft-navbar-text)",
+				navbar_text_hover: "var(--nft-navbar-text-hover)",
+				sign_up_button_icon: "var(--nft-sign-up-button-icon)",
+				envelope_simple_svg: "var(--nft-envelope-simple-svg)",
+				lock_key_svg: "var(--nft-lock-key-svg)",
+				eye_svg: "var(--nft-eye-svg)",
+				eye_slash_svg: "var(--nft-eye-slash-svg)",
+				arrow_right_svg: "var(--nft-arrow-right-svg)",
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -62,7 +71,7 @@ const config: Config = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		}
-  	}
+  	},
   },
   plugins: [require("tailwindcss-animate"), nextui()],
 };

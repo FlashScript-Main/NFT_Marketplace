@@ -2,30 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -93,8 +69,22 @@ body {
 
 /* Custom Theme Switcher Colors */
 .nftDefault {
-  --nft-bg: #ffffff;
-  --nft-text: #171717;
+  --nft-main-bg: #2B2B2B;
+  --nft-main-text: #ffffff;
+
+  /* ---- HomePage ---- */
+  /* Header */
+  --nft-svg-fill: #A259FF;
+  --nft-navbar-text: #ffffff;
+  --nft-navbar-text-hover: #A259FF;
+  --nft-sign-up-button-icon: #ffffff;
+
+  /* ---- SVGs ---- */
+  --nft-envelope-simple-svg: #ffffff;
+  --nft-lock-key-svg: #ffffff;
+  --nft-eye-svg: #ffffff;
+  --nft-eye-slash-svg: #ffffff;
+  --nft-arrow-right-svg: #ffffff;
 }
 
 .red {
@@ -110,4 +100,38 @@ body {
 .blue {
   --nft-bg: #0022ff;
   --nft-text: #00ffe5;
+}
+
+/* Custom Transition */
+.main-transition-color {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+/* SVGs */
+.storefront-svg {
+  @apply fill-nftCustom-svg_fill w-6 h-6 lg:w-8 lg:h-8 mr-1 lg:mr-3;
+}
+
+.user-svg {
+  @apply fill-nftCustom-sign_up_button_icon w-5 h-5;
+}
+
+.envelope-simple-svg {
+  @apply fill-nftCustom-envelope_simple_svg;
+}
+
+.lock-key-svg {
+  @apply fill-nftCustom-lock_key_svg;
+}
+
+.eye-svg {
+  @apply fill-nftCustom-eye_svg;
+}
+
+.eye-slash-svg {
+  @apply fill-nftCustom-eye_slash_svg;
+}
+
+.arrow-right-svg {
+  @apply fill-nftCustom-arrow_right_svg;
 }

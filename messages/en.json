@@ -1,11 +1,13 @@
 {
-    "NavbarLinks": {
-        "home": "Home",
-        "homeTitle": "Home page",
-        "about": "About",
-        "aboutTitle": "About page",
-        "profile": "Profile",
-        "profileTitle": "Profile page"
+    "language": {
+        "isEnglish": "true"
+    },
+    "Header": {
+        "logo": "NFT Marketplace",
+        "marketplace": "Marketplace",
+        "rankings": "Rankings",
+        "connect-wallet": "Connect a wallet",
+        "button": "Sign Up"
     },
     "HomePage": {
         "title": "Landing page",

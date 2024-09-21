@@ -10,6 +10,8 @@ import {
     DropdownMenu as NextUIDropdownMenu,
     DropdownItem as NextUIDropdownItem,
 } from "@nextui-org/dropdown";
+// import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 
 // You can add more properties to it 👇🏻
 const customThemes = [
@@ -19,11 +21,25 @@ const customThemes = [
     { name: "green", color: "bg-green-500" },
 ]
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher = ({ locale }: { locale: string }) => {
 
     const { setTheme } = useTheme();
 
+    // const translateThemeSwitcher = useTranslations('ThemeSwitcher');
+
+    const pathName = usePathname();
+    const router = useRouter();
+
+    const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const newLocale = event.target.value as string;
+
+        const path = pathName.split("/").slice(2).join("/");
+
+        router.push(`/${newLocale}/${path}`);
+    }
+
     return (
+        <>
         <NextUIDropdown backdrop="blur">
             <NextUIDropdownTrigger>
                 <NextUIButton isIconOnly color="danger" aria-label="More Options">
@@ -41,8 +57,17 @@ const ThemeSwitcher = () => {
                         {themeOption.name}
                     </NextUIDropdownItem>
                 ))}
+                
             </NextUIDropdownMenu>
         </NextUIDropdown>
+        <select 
+                value={locale} 
+                onChange={handleLanguageChange}
+            >
+                <option value="en">English</option>
+                <option value="fa">فارسی</option>
+            </select>
+        </>
     )
 
 }
