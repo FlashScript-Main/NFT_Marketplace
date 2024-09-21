@@ -15,7 +15,7 @@ const Header = ({ locale }: { locale: string }) => {
                 <Link href={`/${locale}/`} className={` |  | flex justify-center items-center | group`}>
                     <StorefrontSVG />
         
-                    <span className={` | text-base lg:text-xl font-semibold group-hover:text-nftCustom-navbar_text_hover |  | main-transition-color`}>
+                    <span className={` | text-base lg:text-xl font-semibold text-nftCustom-header_logo group-hover:text-nftCustom-header_logo_hover |  | main-transition-color`}>
                         {translateHeader("logo")}
                     </span>
                 </Link>
@@ -24,7 +24,7 @@ const Header = ({ locale }: { locale: string }) => {
                     <ul>
                         {navbarLinks.map((link) => (
                             <li key={link.key}>
-                                <Link href={link.href}>
+                                <Link href={link.href} className="text-nftCustom-header_navlinks hover:text-nftCustom-header_navlinks_hover">
                                     {translateHeader(link.language)}
                                 </Link>
                             </li>
@@ -34,7 +34,7 @@ const Header = ({ locale }: { locale: string }) => {
                     <CustomButton 
                         translateButton={translateHeader("button")} 
                         locale={locale} 
-                        className=""
+                        className="text-nftCustom-header_button_text bg-nftCustom-header_button_bg hover:bg-nftCustom-header_button_hover border border-nftCustom-header_button_border"
                         type="link"
                         href="sign-up"
                         icon="user"
@@ -52,25 +52,3 @@ const Header = ({ locale }: { locale: string }) => {
 }
 
 export default Header
-/*
-🔻 min-width 👉🏻 |➡------ 🔻
-    xs: 👉🏻 475px 👉🏻 extend: { screens: { 'xs': '475px' } }
-    sm: 👉🏻 640px
-    md: 👉🏻 768px
-    lg: 👉🏻 1024px
-    xl: 👉🏻 1280px
-    2xl: 👉🏻 1536px
-
-🔻 max-width 👉🏻 ------⬅| 🔻
-    max-xs: 👉🏻 475px
-    max-sm: 👉🏻 640px
-    max-md: 👉🏻 768px
-    max-lg: 👉🏻 1024px
-    max-xl: 👉🏻 1280px
-    max-2xl: 👉🏻 1536px
-
-🔻 'min-width' to 'max-width' 👉🏻 |➡------⬅| 🔻
-    xs:max-lg 👉🏻 '475px' to '1024px'
-    sm:max-xl 👉🏻 '640px' to '1280px'
-    md:max-2xl 👉🏻 '768px' to '1536px'
-*/

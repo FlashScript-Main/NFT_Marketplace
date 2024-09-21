@@ -13,17 +13,45 @@ const config: Config = {
   	extend: {
   		colors: {
 			nftCustom: {
-				bg: "var(--nft-main-bg)",
-				text: "var(--nft-main-text)",
-				svg_fill: "var(--nft-svg-fill)",
-				navbar_text: "var(--nft-navbar-text)",
-				navbar_text_hover: "var(--nft-navbar-text-hover)",
-				sign_up_button_icon: "var(--nft-sign-up-button-icon)",
+				// Body
+				body_bg: "var(--nft-body-bg)",
+				body_text: "var(--nft-body-text)", // Not being used
+				
+				// Header
+				header_logo: "var(--nft-header-logo)",
+				header_logo_hover: "var(--nft-header-logo-hover)",
+				header_navlinks: "var(--nft-header-navlinks)",
+				header_navlinks_hover: "var(--nft-header-navlinks-hover)",
+				header_button_text: "var(--nft-header-button-text)",
+				header_button_bg: "var(--nft-header-button-bg)",
+				header_button_border: "var(--nft-header-button-border)",
+				header_button_hover: "var(--nft-header-button-hover)",
+
+				// Discover Section
+
+				// SVGs
+				user_svg: "var(--nft-user-svg)",
 				envelope_simple_svg: "var(--nft-envelope-simple-svg)",
 				lock_key_svg: "var(--nft-lock-key-svg)",
 				eye_svg: "var(--nft-eye-svg)",
 				eye_slash_svg: "var(--nft-eye-slash-svg)",
 				arrow_right_svg: "var(--nft-arrow-right-svg)",
+				rocket_launch_svg: "var(--nft-rocket-launch-svg)",
+				rocket_svg: "var(--nft-rocket-svg)",
+				arrow_left_svg: "var(--nft-arrow-left-svg)",
+				globe_svg: "var(--nft-globe-svg)",
+				trend_up_svg: "var(--nft-trend-up-svg)",
+				user_circle_svg: "var(--nft-user-circle-svg)",
+				plus_svg: "var(--nft-plus-svg)",
+				magnifying_glass_svg: "var(--nft-magnifying-glass-svg)",
+				list_svg: "var(--nft-list-svg)",
+				storefront_svg: "var(--nft-storefront-svg)",
+				wallet_svg: "var(--nft-wallet-svg)",
+				copy_svg: "var(--nft-copy-svg)",
+				discord_logo_svg: "var(--nft-discord-logo-svg)",
+				youtube_logo_svg: "var(--nft-youtube-logo-svg)",
+				twitter_logo_svg: "var(--nft-twitter-logo-svg)",
+				instagram_logo_svg: "var(--nft-instagram-logo-svg)",
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

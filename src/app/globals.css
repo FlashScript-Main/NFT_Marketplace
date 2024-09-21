@@ -69,22 +69,48 @@
 
 /* Custom Theme Switcher Colors */
 .nftDefault {
-  --nft-main-bg: #2B2B2B;
-  --nft-main-text: #ffffff;
+  /* ---- Body ---- */
+  --nft-body-bg: #2B2B2B;
+  --nft-body-text: #ffffff; /* Not being used */
 
   /* ---- HomePage ---- */
   /* Header */
-  --nft-svg-fill: #A259FF;
+  --nft-header-logo: #ffffff;
+  --nft-header-logo-hover: #ffffff;
+  --nft-header-navlinks: #A259FF;
+  --nft-header-navlinks-hover: #ffffff;
+  --nft-header-button-text: #ffffff;
+  --nft-header-button-bg: #ffffff;
+  --nft-header-button-border: #ffffff;
+  --nft-header-button-hover: #ffffff;
+
+
   --nft-navbar-text: #ffffff;
   --nft-navbar-text-hover: #A259FF;
-  --nft-sign-up-button-icon: #ffffff;
 
   /* ---- SVGs ---- */
+  --nft-user-svg: #ffffff;
   --nft-envelope-simple-svg: #ffffff;
   --nft-lock-key-svg: #ffffff;
   --nft-eye-svg: #ffffff;
   --nft-eye-slash-svg: #ffffff;
   --nft-arrow-right-svg: #ffffff;
+  --nft-rocket-launch-svg: #ffffff;
+  --nft-rocket-svg: #ffffff;
+  --nft-arrow-left-svg: #ffffff;
+  --nft-globe-svg: #ffffff;
+  --nft-trend-up-svg: #ffffff;
+  --nft-user-circle-svg: #ffffff;
+  --nft-plus-svg: #ffffff;
+  --nft-magnifying-glass-svg: #ffffff;
+  --nft-list-svg: #ffffff;
+  --nft-storefront-svg: #A259FF;
+  --nft-wallet-svg: #ffffff;
+  --nft-copy-svg: #ffffff;
+  --nft-discord-logo-svg: #ffffff;
+  --nft-youtube-logo-svg: #ffffff;
+  --nft-twitter-logo-svg: #ffffff;
+  --nft-instagram-logo-svg: #ffffff;
 }
 
 .red {
@@ -109,11 +135,11 @@
 
 /* SVGs */
 .storefront-svg {
-  @apply fill-nftCustom-svg_fill w-6 h-6 lg:w-8 lg:h-8 mr-1 lg:mr-3;
+  @apply fill-nftCustom-storefront_svg w-6 h-6 lg:w-8 lg:h-8 mr-1 lg:mr-3;
 }
 
 .user-svg {
-  @apply fill-nftCustom-sign_up_button_icon w-5 h-5;
+  @apply fill-nftCustom-user_svg w-5 h-5;
 }
 
 .envelope-simple-svg {
@@ -134,4 +160,65 @@
 
 .arrow-right-svg {
   @apply fill-nftCustom-arrow_right_svg;
+}
+
+.rocket-launch-svg {
+  @apply fill-nftCustom-rocket_launch_svg;
+}
+
+.rocket-svg {
+  @apply fill-nftCustom-rocket_svg;
+}
+
+.arrow-left-svg {
+  @apply fill-nftCustom-arrow_left_svg;
+}
+
+.globe-svg {
+  @apply fill-nftCustom-globe_svg;
+}
+
+.trend-up-svg {
+  @apply fill-nftCustom-trend_up_svg;
+}
+
+.user-circle-svg {
+  @apply fill-nftCustom-user_circle_svg;
+}
+
+.plus-svg {
+  @apply fill-nftCustom-plus_svg;
+}
+
+.magnifying-glass-svg {
+  @apply fill-nftCustom-magnifying_glass_svg;
+}
+
+.list-svg {
+  @apply fill-nftCustom-list_svg;
+}
+
+.wallet-svg {
+  @apply fill-nftCustom-wallet_svg;
+}
+
+.copy-svg {
+  @apply fill-nftCustom-copy_svg;
+}
+
+.discord-logo-svg {
+  @apply fill-nftCustom-discord_logo_svg;
+}
+
+.youtube-logo-svg {
+  @apply fill-nftCustom-youtube_logo_svg;
+}
+
+.twitter-logo-svg {
+  @apply stroke-nftCustom-twitter_logo_svg; 
+  /* @apply fill-nftCustom-twitter_logo_svg; */
+}
+
+.instagram-logo-svg {
+  @apply fill-nftCustom-instagram_logo_svg;
 }
