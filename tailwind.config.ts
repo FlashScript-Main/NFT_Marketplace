@@ -12,6 +12,10 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+			nftCustom: {
+				bg: "var(--nft-bg)",
+				text: "var(--nft-text)"
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

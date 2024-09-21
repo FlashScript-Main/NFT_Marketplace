@@ -90,3 +90,24 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Theme Switcher Colors */
+.nftDefault {
+  --nft-bg: #ffffff;
+  --nft-text: #171717;
+}
+
+.red {
+  --nft-bg: #ff0000;
+  --nft-text: #ffbb00;
+}
+
+.green {
+  --nft-bg: #6aff00;
+  --nft-text: #d900ff;
+}
+
+.blue {
+  --nft-bg: #0022ff;
+  --nft-text: #00ffe5;
+}

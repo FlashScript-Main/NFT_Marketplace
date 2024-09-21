@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/providers/next-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -28,9 +29,17 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Providers>
-                    {children}
-                </Providers>
+                <ThemeProvider 
+                    attribute="class"
+                    disableTransitionOnChange
+                    defaultTheme="nftDefault"
+                    enableSystem={false}
+                    themes={["nftDefault", "red", "green", "blue"]}
+                >
+                    <Providers>
+                        {children}
+                    </Providers>
+                </ThemeProvider>
             </body>
         </html>
     );
