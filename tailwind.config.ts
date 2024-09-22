@@ -28,6 +28,11 @@ const config: Config = {
 				header_button_bg: "var(--nft-header-button-bg)",
 				header_button_border: "var(--nft-header-button-border)",
 				header_button_hover: "var(--nft-header-button-hover)",
+				header_mobile_menu_toggle: "var(--nft-header-mobile-menu-toggle)",
+				header_mobile_menu_toggle_hover: "var(--nft-header-mobile-menu-toggle-hover)",
+				header_mobile_menu_bg: "var(--nft-header-mobile-menu-bg)",
+				header_mobile_menu_text: "var(--nft-header-mobile-menu-text)",
+				header_mobile_menu_text_hover: "var(--nft-header-mobile-menu-text-hover)",
 
 				// Discover Section
 

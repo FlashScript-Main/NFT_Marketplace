@@ -85,6 +85,11 @@
   --nft-header-button-bg: #A259FF;
   --nft-header-button-border: #A259FF;
   --nft-header-button-hover: #2B2B2B;
+  --nft-header-mobile-menu-toggle: #ffffff;
+  --nft-header-mobile-menu-toggle-hover: #A259FF;
+  --nft-header-mobile-menu-bg: #2B2B2B;
+  --nft-header-mobile-menu-text: #ffffff;
+  --nft-header-mobile-menu-text-hover: #A259FF;
 
   /* ---- SVGs ---- */
   --nft-user-svg: #ffffff;
