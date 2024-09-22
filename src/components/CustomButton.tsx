@@ -1,17 +1,20 @@
-import { UserSVG } from "@/interface/UserSVG"
+import { UserSVG } from "@/interface"
 import Link from "next/link"
 
-const CustomButton = ({ locale, translateButton, type, href, className, icon }: CustomButtonType) => {
+const CustomButton = ({ locale, translateButton, type, href, className, textClass, icon }: CustomButtonType) => {
 
     return (
         <>
             {
                 type === "link" ? 
                 ( 
-                    <Link href={`/${locale}/${href}`} className={`${className}`}>
+                    <Link 
+                        href={`/${locale}/${href}`} 
+                        className={`${className} | main-transition-color | `}
+                    >
                         {icon === "user" && <UserSVG />}
 
-                        <span>
+                        <span className={`${textClass}  |  |  | `}>
                             {translateButton}
                         </span>
                     </Link>

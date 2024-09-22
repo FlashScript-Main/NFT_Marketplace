@@ -75,18 +75,16 @@
 
   /* ---- HomePage ---- */
   /* Header */
+  --nft-header-bg: #2B2B2B;
   --nft-header-logo: #ffffff;
-  --nft-header-logo-hover: #ffffff;
-  --nft-header-navlinks: #A259FF;
-  --nft-header-navlinks-hover: #ffffff;
+  --nft-header-logo-hover: #A259FF;
+  --nft-header-navlinks: #ffffff;
+  --nft-header-navlinks-hover: #A259FF;
   --nft-header-button-text: #ffffff;
-  --nft-header-button-bg: #ffffff;
-  --nft-header-button-border: #ffffff;
-  --nft-header-button-hover: #ffffff;
-
-
-  --nft-navbar-text: #ffffff;
-  --nft-navbar-text-hover: #A259FF;
+  --nft-header-button-text-hover: #A259FF;
+  --nft-header-button-bg: #A259FF;
+  --nft-header-button-border: #A259FF;
+  --nft-header-button-hover: #2B2B2B;
 
   /* ---- SVGs ---- */
   --nft-user-svg: #ffffff;
@@ -139,7 +137,7 @@
 }
 
 .user-svg {
-  @apply fill-nftCustom-user_svg w-5 h-5;
+  @apply fill-nftCustom-user_svg w-5 h-5 group-hover:fill-nftCustom-header_button_text_hover;
 }
 
 .envelope-simple-svg {

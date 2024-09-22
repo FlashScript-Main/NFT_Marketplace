@@ -18,11 +18,13 @@ const config: Config = {
 				body_text: "var(--nft-body-text)", // Not being used
 				
 				// Header
+				header_bg: "var(--nft-header-bg)",
 				header_logo: "var(--nft-header-logo)",
 				header_logo_hover: "var(--nft-header-logo-hover)",
 				header_navlinks: "var(--nft-header-navlinks)",
 				header_navlinks_hover: "var(--nft-header-navlinks-hover)",
 				header_button_text: "var(--nft-header-button-text)",
+				header_button_text_hover: "var(--nft-header-button-text-hover)",
 				header_button_bg: "var(--nft-header-button-bg)",
 				header_button_border: "var(--nft-header-button-border)",
 				header_button_hover: "var(--nft-header-button-hover)",

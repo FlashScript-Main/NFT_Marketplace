@@ -6,6 +6,7 @@ type CustomButtonType = {
     type: "button" | "link";
     href?: string;
     className: string;
+    textClass: string;
     icon?: string;
     // onClick: () => void;
 }
