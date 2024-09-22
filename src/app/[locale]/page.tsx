@@ -1,4 +1,4 @@
-import ThemeSwitcher from "@/theme/ThemeSwitcher"
+// import ThemeSwitcher from "@/theme/ThemeSwitcher"
 import { useTranslations } from 'next-intl';
 // import { getMessages } from 'next-intl/server';
 
@@ -31,7 +31,7 @@ const Home = ({ locale }: { locale: string }) => {
                 {translateHome("title")}
             </div>
 
-            <ThemeSwitcher locale={locale} />
+            {/* <ThemeSwitcher locale={locale} /> */}
         </>
     )
 

@@ -9,14 +9,15 @@
         "connect-wallet": "کیف پول",
         "button": "ثبت نام"
     },
-    "HomePage": {
-        "title": "صفحه اصلی",
-        "isEnglish": "false"
-    },
-    "AboutPage": {
-        "title": "درباره"
-    },
-    "ProfilePage": {
-        "title": "پروفایل"
+    "Footer": {
+        "logo": "NFT فروشگاه",
+        "creation": "توسعه یافته توسط",
+        "community": "به انجمن ما بپیوندید",
+        "Explore": "جستجو کنید",
+        "marketplace": "فروشگاه",
+        "rankings": "رتبه",
+        "connect-wallet": "کیف پول",
+        "Digest": "به خلاصه هفتگی ما بپیوندید",
+        "Exclusive": "تبلیغات و به‌روزرسانی‌های انحصاری را مستقیماً در صندوق ورودی خود دریافت کنید"
     }
 }

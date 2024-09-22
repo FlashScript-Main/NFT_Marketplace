@@ -33,7 +33,9 @@ const config: Config = {
 				header_mobile_menu_bg: "var(--nft-header-mobile-menu-bg)",
 				header_mobile_menu_text: "var(--nft-header-mobile-menu-text)",
 				header_mobile_menu_text_hover: "var(--nft-header-mobile-menu-text-hover)",
-
+				
+				// Footer
+				footer_bg: "var(--nft-footer-bg)",
 				// Discover Section
 
 				// SVGs

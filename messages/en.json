@@ -9,14 +9,15 @@
         "connect-wallet": "Connect a wallet",
         "button": "Sign Up"
     },
-    "HomePage": {
-        "title": "Landing page",
-        "isEnglish": "true"
-    },
-    "AboutPage": {
-        "title": "About"
-    },
-    "ProfilePage": {
-        "title": "Profile"
+    "Footer": {
+        "logo": "NFT Marketplace",
+        "creation": "NFT marketplace created with by",
+        "community": "Join our community",
+        "Explore": "Explore",
+        "marketplace": "Marketplace",
+        "rankings": "Rankings",
+        "connect-wallet": "Connect a wallet",
+        "Digest": "Join Our Weekly Digest",
+        "Exclusive": "Get exclusive promotions & updates straight to your inbox."
     }
 }

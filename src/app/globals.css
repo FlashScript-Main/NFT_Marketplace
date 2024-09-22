@@ -91,6 +91,9 @@
   --nft-header-mobile-menu-text: #ffffff;
   --nft-header-mobile-menu-text-hover: #A259FF;
 
+  /* Footer */
+  --nft-footer-bg: #2B2B2B;
+
   /* ---- SVGs ---- */
   --nft-user-svg: #ffffff;
   --nft-envelope-simple-svg: #ffffff;
@@ -210,18 +213,17 @@
 }
 
 .discord-logo-svg {
-  @apply fill-nftCustom-discord_logo_svg;
+  @apply fill-nftCustom-discord_logo_svg w-8 h-8;
 }
 
 .youtube-logo-svg {
-  @apply fill-nftCustom-youtube_logo_svg;
+  @apply fill-nftCustom-youtube_logo_svg w-8 h-8;
 }
 
 .twitter-logo-svg {
-  @apply stroke-nftCustom-twitter_logo_svg; 
-  /* @apply fill-nftCustom-twitter_logo_svg; */
+  @apply stroke-nftCustom-twitter_logo_svg fill-nftCustom-footer_bg w-8 h-8; 
 }
 
 .instagram-logo-svg {
-  @apply fill-nftCustom-instagram_logo_svg;
+  @apply fill-nftCustom-instagram_logo_svg w-8 h-8;
 }
