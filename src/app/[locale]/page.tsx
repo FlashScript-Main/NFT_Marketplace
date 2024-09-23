@@ -1,5 +1,6 @@
 // import ThemeSwitcher from "@/theme/ThemeSwitcher"
-import { useTranslations } from 'next-intl';
+import { CategoriesSection, DiscoverMoreSection, DiscoverSection, HowItWorksSection, JoinUsSection, MagicMashroomsSection, TopCreatorsSection, TrendingSection } from '@/template/home-page';
+// import { useTranslations } from 'next-intl';
 // import { getMessages } from 'next-intl/server';
 
 export const dynamicParams = false;
@@ -23,16 +24,34 @@ export const dynamicParams = false;
 
 const Home = ({ locale }: { locale: string }) => {
 
-    const translateHome = useTranslations('HomePage');
+    // const translateHome = useTranslations('Home-Discover');
+    // const language = useTranslations("language");
+    // language("isEnglish") === "true"
 
     return (
-        <>
-            <div className="bg-nftCustom-bg text-nftCustom-text">
-                {translateHome("title")}
+        <main>
+            <div className={`w- |  |  | `}>
+                <DiscoverSection locale={locale} />
+
+                <TrendingSection locale={locale} />
+
+                <TopCreatorsSection locale={locale} />
+
+                <CategoriesSection locale={locale} />
+
+                <DiscoverMoreSection locale={locale} />
+            </div>
+
+                <MagicMashroomsSection locale={locale} />
+
+            <div className={`w- |  |  | `}>
+                <HowItWorksSection locale={locale} />
+
+                <JoinUsSection locale={locale} />
             </div>
 
             {/* <ThemeSwitcher locale={locale} /> */}
-        </>
+        </main>
     )
 
 }
