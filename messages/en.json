@@ -11,13 +11,15 @@
     },
     "Footer": {
         "logo": "NFT Marketplace",
-        "creation": "NFT marketplace created with by",
+        "creation": "NFT marketplace created by",
         "community": "Join our community",
         "Explore": "Explore",
         "marketplace": "Marketplace",
         "rankings": "Rankings",
         "connect-wallet": "Connect a wallet",
         "Digest": "Join Our Weekly Digest",
-        "Exclusive": "Get exclusive promotions & updates straight to your inbox."
+        "Exclusive": "Get exclusive promotions & updates straight to your inbox.",
+        "Input-Field": "Enter your email here",
+        "Input-Button": "Subscribe"
     }
 }

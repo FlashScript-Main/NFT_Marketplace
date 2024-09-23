@@ -18,6 +18,7 @@ const config: Config = {
 				c_l_text: "var(--nft-c-l-text)",
 				text: "var(--nft-text)",
 				cta: "var(--nft-cta)",
+				text_accent: "var(--nft-text-accent)",
 
 				blue_accent: "var(--nft-blue-accent)",
 				red_accent: "var(--nft-red-accent)",

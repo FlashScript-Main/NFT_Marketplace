@@ -83,7 +83,7 @@ const Header = ({ locale }: { locale: string }) => {
                         <NextUINavbarItem key={`${item}-${index}`}>
                             <Link
                                 color={index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"}
-                                className={`w-full | text-nftCustom-text hover:text-nftCustom-ctaborder-nftCustom-cta |  | main-transition-color`}
+                                className={`w-full | text-nftCustom-text hover:text-nftCustom-cta |  | main-transition-color`}
                                 href="#"
                             >
                                 {item}
@@ -94,7 +94,7 @@ const Header = ({ locale }: { locale: string }) => {
 
                 <NextUINavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className={`lg:hidden py-2 px-4 | text-nftCustom-text hover:text-nftCustom-ctaborder-nftCustom-cta |  | main-transition-color`}
+                    className={`lg:hidden py-2 px-4 | text-nftCustom-text hover:text-nftCustom-cta |  | main-transition-color`}
                 />
             </div>
         </NextUINavbar>

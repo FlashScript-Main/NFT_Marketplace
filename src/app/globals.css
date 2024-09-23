@@ -85,6 +85,7 @@
   --nft-c-l-text: #858584;
   --nft-text: #FFFFFF;
   --nft-cta: #A259FF;
+  --nft-text-accent: #CCCCCC;
 
   --nft-blue-accent: #377DF7;
   --nft-red-accent: #FF7262;
@@ -119,7 +120,7 @@
 }
 
 .storefront-svg-footer {
-  @apply fill-nftCustom-cta w-6 h-6 lg:w-8 lg:h-8 mr-1 lg:mr-3;
+  @apply fill-nftCustom-cta w-8 h-8 mr-1 lg:mr-3;
 }
 
 .user-svg {
@@ -127,7 +128,7 @@
 }
 
 .envelope-simple-svg {
-  @apply fill-nftCustom-text;
+  @apply fill-nftCustom-text group-hover:fill-nftCustom-cta w-5 h-5 md:hidden;
 }
 
 .lock-key-svg {
@@ -191,17 +192,17 @@
 }
 
 .discord-logo-svg {
-  @apply fill-nftCustom-c_l_text w-8 h-8;
+  @apply fill-nftCustom-c_l_text w-8 h-8 hover:fill-nftCustom-cta;
 }
 
 .youtube-logo-svg {
-  @apply fill-nftCustom-c_l_text w-8 h-8;
+  @apply fill-nftCustom-c_l_text w-8 h-8 hover:fill-nftCustom-cta;
 }
 
 .twitter-logo-svg {
-  @apply stroke-nftCustom-c_l_text fill-nftCustom-footer-bg w-8 h-8; 
+  @apply stroke-nftCustom-c_l_text fill-nftCustom-footer-bg w-8 h-8 hover:stroke-nftCustom-cta; 
 }
 
 .instagram-logo-svg {
-  @apply fill-nftCustom-c_l_text w-8 h-8;
+  @apply fill-nftCustom-c_l_text w-8 h-8 hover:fill-nftCustom-cta;
 }
