@@ -9,11 +9,12 @@ const Footer = ({ locale }: { locale: string }) => {
 
     const translateFooter = useTranslations('Footer');
     // const language = useTranslations("language");
+    // language("isEnglish") === "true"
 
     return (
         <footer className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg | flex flex-col | `}>
-            <div className={`xl:w-[66rem] xl:mx-auto |  | flex flex-col xl:flex-row xl:justify-between xl:items-center  | border-2 border-rose-700`}>
-                <div className={`max-xl:mb-8 xl:w-[18rem] |  | flex flex-col justify-start items-start | `}>
+            <div className={`xl:w-[66rem] xl:mx-auto |  | flex flex-col xl:flex-row xl:justify-between xl:items-center  | `}>
+                <div className={`max-xl:mb-8 xl:w-[18rem] xl:mb-auto |  | flex flex-col justify-start items-start | `}>
                     <Link 
                         href={`/${locale}/`} 
                         className={` |  | flex justify-center items-center | group`}
@@ -72,7 +73,7 @@ const Footer = ({ locale }: { locale: string }) => {
                     }
                 </div>
 
-                <div className={`xl:mb-auto |  | flex flex-col gap-3 | border-2 border-indigo-700`}>
+                <div className={`xl:mb-auto xl:w-[24.5rem] |  | flex flex-col gap-3 | `}>
                     <h6 className={`mb-2 xl:mb-1 | text-nftCustom-text text-[1.4rem] font-bold ${spaceMono} |  | `}>
                         {translateFooter("Digest")}
                     </h6>
@@ -85,24 +86,24 @@ const Footer = ({ locale }: { locale: string }) => {
                 </div>
             </div>
 
-            <div>
+            <div className={`xl:w-[66rem] xl:mx-auto mt-8 md:mt-10 pt-5 | text-sm font-normal text-nftCustom-text_accent |  | border-t border-t-nftCustom-c_l_text main-transition-color`}>
                 &#169; NFT Market. Use this template freely.
                 <br />
                 (Huge Thanks from 
                 <a 
                     href="https://github.com/FlashScript-Main" 
                     target="_blank"
-                    className={` |  |  | `}
+                    className={` | text-nftCustom-cta hover:text-nftCustom-text font-semibold |  | `}
                 >
                     {" "} FlashScript {" "}
                 </a>
                 to 
                 <a 
-                    href="" 
+                    href="https://www.figma.com/community/file/1173962104946517060/nft-marketplace-template-create-an-nft-website-in-minutes" 
                     target="_blank"
-                    className={` |  |  | `}
+                    className={` | text-nftCustom-cta hover:text-nftCustom-text font-semibold |  | `}
                 >
-                    {" "} TheDisignerName {" "}
+                    {" "} animaapp.io {" "}
                 </a>
                 for Creating this Beautiful Design and Sharing it for free)
             </div>

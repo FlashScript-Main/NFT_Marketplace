@@ -40,7 +40,7 @@ const SubscribeForm = () => {
 
     return (
         <>  
-            <div className={`max-md:max-w-[20rem] max-md:mx-auto md:max-w-[24rem] md:relative |  | max-md:flex max-md:flex-col | border-2 border-orange-500`}>
+            <div className={`max-md:max-w-[20rem] max-md:mx-auto md:max-w-[24rem] md:relative |  | max-md:flex max-md:flex-col | `}>
                 <NextUIInput 
                     type="email" 
                     label={isInvalid ? translateFooter("Failure") : translateFooter("Input-Field")}
@@ -64,7 +64,7 @@ const SubscribeForm = () => {
 
                 <button 
                     onClick={() => handleSubscribe()}
-                    className={`py-2 md:py-3 md:px-8 mt-3 md:absolute md:right-0 md:top-0 md:mt-0 | bg-nftCustom-cta hover:bg-nftCustom-footer-bg md:hover:bg-nftCustom-text | flex justify-center items-center | border-4 border-nftCustom-cta rounded-[20px] md:rounded-[18px] main-transition-color group`}
+                    className={`py-3 md:px-8 mt-3 md:absolute md:right-0 md:top-0 md:mt-0 | bg-nftCustom-cta hover:bg-nftCustom-footer-bg md:hover:bg-nftCustom-text | flex justify-center items-center | border-4 border-nftCustom-cta rounded-[20px] md:rounded-[18px] main-transition-color group`}
                 >
                     <EnvelopeSimpleSVG />
 
