@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Footer, Header } from "@/components";
 import { workSans } from "@/utils/fonts";
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -38,6 +39,7 @@ export default async function RootLayout({
                                 <Header locale={locale} />
                                 {children}
                                 <Footer locale={locale} />
+                                <Toaster />
                             </div>
                         </Providers>
                     </ThemeProvider>

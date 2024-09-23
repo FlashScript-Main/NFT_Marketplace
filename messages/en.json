@@ -20,6 +20,8 @@
         "Digest": "Join Our Weekly Digest",
         "Exclusive": "Get exclusive promotions & updates straight to your inbox.",
         "Input-Field": "Enter your email here",
-        "Input-Button": "Subscribe"
+        "Input-Button": "Subscribe",
+        "Success": "Subscribed successfully!",
+        "Failure": "Invalid Email Address!"
     }
 }
