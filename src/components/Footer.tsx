@@ -10,14 +10,14 @@ const Footer = ({ locale }: { locale: string }) => {
     // const language = useTranslations("language");
 
     return (
-        <footer>
-            <div>
-                <div>
+        <footer className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg | flex flex-col | `}>
+            <div className={` |  | flex flex-col lg:flex-row | border-2 border-rose-700`}>
+                <div className={` |  | flex flex-col justify-start items-start | border-2 border-indigo-700`}>
                     <Link 
                         href={`/${locale}/`} 
                         className={` |  | flex justify-center items-center | group`}
                     >
-                        <StorefrontSVG />
+                        <StorefrontSVG footer={true} />
             
                         <span className={` | text-base lg:text-xl font-semibold text-nftCustom-header_logo group-hover:text-nftCustom-header_logo_hover |  | main-transition-color`}>
                             {translateFooter("logo")}
@@ -36,16 +36,18 @@ const Footer = ({ locale }: { locale: string }) => {
                     <span>
                         {translateFooter("community")}
                     </span>
-
-                    {footerIcons.map((icon) => (
-                        <a 
-                            key={icon.id}
-                            href="https://github.com/FlashScript-Main"
-                            target="_blank"
-                        >
-                            <icon.value />
-                        </a>
-                    ))}
+                    
+                    <div className={` |  | flex | `}>
+                        {footerIcons.map((icon) => (
+                            <a 
+                                key={icon.id}
+                                href="https://github.com/FlashScript-Main"
+                                target="_blank"
+                            >
+                                <icon.value />
+                            </a>
+                        ))}
+                    </div>
                 </div>
 
                 <div>

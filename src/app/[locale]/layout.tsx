@@ -24,7 +24,7 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} className={` |  |  | scroll-smooth overflow-x-hidden`}>
-            <body className={`relative | bg-nftCustom-body_bg ${workSans} |  | `}>
+            <body className={`relative | bg-nftCustom-background ${workSans} |  | `}>
                 <NextIntlClientProvider messages={messages}>
                     <ThemeProvider 
                         attribute="class"
