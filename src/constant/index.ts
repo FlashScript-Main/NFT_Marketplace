@@ -65,3 +65,9 @@ export const footerIcons = [
         value: InstagramLogoSVG,
     },
 ]
+
+export const discoverNumbers = [
+    { id: 1, value: 240, text: "Total Sale" },
+    { id: 2, value: 100, text: "Auctions" },
+    { id: 3, value: 500, text: "Artists" },
+]

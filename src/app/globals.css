@@ -148,7 +148,7 @@
 }
 
 .rocket-launch-svg {
-  @apply fill-nftCustom-text;
+  @apply fill-nftCustom-text w-5 h-5 group-hover:fill-nftCustom-cta;
 }
 
 .rocket-svg {

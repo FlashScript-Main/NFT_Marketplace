@@ -19,7 +19,7 @@ const Footer = ({ locale }: { locale: string }) => {
                         href={`/${locale}/`} 
                         className={` |  | flex justify-center items-center | group`}
                     >
-                        <StorefrontSVG footer={true} />
+                        <StorefrontSVG footer="true" />
             
                         <span className={` | text-xl font-semibold text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color`}>
                             {translateFooter("logo")}

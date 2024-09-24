@@ -3,7 +3,7 @@ import { CategoriesSection, DiscoverMoreSection, DiscoverSection, HowItWorksSect
 // import { useTranslations } from 'next-intl';
 // import { getMessages } from 'next-intl/server';
 
-export const dynamicParams = false;
+// export const dynamicParams = false;
 
 // export const generateStaticParams = () => {
 //   return ["en", "fa"].map(locale => ({ locale }))
@@ -30,7 +30,7 @@ const Home = ({ locale }: { locale: string }) => {
 
     return (
         <main>
-            <div className={`w- |  |  | `}>
+            <div className={`max-md:px-[1.875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>
                 <DiscoverSection locale={locale} />
 
                 <TrendingSection locale={locale} />
@@ -44,7 +44,7 @@ const Home = ({ locale }: { locale: string }) => {
 
                 <MagicMashroomsSection locale={locale} />
 
-            <div className={`w- |  |  | `}>
+            <div className={`max-md:px-[1.875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>
                 <HowItWorksSection locale={locale} />
 
                 <JoinUsSection locale={locale} />
