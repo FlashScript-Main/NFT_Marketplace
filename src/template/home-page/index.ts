@@ -6,6 +6,7 @@ import DiscoverMoreSection from "./DiscoverMoreSection";
 import HowItWorksSection from "./HowItWorksSection";
 import JoinUsSection from "./JoinUsSection";
 import MagicMashroomsSection from "./MagicMashroomsSection";
+import DiscoverSectionCountUp from "./DiscoverSectionCountUp";
 
 export {
     DiscoverSection,
@@ -15,5 +16,6 @@ export {
     DiscoverMoreSection,
     HowItWorksSection,
     JoinUsSection,
-    MagicMashroomsSection
+    MagicMashroomsSection,
+    DiscoverSectionCountUp,
 }

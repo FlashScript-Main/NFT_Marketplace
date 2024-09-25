@@ -1,8 +1,8 @@
 import CustomButton from "@/components/CustomButton"
-import { discoverNumbers } from "@/constant";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link"
+import DiscoverSectionCountUp from "./DiscoverSectionCountUp";
 
 const DiscoverSection = ({ locale }: { locale: string }) => {
 
@@ -66,13 +66,7 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                     textClass="text-[1rem] leading-[140%] font-medium group-hover:text-nftCustom-cta ml-3"
                 />
 
-                <div>
-                    {discoverNumbers.map((number) => (
-                        
-                    ))}
-                    <span></span>
-                    <p></p>
-                </div>
+                <DiscoverSectionCountUp />
             </div>
 
             <div>

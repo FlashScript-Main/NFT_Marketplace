@@ -13,9 +13,9 @@
         "title": "Discover digital art & Collect NFTs",
         "description": "NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.",
         "button-text": "Get Started",
-        "Additional-info-1": "Total Sale",
-        "Additional-info-2": "Auctions",
-        "Additional-info-3": "Artists",
+        "Total Sale": "Total Sale",
+        "Auctions": "Auctions",
+        "Artists": "Artists",
         "card-title": "Space Walking"
     },
     "Footer": {
