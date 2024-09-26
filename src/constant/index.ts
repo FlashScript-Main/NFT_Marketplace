@@ -3,7 +3,7 @@ import { DiscordLogoSVG, InstagramLogoSVG, TwitterLogoSVG, YoutubeLogoSVG } from
 export const homeInfo = [
     { key: "title", value: "Landing page", className: "text-nftCustom-text" },
     { key: "isEnglish", value: "true", className: "text-nftCustom-text" }
-]
+];
 
 export const navbarLinks = [
     { 
@@ -24,7 +24,7 @@ export const navbarLinks = [
         href: "connect-wallet", 
         language: "connect-wallet" 
     },
-]
+];
 
 export const footerLinks = [
     { 
@@ -45,7 +45,7 @@ export const footerLinks = [
         href: "connect-wallet", 
         language: "connect-wallet",
     }
-]
+];
 
 export const footerIcons = [
     {
@@ -64,10 +64,52 @@ export const footerIcons = [
         id: 4,
         value: InstagramLogoSVG,
     },
-]
+];
 
 export const discoverNumbers = [
     { id: 1, value: 240, text: "Total Sale" },
     { id: 2, value: 100, text: "Auctions" },
     { id: 3, value: 500, text: "Artists" },
-]
+];
+
+export const trendingInfo = [
+    {
+        id: 1,
+        bigImage: "animals-dog.jpg",
+        smallImageOne: "animals-cat.jpg",
+        smallImageTwo: "animals-bear.jpg",
+        imageAlt: "Colorfull Animal NFT",
+        numberImage: 1025,
+        title: "DSGN Animals",
+        href: "/",
+        avatarImage: "mr-fox-avatar.jpg",
+        avatarName: "MrFox",
+        className: "",
+    },
+    {
+        id: 2,
+        bigImage: "mushrooms-one.jpg",
+        smallImageOne: "mushrooms-two.jpg",
+        smallImageTwo: "mushrooms-three.jpg",
+        imageAlt: "Colorfull Animal NFT",
+        numberImage: 521,
+        title: "Magic Mushrooms",
+        href: "/",
+        avatarImage: "shroomie-avatar.jpg",
+        avatarName: "Shroomie",
+        className: "md:max-xl:ml-auto xl:mx-auto",
+    },
+    {
+        id: 3,
+        bigImage: "machines-one.jpg",
+        smallImageOne: "machines-two.jpg",
+        smallImageTwo: "machines-three.jpg",
+        imageAlt: "Colorfull Animal NFT",
+        numberImage: 209,
+        title: "Disco Machines",
+        href: "/",
+        avatarImage: "bekind-robot-avatar.jpg",  
+        avatarName: "BeKind2Robots",
+        className: "md:max-xl:hidden xl:ml-auto",
+    },
+];

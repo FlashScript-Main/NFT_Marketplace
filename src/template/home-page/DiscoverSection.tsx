@@ -11,7 +11,7 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
     // language("isEnglish") === "true"
 
     return (
-        <section className={`py-10 md:py-16 | md:flex md:gap-8 |  | `}>
+        <section className={`py-10 md:py-16 xl:py-20 | md:flex md:gap-8 |  | `}>
             <div className={` |  | flex flex-col items-center gap-[0.625rem] md:gap-5 md:basis-1/2 | `}>
                 <h1 className={` | text-nftCustom-text text-3xl md:text-4xl md:leading-[120%] xl:text-[4.2rem] font-semibold capitalize |  | `}>
                     {translateDiscover("title")}
