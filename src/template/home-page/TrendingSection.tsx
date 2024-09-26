@@ -3,11 +3,10 @@ import { spaceMono } from "@/utils/fonts"
 import Image from "next/image"
 import Link from "next/link"
 
-// https://dev.to/collegewap/how-to-handle-mouse-hover-event-in-react-5e3j
 const TrendingSection = ({ locale }: { locale: string }) => {
-
+    
     return (
-        <section className={`pt-10 pb-6 xl:py-20 |  |  | border-2 border-indigo-600`}>
+        <section className={`pt-10 pb-6 xl:py-20 |  |  | `}>
             <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | `}>
                 Trending Collection
             </h2>
@@ -16,7 +15,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                 Checkout our weekly updated trending collection.
             </p>
 
-            <div className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-md:gap-10 | border-2 border-orange-600`}>
+            <div className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-md:gap-10 | `}>
                 {trendingInfo.map((trend) => (
                     <div
                         key={trend.id}
