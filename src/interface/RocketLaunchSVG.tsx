@@ -1,9 +1,11 @@
 import * as React from "react"
 import { SVGProps } from "react"
 
-const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
+type SvgComponentProps = SVGProps<SVGSVGElement> & { place?: string };
+
+const SvgComponent = (props: SvgComponentProps) => (
   <svg
-    className="rocket-launch-svg"
+    className={props.place === "rankings" ? "rocket-launch-svg-rankings" : "rocket-launch-svg"}
     // width={32}
     // height={32}
     viewBox="0 0 32 32"

@@ -18,6 +18,13 @@
         "Artists": "Artists",
         "card-title": "Space Walking"
     },
+    "Home-trend": {
+        "title": "Discover digital art & Collect NFTs"
+    },
+    "Home-top-creators": {
+        "title": "Discover digital art & Collect NFTs",
+        "button-text": "View Rankings"
+    },
     "Footer": {
         "logo": "NFT Marketplace",
         "creation": "NFT marketplace created by",

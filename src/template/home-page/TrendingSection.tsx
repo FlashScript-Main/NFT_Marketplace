@@ -63,7 +63,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
 
                             <Link 
                                 href={`/${locale}/${trend.href}`} 
-                                className={` |  | flex justify-start items-center gap-3 | group`}
+                                className={`w-fit |  | flex justify-start items-center gap-3 | group`}
                             >
                                 <Image 
                                     src={`/${trend.avatarImage}`}
