@@ -1,8 +1,10 @@
 
-const TopCreatorsSection = () => {
+const TopCreatorsSection = ({ locale }: { locale: string }) => {
 
     return (
-        <div>TopCreatorsSection</div>
+        <section className={`py-10 xl:py-20 |  |  | `}>
+
+        </section>
     )
 
 }

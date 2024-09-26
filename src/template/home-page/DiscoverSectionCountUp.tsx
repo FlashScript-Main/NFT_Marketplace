@@ -10,7 +10,7 @@ const DiscoverSectionCountUp = () => {
     const translateDiscover = useTranslations('Home-Discover');
 
     return (
-        <div className={`w-full max-md:mt-6 |  | flex justify-between | `}>
+        <div className={`md:w-full max-md:min-w-[20rem] max-md:mx-auto max-md:mt-6 |  | flex justify-between | `}>
             {discoverNumbers.map((number) => (
                 <div
                     key={number.id}
