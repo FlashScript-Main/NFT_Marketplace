@@ -35,12 +35,12 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                 </div>
             </div>
 
-            {/*   md:gap-x-[1.875rem] md:gap-y-[1.875rem] */}
-            <div className={`max-md:mb-10 md:mt-6 xl:mt-10 max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  | grid grid-cols-1 max-md:gap-5 md:grid-cols-2 xl:grid-cols-3 | border-2 border-indigo-600`}>
+            <div className={`max-md:mb-10 md:mt-6 xl:mt-10 max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  | grid grid-cols-1 max-md:gap-5 md:grid-cols-2 md:gap-x-[1.875rem] xl:grid-cols-3 | `}>
                 {discoverMoreInfo.map((card) => (
                     <Link
+                        key={card.id}
                         href={`/${locale}/${card.href}`}
-                        className={`overflow-hidden ${card.className} |  |  | rounded-[20px] group border-2 border-rose-800`}
+                        className={`overflow-hidden ${card.className} |  |  | rounded-[20px] group `}
                     >
                         <div className={`overflow-hidden  |  |  | `}>
                             <Image 
@@ -48,7 +48,7 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                                 alt={`${card.title} Image`}
                                 width={315}
                                 height={238}
-                                className={`w-[19.6875rem] h-[14.875rem] object-cover xl:w-full |  |  | group-hover:scale-110 duration-500 transition-transform`}
+                                className={`max-md:w-[19.6875rem] max-md:h-[14.875rem] md:w-full object-cover |  |  | group-hover:scale-110 duration-500 transition-transform`}
                             />
                         </div>
 
@@ -73,7 +73,7 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                                 </div>
                             </div>
 
-                            <div className={` |  | flex flex-col gap-2 | `}>
+                            <div className={` |  | flex flex-col gap-2 md:gap-[0.4rem] | `}>
                                 <div className={` |  | flex justify-between items-center | `}>
                                     <p className={` | text-nftCustom-c_l_text text-xs font-normal ${spaceMono} |  | `}>
                                         Price
@@ -85,11 +85,11 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                                 </div>
 
                                 <div className={` |  | flex justify-between items-center | `}>
-                                    <span className={` | text-nftCustom-text text-xs font-normal ${spaceMono} |  | `}>
+                                    <span className={` | text-nftCustom-text text-xs md:text-base font-normal ${spaceMono} |  | `}>
                                         {card.price} ETH
                                     </span>
 
-                                    <span className={` | text-nftCustom-text text-xs font-normal ${spaceMono} |  | `}>
+                                    <span className={` | text-nftCustom-text text-xs md:text-base font-normal ${spaceMono} |  | `}>
                                         {card.highestBid} wETH
                                     </span>
                                 </div>
