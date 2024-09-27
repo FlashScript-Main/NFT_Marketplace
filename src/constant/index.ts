@@ -283,3 +283,39 @@ export const categories = [
         title: "Virtual Worlds",
     },
 ]
+
+export const discoverMoreInfo = [
+    {
+        id: 1,
+        href: "/",
+        image: "distant-galaxy.jpg",
+        title: "Distant Galaxy",
+        avatarImage: "moondancer-avatar.jpg",
+        avatarName: "MoonDancer",
+        price: "1.63",
+        highestBid: "0.33",
+        className: "",
+    },
+    {
+        id: 2,
+        href: "/",
+        image: "life-on-edena.jpg",
+        title: "Life on Edena",
+        avatarImage: "nebulakid-avatar.jpg",
+        avatarName: "NebulaKid",
+        price: "0.89",
+        highestBid: "0.27",
+        className: "",
+    },
+    {
+        id: 3,
+        href: "/",
+        image: "astro-fiction.jpg",
+        title: "AstroFiction",
+        avatarImage: "dotgu-avatar.jpg",
+        avatarName: "Spaceone",
+        price: "1.45",
+        highestBid: "0.31",
+        className: "md:max-xl:hidden",
+    },
+];

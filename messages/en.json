@@ -25,6 +25,10 @@
         "title": "Discover digital art & Collect NFTs",
         "button-text": "View Rankings"
     },
+    "Home-Discover-More": {
+        "title": "Discover digital art & Collect NFTs",
+        "button-text": "See All"
+    },
     "Footer": {
         "logo": "NFT Marketplace",
         "creation": "NFT marketplace created by",

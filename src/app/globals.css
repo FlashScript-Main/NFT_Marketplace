@@ -136,7 +136,7 @@
 }
 
 .eye-svg {
-  @apply fill-nftCustom-text;
+  @apply fill-nftCustom-cta w-5 h-5 group-hover:fill-nftCustom-cta;
 }
 
 .eye-slash-svg {

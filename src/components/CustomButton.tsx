@@ -1,4 +1,4 @@
-import { RocketLaunchSVG, UserSVG } from "@/interface"
+import { EyeSVG, RocketLaunchSVG, UserSVG } from "@/interface"
 import Link from "next/link"
 
 const CustomButton = ({ locale, translateButton, type, href, className, textClass, icon }: CustomButtonType) => {
@@ -15,6 +15,7 @@ const CustomButton = ({ locale, translateButton, type, href, className, textClas
                         {icon === "user" && <UserSVG />}
                         {icon === "rocket-launch" && <RocketLaunchSVG />}
                         {icon === "rocket-launch-rankings" && <RocketLaunchSVG place="rankings" />}
+                        {icon === "eye" && <EyeSVG />}
 
                         <span className={`${textClass}  |  |  | `}>
                             {translateButton}
