@@ -224,3 +224,62 @@ export const topCreatorsInfo = [
         numberSales: 13.86,
     }
 ];
+
+export const categories = [
+    {
+        id: 1,
+        href: "/",
+        blurImage: "art-category.jpg",
+        iconImage: "paint-brush.png",
+        title: "Art",
+    },
+    {
+        id: 2,
+        href: "/",
+        blurImage: "icecream-ape.jpg",
+        iconImage: "swatches.png",
+        title: "Collectibles",
+    },
+    {
+        id: 3,
+        href: "/",
+        blurImage: "music-category.jpg",
+        iconImage: "music-notes.png",
+        title: "Music",
+    },
+    {
+        id: 4,
+        href: "/",
+        blurImage: "photography-category.jpg",
+        iconImage: "camera.png",
+        title: "Photography",
+    },
+    {
+        id: 5,
+        href: "/",
+        blurImage: "video-category.jpg",
+        iconImage: "video-camera.png",
+        title: "Video",
+    },
+    {
+        id: 6,
+        href: "/",
+        blurImage: "utility-category.jpg",
+        iconImage: "magicwand.png",
+        title: "Utility",
+    },
+    {
+        id: 7,
+        href: "/",
+        blurImage: "sport-category.jpg",
+        iconImage: "basketball.png",
+        title: "Sport",
+    },
+    {
+        id: 8,
+        href: "/",
+        blurImage: "virtualworlds-category.jpg",
+        iconImage: "planet.png",
+        title: "Virtual Worlds",
+    },
+]
