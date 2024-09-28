@@ -139,6 +139,10 @@
   @apply fill-nftCustom-cta w-5 h-5 group-hover:fill-nftCustom-cta;
 }
 
+.eye-svg-magic-mashrooms {
+  @apply fill-nftCustom-cta w-5 h-5 group-hover:fill-nftCustom-cta;
+}
+
 .eye-slash-svg {
   @apply fill-nftCustom-text;
 }
@@ -209,4 +213,13 @@
 
 .instagram-logo-svg {
   @apply fill-nftCustom-c_l_text w-8 h-8 hover:fill-nftCustom-cta;
+}
+
+/* Bacground Image */
+.magic-mashrooms-background {
+  background-color: var(--nft-background-secondary);
+  background-image: url("/magic-mashrooms.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

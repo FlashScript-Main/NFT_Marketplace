@@ -16,6 +16,7 @@ const CustomButton = ({ locale, translateButton, type, href, className, textClas
                         {icon === "rocket-launch" && <RocketLaunchSVG />}
                         {icon === "rocket-launch-rankings" && <RocketLaunchSVG place="rankings" />}
                         {icon === "eye" && <EyeSVG />}
+                        {icon === "magic-mashrooms-eye" && <EyeSVG place="magic-mashrooms" />}
 
                         <span className={`${textClass}  |  |  | `}>
                             {translateButton}
