@@ -1,3 +1,4 @@
+import { CountDownTimer } from "@/components";
 import CustomButton from "@/components/CustomButton"
 import { useTranslations } from "next-intl";
 import Image from "next/image"
@@ -48,7 +49,7 @@ const MagicMashroomsSection = ({ locale }: { locale: string }) => {
                 </div>
 
                 <div>
-                    {/* <CountDownTimer /> */}
+                    <CountDownTimer />
                 </div>
 
                 <div className={`md:hidden |  |  | `}>

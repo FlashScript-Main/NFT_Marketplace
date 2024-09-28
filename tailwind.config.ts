@@ -23,11 +23,13 @@ const config: Config = {
 
 				blue_accent: "var(--nft-blue-accent)",
 				red_accent: "var(--nft-red-accent)",
-
+				
 				// Footer
 				footer: {
 					bg: "var(--nft-footer-bg)",
 				},
+
+				countdown_bg: "rgba(var(--nft-countdown-bg))",
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

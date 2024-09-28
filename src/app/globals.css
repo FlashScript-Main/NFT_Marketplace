@@ -92,6 +92,8 @@
 
   /* Footer */
   --nft-footer-bg: #3B3B3B;
+
+  --nft-countdown-bg: 59, 59, 59;
 }
 
 .red {
