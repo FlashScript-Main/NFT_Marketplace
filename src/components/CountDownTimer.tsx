@@ -57,7 +57,7 @@ const renderer = ({ hours, minutes, seconds, completed }: RendererPropsType) => 
 const CountDownTimer = () => {
 
     return (
-        <div className={`p-[1.875rem] | bg-nftCustom-countdown_bg/50 |  | rounded-[20px]`}>
+        <div className={`p-[1.875rem] md:w-[18.4375rem] | bg-nftCustom-countdown_bg/50 |  | rounded-[20px]`}>
             <h6 className={`mb-1 | text-nftCustom-text text-xs font-normal ${spaceMono} |  | `}>
                 Auction ends in:
             </h6>

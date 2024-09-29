@@ -9,11 +9,11 @@ const MagicMashroomsSection = ({ locale }: { locale: string }) => {
     const translateMagicMashrooms = useTranslations('Home-Magic-Mashrooms');
 
     return (
-        <section className={`w-full pt-[7.5rem] md:pt-[22.5rem] pb-10 md:pb-[3.75rem] xl:py-96 mt-14 md:mt-16 xl:mt-20 relative |  |  | magic-mashrooms-background`}>
+        <section className={`w-full pt-[7.5rem] md:pt-[20.5rem] pb-10 md:pb-[3.75rem] mt-14 md:mt-16 xl:mt-20 relative |  |  | magic-mashrooms-background`}>
             <div className={`w-full h-full absolute inset-0 z-10 | bg-gradient-to-b from-transparent to-nftCustom-cta to-[110%] |  | `} />
 
-            <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto relative z-20 |  | flex flex-col gap-[1.875rem] | border-2 border-indigo-500`}>
-                <div className={` |  | flex flex-col gap-[1.875rem] | border-2 border-rose-600`}>
+            <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto relative z-20 |  | flex flex-col md:flex-row md:justify-between max-md:gap-[1.875rem] | `}>
+                <div className={` |  | flex flex-col gap-[1.875rem] | `}>
                     <Link 
                         href={`/${locale}/`}
                         className={`w-[9.4375rem] py-[0.625rem] | bg-nftCustom-background_secondary hover:bg-nftCustom-text | flex justify-center items-center gap-3 | rounded-[20px] group main-transition-color`}
@@ -42,13 +42,13 @@ const MagicMashroomsSection = ({ locale }: { locale: string }) => {
                             type="link" 
                             href="sign-up"
                             icon="magic-mashrooms-eye"
-                            className="py-[1.1875rem] max-md:max-w-[315px] md:max-w-[198px] max-md:mx-auto border-4 border-nftCustom-text bg-nftCustom-text hover:border-nftCustom-cta flex justify-center items-center rounded-[20px] group main-transition-color"
+                            className="py-[1.1875rem] md:py-[1.1rem] max-md:max-w-[315px] md:max-w-[198px] max-md:mx-auto border-4 border-nftCustom-text bg-nftCustom-text hover:border-nftCustom-cta flex justify-center items-center rounded-[20px] group main-transition-color"
                             textClass="text-[1rem] leading-[140%] font-semibold text-nftCustom-background group-hover:text-nftCustom-cta ml-3"
                         />
                     </div>
                 </div>
 
-                <div>
+                <div className={` |  | md:flex md:justify-end md:items-end | `}>
                     <CountDownTimer />
                 </div>
 
