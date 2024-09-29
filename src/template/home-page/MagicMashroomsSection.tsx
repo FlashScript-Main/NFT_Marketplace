@@ -52,7 +52,7 @@ const MagicMashroomsSection = ({ locale }: { locale: string }) => {
                     <CountDownTimer />
                 </div>
 
-                <div className={`md:hidden |  |  | `}>
+                <div className={`md:hidden max-md:mb-2 |  |  | `}>
                     <CustomButton
                         locale={locale} 
                         translateButton={translateMagicMashrooms("button-text")} 
