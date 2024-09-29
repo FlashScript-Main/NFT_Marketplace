@@ -62,7 +62,7 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                     type="link" 
                     href="sign-up"
                     icon="rocket-launch"
-                    className="max-[425px]:w-full max-sm:px-20 sm:px-20 md:px-0 md:w-[14rem] md:py-[1rem] md:mr-auto md:mb-2 xl:mb-6 border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-background text-nftCustom-text flex justify-center items-center rounded-[20px] py-[1.1875rem] group"
+                    className="max-[425px]:w-full max-sm:px-20 sm:px-20 md:px-0 md:w-[14rem] md:py-[1rem] md:mr-auto md:mb-2 xl:mb-6 border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] py-[1.1875rem] group"
                     textClass="text-[1rem] leading-[140%] font-medium group-hover:text-nftCustom-cta ml-3"
                 />
 

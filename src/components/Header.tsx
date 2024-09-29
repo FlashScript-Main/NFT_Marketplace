@@ -69,7 +69,7 @@ const Header = ({ locale }: { locale: string }) => {
                     <CustomButton 
                         translateButton={translateHeader("button")} 
                         locale={locale} 
-                        className="border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-background text-nftCustom-text flex justify-center items-center rounded-3xl px-[1.4rem] py-[1rem] group"
+                        className="border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-3xl px-[1.4rem] py-[1rem] group"
                         textClass="text-[1rem] leading-[140%] font-semibold group-hover:text-nftCustom-cta ml-3"
                         type="link"
                         href="sign-up"
