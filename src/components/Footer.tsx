@@ -81,7 +81,7 @@ const Footer = ({ locale }: { locale: string }) => {
                     <p className={`xl:w-[20rem] mb-4 | text-nftCustom-text_accent text-base font-normal |  | `}>
                         {translateFooter("Exclusive")}
                     </p>
-
+                    
                     <SubscribeForm />
                 </div>
             </div>

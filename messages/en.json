@@ -33,6 +33,13 @@
         "title": "Discover digital art & Collect NFTs",
         "button-text": "See NFT"
     },
+    "Home-Join-Us": {
+        "title": "Discover digital art & Collect NFTs",
+        "Input-Field": "Enter your email here",
+        "Input-Button": "Subscribe",
+        "Success": "Subscribed successfully!",
+        "Failure": "Invalid Email Address!"
+    },
     "Footer": {
         "logo": "NFT Marketplace",
         "creation": "NFT marketplace created by",
