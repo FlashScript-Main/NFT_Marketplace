@@ -319,3 +319,27 @@ export const discoverMoreInfo = [
         className: "md:max-xl:hidden",
     },
 ];
+
+export const howItWorksInfo = [
+    {
+        id: 1,
+        image: "setup-your-wallet.png",
+        imageAlt: "Wallet",
+        title: "Setup your wallet",
+        text: "Set up your wallet of choice. Connect it to the NFT market by clicking the wallet icon in the top right corner.",
+    },
+    {
+        id: 2,
+        image: "create-collection.png",
+        imageAlt: "Collection",
+        title: "Create Collection",
+        text: "Upload your work and setup your collection. Add a description, social links and floor price.",
+    },
+    {
+        id: 3,
+        image: "start-earning.png",
+        imageAlt: "Earning",
+        title: "Start Earning",
+        text: "Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others.",
+    },
+]

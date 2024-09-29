@@ -45,9 +45,9 @@ const Home = ({ locale }: { locale: string }) => {
                 <MagicMashroomsSection locale={locale} />
 
             <div className={`max-md:px-[1.875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>
-                <HowItWorksSection locale={locale} />
+                <HowItWorksSection />
 
-                <JoinUsSection locale={locale} />
+                <JoinUsSection />
             </div>
 
             {/* <ThemeSwitcher locale={locale} /> */}
