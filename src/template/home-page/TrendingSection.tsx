@@ -1,18 +1,22 @@
 import { trendingInfo } from "@/constant"
 import { spaceMono } from "@/utils/fonts"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Link from "next/link"
 
 const TrendingSection = ({ locale }: { locale: string }) => {
-    
+
+    const translateTrending = useTranslations('Home-trend');
+    const language = useTranslations("language");
+
     return (
         <section className={`pt-10 pb-6 xl:py-20 |  |  | `}>
-            <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | `}>
-                Trending Collection
+            <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                {translateTrending("title")}
             </h2>
 
-            <p className={`mt-2 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light |  | `}>
-                Checkout our weekly updated trending collection.
+            <p className={`mt-2 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                {translateTrending("description")}
             </p>
 
             <div className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-md:gap-10 | `}>
@@ -57,13 +61,13 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                         </div>
 
                         <div className={`mt-[0.9375rem] |  |  | `}>
-                            <h5 className={`mb-2 | text-nftCustom-text text-[1.375rem] font-medium |  | `}>
-                                {trend.title}
+                            <h5 className={`mb-2 | text-nftCustom-text text-[1.375rem] font-medium |  | ${language("isEnglish") === "false" && "text-end" }`}>
+                                {language("isEnglish") === "true" ? trend.titleEn : trend.titleFa}
                             </h5>
 
                             <Link 
                                 href={`/${locale}/${trend.href}`} 
-                                className={`w-fit |  | flex justify-start items-center gap-3 | group`}
+                                className={`w-fit |  | flex items-center gap-3 | group ${language("isEnglish") === "true" ? "justify-start" : "ml-auto"}`}
                             >
                                 <Image 
                                     src={`/${trend.avatarImage}`}

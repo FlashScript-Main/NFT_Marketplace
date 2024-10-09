@@ -12,6 +12,7 @@ import {
     NavbarMenuToggle as NextUINavbarMenuToggle,
 } from "@nextui-org/react";
 import { useState } from "react";
+import { iranSans } from "@/utils/fonts";
 
 const Header = ({ locale }: { locale: string }) => {
     // ${language("isEnglish") === "true" ? "text-left" : "text-right"}
@@ -41,24 +42,24 @@ const Header = ({ locale }: { locale: string }) => {
             shouldHideOnScroll 
             maxWidth="full"
             height="3.375rem"
-            className={`py-2 lg:py-6  | bg-nftCustom-background |  | `}
+            className={`py-2 lg:py-6 | bg-nftCustom-background |  | ${language("isEnglish") === "false" && `${iranSans}`}`}
         >
             <div className={`w-full md:w-[95%] lg:max-w-[74rem] mx-auto |  | flex justify-between items-center | `}>
-                <Link href={`/${locale}/`} className={` |  | flex justify-center items-center | group`}>
+                <Link href={`/${locale}/`} className={` |  | flex justify-center items-center | group ${language("isEnglish") === "false" && "order-last"}`}>
                     <StorefrontSVG />
         
-                    <span className={` | text-base lg:text-xl font-semibold text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color`}>
+                    <span className={` | text-base lg:text-xl text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color ${language("isEnglish") === "true" ? "font-semibold ml-1 lg:ml-3" : `font-bold order-first mr-1 lg:mr-3`}`}>
                         {translateHeader("logo")}
                     </span>
                 </Link>
 
                 <div className={`max-lg:hidden |  | flex justify-between items-center gap-7 | `}>
-                    <ul className={` |  | flex justify-center items-center gap-7 | `}>
+                    <ul className={` |  | flex justify-center items-center gap-7 | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
                         {navbarLinks.map((link) => (
                             <li key={link.key}>
                                 <Link 
                                     href={link.href} 
-                                    className={` | text-base ${language("isEnglish") === "true" ? "font-semibold" : "font-light"} text-nftCustom-text hover:text-nftCustom-cta |  | main-transition-color`}
+                                    className={` | text-base text-nftCustom-text hover:text-nftCustom-cta font-semibold |  | main-transition-color`}
                                 >
                                     {translateHeader(link.language)}
                                 </Link>
@@ -67,10 +68,10 @@ const Header = ({ locale }: { locale: string }) => {
                     </ul>
 
                     <CustomButton 
-                        translateButton={translateHeader("button")} 
+                        translateButton={translateHeader("button-text")} 
                         locale={locale} 
-                        className="border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-3xl px-[1.4rem] py-[1rem] group"
-                        textClass="text-[1rem] leading-[140%] font-semibold group-hover:text-nftCustom-cta ml-3"
+                        className={`border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-3xl px-[1.4rem] py-[1rem] group ${language("isEnglish") === "false" && "order-first"}`}
+                        textClass={`text-[1rem] leading-[140%] group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3 font-semibold" : "mr-3 font-bold order-first"}`}
                         type="link"
                         href="sign-up"
                         icon="user"

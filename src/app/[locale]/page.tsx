@@ -1,6 +1,7 @@
 // import ThemeSwitcher from "@/theme/ThemeSwitcher"
 import { CategoriesSection, DiscoverMoreSection, DiscoverSection, HowItWorksSection, JoinUsSection, MagicMashroomsSection, TopCreatorsSection, TrendingSection } from '@/template/home-page';
-// import { useTranslations } from 'next-intl';
+import { iranSans } from '@/utils/fonts';
+import { useTranslations } from 'next-intl';
 // import { getMessages } from 'next-intl/server';
 
 // export const dynamicParams = false;
@@ -25,11 +26,15 @@ import { CategoriesSection, DiscoverMoreSection, DiscoverSection, HowItWorksSect
 const Home = ({ locale }: { locale: string }) => {
 
     // const translateHome = useTranslations('Home-Discover');
-    // const language = useTranslations("language");
+    const language = useTranslations("language");
     // language("isEnglish") === "true"
 
+    // 🔥 Basic 🔥
+    // ${language("isEnglish") === "true" ? "flex-row" : "flex-row-reverse"}
+    // ${language("isEnglish") === "false" && "flex-row-reverse"}
+
     return (
-        <main>
+        <main className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <div className={`max-md:px-[1.875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>
                 <DiscoverSection locale={locale} />
 

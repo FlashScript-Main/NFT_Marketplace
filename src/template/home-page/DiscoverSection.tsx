@@ -7,17 +7,16 @@ import DiscoverSectionCountUp from "./DiscoverSectionCountUp";
 const DiscoverSection = ({ locale }: { locale: string }) => {
 
     const translateDiscover = useTranslations('Home-Discover');
-    // const language = useTranslations("language");
-    // language("isEnglish") === "true"
+    const language = useTranslations("language");
 
     return (
-        <section className={`py-10 md:py-16 xl:py-20 | md:flex md:gap-8 |  | `}>
+        <section className={`py-10 md:py-16 xl:py-20 | md:flex md:gap-8 |  | ${language("isEnglish") === "false" && "md:flex-row-reverse"}`}>
             <div className={` |  | flex flex-col items-center gap-[0.625rem] md:gap-5 md:basis-1/2 | `}>
-                <h1 className={`max-md:mr-auto | text-nftCustom-text text-3xl md:text-4xl md:leading-[120%] xl:text-[4.2rem] font-semibold capitalize |  | `}>
+                <h1 className={`max-md:mr-auto | text-nftCustom-text text-3xl md:text-4xl md:leading-[120%] font-semibold capitalize |  | ${language("isEnglish") === "true" ? "xl:text-[4.2rem]" : "text-end xl:text-[3.8rem]"}`}>
                     {translateDiscover("title")}
                 </h1>
 
-                <p className={`md:mb-1 xl:mb-3 | text-nftCustom-text text-base xl:text-2xl font-light |  | `}>
+                <p className={`md:mb-1 xl:mb-3 | text-nftCustom-text text-base xl:text-2xl font-light |  | ${language("isEnglish") === "false" && "text-end"}`}>
                     {translateDiscover("description")}
                 </p>
 
@@ -36,11 +35,11 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                     </div>
 
                     <div className={`py-[1.375rem] px-5 space-y-[0.625rem] | bg-nftCustom-background_secondary |  | `}>
-                        <h5 className={` | text-nftCustom-text group-hover:text-nftCustom-cta text-[1.375rem] font-medium capitalize |  | main-transition-color`}>
+                        <h5 className={` | text-nftCustom-text group-hover:text-nftCustom-cta text-[1.375rem] font-medium capitalize |  | main-transition-color ${language("isEnglish") === "false" && "text-end"}`}>
                             {translateDiscover("card-title")}
                         </h5>
 
-                        <div className={` |  | flex justify-start items-center gap-3 | `}>
+                        <div className={` |  | flex items-center gap-3 | ${language("isEnglish") === "true" ? "justify-start" : "justify-end"}`}>
                             <Image 
                                 src="/animakid-avatar.png"
                                 alt="Animakid Avatar"
@@ -62,8 +61,8 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                     type="link" 
                     href="sign-up"
                     icon="rocket-launch"
-                    className="max-[425px]:w-full max-sm:px-20 sm:px-20 md:px-0 md:w-[14rem] md:py-[1rem] md:mr-auto md:mb-2 xl:mb-6 border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] py-[1.1875rem] group"
-                    textClass="text-[1rem] leading-[140%] font-medium group-hover:text-nftCustom-cta ml-3"
+                    className={`max-[425px]:w-full max-sm:px-20 sm:px-20 md:px-0 md:w-[14rem] md:py-[1rem] md:mb-2 xl:mb-6 border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] py-[1.1875rem] group ${language("isEnglish") === "true" ? "md:mr-auto" : "md:ml-auto"}`}
+                    textClass={`text-[1rem] leading-[140%] font-medium group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3" : "mr-3 order-first"}`}
                 />
 
                 <DiscoverSectionCountUp />
@@ -85,11 +84,11 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                     </div>
 
                     <div className={`py-[1.375rem] px-5 space-y-[0.625rem] | bg-nftCustom-background_secondary |  | `}>
-                        <h5 className={`xl:ml-2 | text-nftCustom-text group-hover:text-nftCustom-cta text-[1.375rem] font-medium capitalize |  | main-transition-color`}>
+                        <h5 className={` | text-nftCustom-text group-hover:text-nftCustom-cta text-[1.375rem] font-medium capitalize |  | main-transition-color ${language("isEnglish") === "true" ? "xl:ml-2" : "text-end xl:mr-2"}`}>
                             {translateDiscover("card-title")}
                         </h5>
 
-                        <div className={`xl:ml-2 |  | flex justify-start items-center gap-3 | `}>
+                        <div className={` |  | flex items-center gap-3 | ${language("isEnglish") === "true" ? "justify-start xl:ml-2" : "justify-end xl:mr-2"}`}>
                             <Image 
                                 src="/animakid-avatar.png"
                                 alt="Animakid Avatar"

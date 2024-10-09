@@ -118,7 +118,7 @@
 
 /* SVGs */
 .storefront-svg {
-  @apply fill-nftCustom-cta w-6 h-6 lg:w-8 lg:h-8 mr-1 lg:mr-3;
+  @apply fill-nftCustom-cta w-6 h-6 lg:w-8 lg:h-8;
 }
 
 .storefront-svg-footer {

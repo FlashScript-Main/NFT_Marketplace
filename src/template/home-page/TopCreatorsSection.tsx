@@ -8,17 +8,18 @@ import Link from "next/link"
 const TopCreatorsSection = ({ locale }: { locale: string }) => {
 
     const translateTopCreators = useTranslations('Home-top-creators');
+    const language = useTranslations("language");
 
     return (
         <section className={`py-10 xl:py-20 |  |  | `}>
-            <div className={` |  | md:flex | `}>
+            <div className={` |  | md:flex | ${language("isEnglish") === "false" && "md:flex-row-reverse"}`}>
                 <div className={` |  | md:basis-2/3 | `}>
-                    <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | `}>
-                        Top Creators
+                    <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | ${language("isEnglish") === "false" && "text-end" }`}>
+                        {translateTopCreators("title")}
                     </h2>
 
-                    <p className={`mt-2 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light |  | `}>
-                        Checkout Top Rated Creators on the NFT Marketplace
+                    <p className={`mt-2 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light |  | ${language("isEnglish") === "false" && "text-end" }`}>
+                        {translateTopCreators("description")}
                     </p>
                 </div>
 
@@ -29,8 +30,8 @@ const TopCreatorsSection = ({ locale }: { locale: string }) => {
                         type="link" 
                         href="sign-up"
                         icon="rocket-launch-rankings"
-                        className="py-[1.1875rem] max-md:max-w-[315px] md:max-w-[247px] max-md:mx-auto md:ml-auto border-4 border-nftCustom-cta bg-nftCustom-background hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] group"
-                        textClass="text-[1rem] leading-[140%] font-medium text-nftCustom-text group-hover:text-nftCustom-cta ml-3"
+                        className={`py-[1.1875rem] max-md:max-w-[315px] md:max-w-[247px] max-md:mx-auto border-4 border-nftCustom-cta bg-nftCustom-background hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] group ${language("isEnglish") === "true" ? "md:ml-auto" : "md:mr-auto"}`}
+                        textClass={`text-[1rem] leading-[140%] font-medium text-nftCustom-text group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3" : "mr-3 order-first"}`}
                     />
                 </div>
             </div>
@@ -69,9 +70,11 @@ const TopCreatorsSection = ({ locale }: { locale: string }) => {
                                 {top.avatarName}
                             </h6>
 
-                            <p className={` | text-nftCustom-c_l_text text-base max-[390px]:text-sm font-normal |  | `}>
-                                Total Sales:
-                                <span className={`ml-2 | text-nftCustom-text text-base max-[390px]:text-sm font-normal ${spaceMono} |  | `}>
+                            <p className={` | text-nftCustom-c_l_text text-base max-[390px]:text-sm font-normal | | ${language("isEnglish") === "false" && "flex justify-between"}`}>
+                                <span className={` |  |  | ${language("isEnglish") === "false" && "order-last"}`}>
+                                    {translateTopCreators("Total Sales")}
+                                </span>
+                                <span className={` | text-nftCustom-text text-base max-[390px]:text-sm font-normal ${spaceMono} |  | ${language("isEnglish") === "true" ? "ml-2" : "mr-2"}`}>
                                     {top.numberSales} ETH
                                 </span>
                             </p>

@@ -3,16 +3,15 @@ import { StorefrontSVG } from "@/interface"
 import { useTranslations } from "next-intl";
 import Link from "next/link"
 import SubscribeForm from "./SubscribeForm";
-import { spaceMono } from "@/utils/fonts";
+import { iranSans, spaceMono } from "@/utils/fonts";
 
 const Footer = ({ locale }: { locale: string }) => {
 
     const translateFooter = useTranslations('Footer');
-    // const language = useTranslations("language");
-    // language("isEnglish") === "true"
+    const language = useTranslations("language");
 
     return (
-        <footer className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg | flex flex-col | `}>
+        <footer className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg | flex flex-col | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <div className={`xl:w-[66rem] xl:mx-auto |  | flex flex-col xl:flex-row xl:justify-between xl:items-center  | `}>
                 <div className={`max-xl:mb-8 xl:w-[18rem] xl:mb-auto |  | flex flex-col justify-start items-start | `}>
                     <Link 

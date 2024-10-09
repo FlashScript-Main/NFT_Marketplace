@@ -1,13 +1,17 @@
 import { categories } from "@/constant"
+import { useTranslations } from "next-intl";
 import Image from "next/image"
 import Link from "next/link"
 
 const CategoriesSection = ({ locale }: { locale: string }) => {
 
+    const translateCategories = useTranslations('Home-Categories');
+    const language = useTranslations("language");
+
     return (
-        <section className={`py-10 xl:py-20 |  |  | `}>
+        <section className={`py-10 xl:py-20 |  |  | border-2 border-orange-500`}>
             <h2 className={`mb-10 xl:mb-[3.75rem] | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | `}>
-                Browse Categories
+                {translateCategories("title")}
             </h2>
 
             <div className={`max-w-[22.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  | grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-7 | `}>
