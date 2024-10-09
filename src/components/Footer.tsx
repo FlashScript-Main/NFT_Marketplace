@@ -83,7 +83,9 @@ const Footer = ({ locale }: { locale: string }) => {
                         {translateFooter("Exclusive")}
                     </p>
                     
-                    <SubscribeForm />
+                    <div>
+                        <SubscribeForm />
+                    </div>
                 </div>
             </div>
 

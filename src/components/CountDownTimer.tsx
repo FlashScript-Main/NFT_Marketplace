@@ -54,7 +54,7 @@ const CountDownTimer = () => {
 
     return (
         <div className={`p-[1.875rem] md:w-[18.4375rem] | bg-nftCustom-countdown_bg/50 |  | rounded-[20px]`}>
-            <h6 className={`mb-1 | text-nftCustom-text text-xs font-normal ${spaceMono} |  | ${language("isEnglish") === "false" && "text-end"}`}>
+            <h6 className={`mb-1 | text-nftCustom-text |  | ${language("isEnglish") === "true" ? `${spaceMono} text-xs font-normal` : `${iranSans} text-sm font-bold text-end`}`}>
                 {language("isEnglish") === "true" ? "Auction ends in:" : ":پایان تخفیفات جشنواره"}
             </h6>
 

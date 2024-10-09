@@ -5,11 +5,12 @@ import { Input as NextUIInput } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast"
+import { iranSans } from "@/utils/fonts";
 
 const JoinUsSubscribeForm = () => {
 
     const translateJoinUs = useTranslations('Home-Join-Us');
-    // const language = useTranslations("language");
+    const language = useTranslations("language");
 
     const [value, setValue] = useState("");
     const [isInvalid, setIsInvalid] = useState(false);
@@ -24,7 +25,7 @@ const JoinUsSubscribeForm = () => {
             setValue("");
             toast({
                 title: ( translateJoinUs("Success") ),
-                className: "bg-green-600 text-white border-4 border-green-900",
+                className: `bg-green-600 text-white border-4 border-green-900 ${language("isEnglish") === "false" && `${iranSans} flex items-center justify-end`}`,
                 duration: 4000
             })
         }
@@ -32,7 +33,7 @@ const JoinUsSubscribeForm = () => {
             setIsInvalid(true);
             toast({
                 title: ( translateJoinUs("Failure") ),
-                className: "bg-rose-600 text-white border-4 border-red-900",
+                className: `bg-rose-600 text-white border-4 border-red-900 ${language("isEnglish") === "false" && `${iranSans} flex items-center justify-end`}`,
                 duration: 4000
             })
         }
@@ -40,7 +41,7 @@ const JoinUsSubscribeForm = () => {
 
     return (
         <>  
-            <div className={`max-xl:max-w-[20rem] max-xl:mx-auto xl:max-w-[24rem] xl:relative |  | max-xl:flex max-xl:flex-col | `}>
+            <div className={`max-xl:max-w-[20rem] max-xl:mx-auto xl:max-w-[24rem] xl:relative |  | max-xl:flex max-xl:flex-col | ${language("isEnglish") === "false" && "xl:ml-auto"}`}>
                 <NextUIInput 
                     type="email" 
                     label={isInvalid ? translateJoinUs("Failure") : translateJoinUs("Input-Field")}
@@ -68,7 +69,7 @@ const JoinUsSubscribeForm = () => {
                 >
                     <EnvelopeSimpleSVG />
 
-                    <span className={`max-xl:ml-3 | text-nftCustom-text group-hover:text-nftCustom-cta text-base font-medium |  | `}>
+                    <span className={` | text-nftCustom-text group-hover:text-nftCustom-cta text-base font-medium |  | ${language("isEnglish") === "true" ? "max-xl:ml-3" : "max-xl:mr-3 order-first"}`}>
                         {translateJoinUs("Input-Button")}
                     </span>
                 </button>
