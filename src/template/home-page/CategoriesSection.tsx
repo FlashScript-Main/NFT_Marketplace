@@ -9,8 +9,8 @@ const CategoriesSection = ({ locale }: { locale: string }) => {
     const language = useTranslations("language");
 
     return (
-        <section className={`py-10 xl:py-20 |  |  | border-2 border-orange-500`}>
-            <h2 className={`mb-10 xl:mb-[3.75rem] | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | `}>
+        <section className={`py-10 xl:py-20 |  |  | `}>
+            <h2 className={`mb-10 xl:mb-[3.75rem] | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | ${language("isEnglish") === "false" && "text-end"}`}>
                 {translateCategories("title")}
             </h2>
 
@@ -24,7 +24,7 @@ const CategoriesSection = ({ locale }: { locale: string }) => {
                         <div className={`relative overflow-hidden inline-block h-[142px] w-[147.5] xl:h-[240px] xl:w-[240px]  |  |  | `}>
                             <Image 
                                 src={`/${category.blurImage}`}
-                                alt={`${category.title} Category`}
+                                alt={`${category.titleEn} Category`}
                                 width={147.5}
                                 height={142}
                                 quality={100}
@@ -41,8 +41,8 @@ const CategoriesSection = ({ locale }: { locale: string }) => {
                         </div>
 
                         <div className={`py-5 px-5 xl:py-7 xl:px-7 | bg-nftCustom-background_secondary |  | `}>
-                            <h6 className={` | text-nftCustom-text max-md:line-clamp-1 md:text-nowrap group-hover:text-nftCustom-cta text-base xl:text-[1.375rem] font-semibold |  | main-transition-color`}>
-                                {category.title}
+                            <h6 className={` | text-nftCustom-text max-md:line-clamp-1 md:text-nowrap group-hover:text-nftCustom-cta text-base xl:text-[1.375rem] font-semibold |  | main-transition-color ${language("isEnglish") === "false" && "text-end"}`}>
+                                {language("isEnglish") === "true" ? category.titleEn : category.titleFa}
                             </h6>
                         </div>
                     </Link>

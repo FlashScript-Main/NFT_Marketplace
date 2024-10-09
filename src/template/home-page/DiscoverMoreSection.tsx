@@ -8,17 +8,18 @@ import Link from "next/link";
 const DiscoverMoreSection = ({ locale }: { locale: string }) => {
 
     const translateDiscoverMore = useTranslations('Home-Discover-More');
+    const language = useTranslations("language");
 
     return (
         <section className={`py-10 xl:py-20 |  |  | `}>
-            <div className={` |  | md:flex | `}>
+            <div className={` |  | md:flex | ${language("isEnglish") === "false" && "md:flex-row-reverse"} `}>
                 <div className={` |  | md:basis-2/3 | `}>
-                    <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | `}>
-                        Discover More NFTs
+                    <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                        {translateDiscoverMore("title")}
                     </h2>
 
-                    <p className={`mt-2 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light |  | `}>
-                        Explore new trending NFTs
+                    <p className={`mt-2 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                        {translateDiscoverMore("description")}
                     </p>
                 </div>
 
@@ -29,8 +30,8 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                         type="link" 
                         href="sign-up"
                         icon="eye"
-                        className="py-[1.1875rem] max-md:max-w-[315px] md:max-w-[247px] max-md:mx-auto md:ml-auto border-4 border-nftCustom-cta bg-nftCustom-background hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] group"
-                        textClass="text-[1rem] leading-[140%] font-medium text-nftCustom-text group-hover:text-nftCustom-cta ml-3"
+                        className={`py-[1.1875rem] max-md:max-w-[315px] md:max-w-[247px] max-md:mx-auto border-4 border-nftCustom-cta bg-nftCustom-background hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] group ${language("isEnglish") === "true" ? "md:ml-auto" : "md:mr-auto"}`}
+                        textClass={`text-[1rem] leading-[140%] font-medium text-nftCustom-text group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3" : "mr-3 order-first"}`}
                     />
                 </div>
             </div>
@@ -45,7 +46,7 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                         <div className={`overflow-hidden  |  |  | `}>
                             <Image 
                                 src={`/${card.image}`}
-                                alt={`${card.title} Image`}
+                                alt={`${card.titleEn} Image`}
                                 width={315}
                                 height={238}
                                 className={`max-md:w-[19.6875rem] max-md:h-[14.875rem] md:w-full object-cover |  |  | group-hover:scale-110 duration-500 transition-transform`}
@@ -54,11 +55,11 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
 
                         <div className={`px-5 pt-5 pb-6 | bg-nftCustom-background_secondary | flex flex-col gap-[1.5625rem] | `}>
                             <div>
-                                <h5 className={`mb-[0.3125rem] | text-nftCustom-text group-hover:text-nftCustom-cta text-[1.375rem] font-semibold capitalize |  | main-transition-color`}>
-                                    {card.title}
+                                <h5 className={`mb-[0.3125rem] | text-nftCustom-text group-hover:text-nftCustom-cta text-[1.375rem] font-semibold capitalize |  | main-transition-color ${language("isEnglish") === "false" && "text-end"}`}>
+                                    {language("isEnglish") === "true" ? card.titleEn : card.titleFa}
                                 </h5>
 
-                                <div className={` |  | flex justify-start items-center gap-3 | `}>
+                                <div className={` |  | flex items-center gap-3 | ${language("isEnglish") === "true" ? "justify-start" : "justify-end"}`}>
                                     <Image 
                                         src={`/${card.avatarImage}`}
                                         alt={`${card.avatarName} Avatar`}
@@ -74,17 +75,17 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                             </div>
 
                             <div className={` |  | flex flex-col gap-2 md:gap-[0.4rem] | `}>
-                                <div className={` |  | flex justify-between items-center | `}>
+                                <div className={` |  | flex justify-between items-center | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
                                     <p className={` | text-nftCustom-c_l_text text-xs font-normal ${spaceMono} |  | `}>
-                                        Price
+                                        {translateDiscoverMore("price")}
                                     </p>
 
                                     <p className={` | text-nftCustom-c_l_text text-xs font-normal ${spaceMono} |  | `}>
-                                        Highest Bid
+                                        {translateDiscoverMore("bid")}
                                     </p>
                                 </div>
 
-                                <div className={` |  | flex justify-between items-center | `}>
+                                <div className={` |  | flex justify-between items-center | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
                                     <span className={` | text-nftCustom-text text-xs md:text-base font-normal ${spaceMono} |  | `}>
                                         {card.price} ETH
                                     </span>

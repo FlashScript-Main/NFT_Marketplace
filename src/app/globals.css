@@ -122,7 +122,7 @@
 }
 
 .storefront-svg-footer {
-  @apply fill-nftCustom-cta w-8 h-8 mr-1 lg:mr-3;
+  @apply fill-nftCustom-cta w-8 h-8;
 }
 
 .user-svg {

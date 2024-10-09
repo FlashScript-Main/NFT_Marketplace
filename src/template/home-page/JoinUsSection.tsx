@@ -1,7 +1,11 @@
 import { JoinUsSubscribeForm } from "@/components"
+import { useTranslations } from "next-intl";
 import Image from "next/image"
 
 const JoinUsSection = () => {
+
+    const translateJoinUs = useTranslations('Home-Join-Us');
+    const language = useTranslations("language");
 
     return (
         <section className={`pt-10 pb-10 md:pb-20 |  |  | `}>
@@ -18,12 +22,12 @@ const JoinUsSection = () => {
                 </div>
 
                 <div className={`xl:pt-4 |  | md:basis-1/2 |`}>
-                    <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] xl:leading-[120%] font-medium capitalize |  | `}>
-                        Join our weekly digest
+                    <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] xl:leading-[120%] font-medium capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                        {translateJoinUs("title")}
                     </h2>
 
-                    <p className={`mt-2 mb-10 | text-nftCustom-text text-base xl:text-[1.375rem] xl:leading-[160%] font-light xl:capitalize |  | `}>
-                        Get exclusive promotions & updates straight to your inbox.
+                    <p className={`mt-2 mb-10 | text-nftCustom-text text-base xl:text-[1.375rem] xl:leading-[160%] font-light xl:capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                        {translateJoinUs("description")}
                     </p>
 
                     <div>

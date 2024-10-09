@@ -71,7 +71,7 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
             <div className={`max-md:hidden |  |  | md:basis-1/2 `}>
                 <Link 
                     href={`/${locale}/`} 
-                    className={`overflow-hidden my-6 md:my-0 xl:ml-auto xl:w-[31rem] xl:h-[31rem] | flex flex-col |  | rounded-[20px] group`}
+                    className={`overflow-hidden my-6 md:my-0 xl:w-[31rem] xl:h-[31rem] | flex flex-col |  | rounded-[20px] group ${language("isEnglish") === "true" ? "xl:ml-auto" : "xl:mr-auto"}`}
                 >
                     <div className={`overflow-hidden inline-block h-fit |  |  | `}>
                         <Image 

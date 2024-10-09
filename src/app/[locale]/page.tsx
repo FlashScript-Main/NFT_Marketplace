@@ -32,6 +32,8 @@ const Home = ({ locale }: { locale: string }) => {
     // 🔥 Basic 🔥
     // ${language("isEnglish") === "true" ? "flex-row" : "flex-row-reverse"}
     // ${language("isEnglish") === "false" && "flex-row-reverse"}
+    // ${language("isEnglish") === "true" ? "" : ""}
+    // ${language("isEnglish") === "false" && ""}
 
     return (
         <main className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
