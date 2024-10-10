@@ -1,3 +1,6 @@
+import { MotionH2, MotionSpan } from "@/animations/motion-provider";
+import { charVariants } from "@/animations/motion-variants";
+import { SectionToScroll } from "@/animations/ScrollAnimations";
 import { howItWorksInfo } from "@/constant"
 import { useTranslations } from "next-intl";
 import Image from "next/image"
@@ -8,10 +11,24 @@ const HowItWorksSection = () => {
     const language = useTranslations("language");
 
     return (
-        <section className={`py-10 xl:py-20 |  |  | `}>
-            <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}>
-                {translateHowItWorks("title")}
-            </h2>
+        <SectionToScroll className={`py-10 xl:py-20 |  |  | `}>
+            <MotionH2
+                initial="hidden"
+                whileInView="reveal"
+                viewport={{ once: true, margin: "-200px" }}
+                transition={{ staggerChildren: 0.02, delay: 1.5 }} 
+                className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}
+            >
+                {translateHowItWorks("title").split("").map(char => (
+                    <MotionSpan
+                        key={char}
+                        transition={{ duration: 1 }}
+                        variants={charVariants}
+                    >
+                        {char}
+                    </MotionSpan>
+                ))}
+            </MotionH2>
 
             <p className={`mt-1 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light xl:capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}>
                 {translateHowItWorks("description")}
@@ -41,7 +58,7 @@ const HowItWorksSection = () => {
                     </div>
                 ))}
             </div>
-        </section>
+        </SectionToScroll>
     )
 
 }

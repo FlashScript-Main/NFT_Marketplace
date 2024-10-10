@@ -1,6 +1,6 @@
-import { MotionDiv, MotionH2, MotionP, MotionSpan } from "@/animations/motion-provider"
+import { MotionDiv, MotionH2, MotionH5, MotionP, MotionSpan } from "@/animations/motion-provider"
 import { charVariants } from "@/animations/motion-variants"
-import { DivToScroll, SectionToScroll } from "@/animations/ScrollAnimations"
+import { SectionToScroll } from "@/animations/ScrollAnimations"
 import { trendingInfo } from "@/constant"
 import { spaceMono } from "@/utils/fonts"
 import { useTranslations } from "next-intl"
@@ -13,7 +13,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
     const language = useTranslations("language");
 
     return (
-        <SectionToScroll className={`pt-10 pb-6 xl:py-20 |  |  | border-2 border-indigo-700`}>
+        <SectionToScroll className={`pt-10 pb-6 xl:py-20 |  |  | `}>
             <MotionH2 
                 initial="hidden"
                 whileInView="reveal"
@@ -50,11 +50,11 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                 ))}
             </MotionP>
 
-            <DivToScroll className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-md:gap-10 | border-2 border-rose-600`}>
+            <div className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-md:gap-10 | `}>
                 {trendingInfo.map((trend, index) => (
                     <div
                         key={trend.id}
-                        className={`max-w-[19.6875rem] md:max-w-[20.625rem] max-md:mx-auto |  |  | ${trend.className} border-2 border-green-400`}
+                        className={`max-w-[19.6875rem] md:max-w-[20.625rem] max-md:mx-auto |  |  | ${trend.className}`}
                     >
                         <MotionDiv
                             initial={{ y: "10%", opacity: 0 }}
@@ -75,8 +75,8 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                             <MotionDiv
                                 initial={{ y: "20%", opacity: 0 }}
                                 whileInView={{ y: "0%", opacity: 1 }}
-                                viewport={{ once: true, margin: "-200px" }}
-                                transition={{ staggerChildren: 0.02, delay: 0.25 * index, duration: 0.25 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 0.5), duration: 0.25 }}
                             >
                                 <Image 
                                     src={`/${trend.smallImageOne}`}
@@ -90,7 +90,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                             <MotionDiv
                                 initial={{ y: "20%", opacity: 0 }}
                                 whileInView={{ y: "0%", opacity: 1 }}
-                                viewport={{ once: true, margin: "-200px" }}
+                                viewport={{ once: true, margin: "-100px" }}
                                 transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 1), duration: 0.25 }}
                             >
                                 <Image 
@@ -109,7 +109,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                                 <MotionDiv
                                     initial={{ y: "20%", opacity: 0 }}
                                     whileInView={{ y: "0%", opacity: 1 }}
-                                    viewport={{ once: true, margin: "-200px" }}
+                                    viewport={{ once: true, margin: "-100px" }}
                                     transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 1.5), duration: 0.25 }}
                                     className={`w-[95px] h-[95px] md:w-[100px] md:h-[100px] | bg-nftCustom-cta hover:bg-nftCustom-text | grid place-content-center | border-4 border-nftCustom-cta rounded-[20px] group main-transition-color`}
                                 >
@@ -121,35 +121,43 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                         </div>
 
                         <div className={`mt-[0.9375rem] |  |  | `}>
-                            <h5 className={`mb-2 | text-nftCustom-text text-[1.375rem] font-medium |  | ${language("isEnglish") === "false" && "text-end" }`}>
-                                {language("isEnglish") === "true" ? trend.titleEn : trend.titleFa}
-                            </h5>
-
-                            <Link 
-                                href={`/${locale}/${trend.href}`} 
-                                className={`w-fit |  | flex items-center gap-3 | group ${language("isEnglish") === "true" ? "justify-start" : "ml-auto"}`}
+                            <MotionH5 
+                                initial={{ x: "20%", opacity: 0 }}
+                                whileInView={{ x: "0%", opacity: 1 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ staggerChildren: 0.02, delay: 0.25 * index, duration: 0.5 }}
+                                className={`mb-2 | text-nftCustom-text text-[1.375rem] font-medium |  | ${language("isEnglish") === "false" && "text-end" }`}
                             >
-                                <Image 
-                                    src={`/${trend.avatarImage}`}
-                                    alt={`${trend.avatarName} Avatar`}
-                                    width={24}
-                                    height={24}
-                                    className={`w-aut h-auto  |  |  | rounded-full`}
-                                />
-                                
-                                <span className={` | text-base font-light text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color`}>
-                                    {trend.avatarName}
-                                </span>
-                            </Link>
+                                {language("isEnglish") === "true" ? trend.titleEn : trend.titleFa}
+                            </MotionH5>
+
+                            <MotionDiv
+                                initial={{ y: "20%", opacity: 0 }}
+                                whileInView={{ y: "0%", opacity: 1 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 1), duration: 0.25 }}
+                            >
+                                <Link 
+                                    href={`/${locale}/${trend.href}`} 
+                                    className={`w-fit |  | flex items-center gap-3 | group ${language("isEnglish") === "true" ? "justify-start" : "ml-auto"}`}
+                                >
+                                    <Image 
+                                        src={`/${trend.avatarImage}`}
+                                        alt={`${trend.avatarName} Avatar`}
+                                        width={24}
+                                        height={24}
+                                        className={`w-aut h-auto  |  |  | rounded-full`}
+                                    />
+                                    
+                                    <span className={` | text-base font-light text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color`}>
+                                        {trend.avatarName}
+                                    </span>
+                                </Link>
+                            </MotionDiv>
                         </div>
                     </div>
                 ))}
-                <div>
-                
-
-                    
-                </div>
-            </DivToScroll>
+            </div>
         </SectionToScroll>
     )
 

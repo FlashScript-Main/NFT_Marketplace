@@ -18,7 +18,7 @@ const DiscoverSectionCountUp = () => {
                     key={number.id}
                     initial={{ y: "20%", opacity: 0 }}
                     animate={{ y: "0%", opacity: 1 }}
-                    transition={{ delay: 0.25 * index, duration: 0.5, ease: "easeInOut" }}
+                    transition={{ delay: 0.25 * (index + 0.5), duration: 0.5, ease: "easeInOut" }}
                     viewport={{ once: true }}
                     className={` |  | flex flex-col justify-center | `}
                 >   
