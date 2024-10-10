@@ -20,3 +20,8 @@ interface MotionDivProps extends ForwardRefComponent<HTMLElement, HTMLMotionProp
     children: React.ReactNode;
     className?: string;
 }
+
+interface MotionFooterProps extends ForwardRefComponent<HTMLElement, HTMLMotionProps<"footer">> {
+    children: React.ReactNode;
+    className?: string;
+}

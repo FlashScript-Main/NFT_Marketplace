@@ -1,6 +1,6 @@
-import { MotionH2, MotionSpan } from "@/animations/motion-provider";
+import { MotionH2, MotionH6, MotionP, MotionSpan } from "@/animations/motion-provider";
 import { charVariants } from "@/animations/motion-variants";
-import { SectionToScroll } from "@/animations/ScrollAnimations";
+import { DivToScroll, SectionToScroll } from "@/animations/ScrollAnimations";
 import { howItWorksInfo } from "@/constant"
 import { useTranslations } from "next-intl";
 import Image from "next/image"
@@ -30,12 +30,26 @@ const HowItWorksSection = () => {
                 ))}
             </MotionH2>
 
-            <p className={`mt-1 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light xl:capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}>
-                {translateHowItWorks("description")}
-            </p>
+            <MotionP 
+                initial="hidden"
+                whileInView="reveal"
+                viewport={{ once: true, margin: "-200px" }}
+                transition={{ staggerChildren: 0.02, delay: 1.5 }} 
+                className={`mt-1 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light xl:capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}
+            >
+                {translateHowItWorks("description").split("").map(char => (
+                    <MotionSpan
+                        key={char}
+                        transition={{ duration: 0.75 }}
+                        variants={charVariants}
+                    >
+                        {char}
+                    </MotionSpan>
+                ))}
+            </MotionP>
 
-            <div className={` |  | grid grid-cols-1 max-md:gap-y-5 md:grid-cols-3 md:gap-x-[1.875rem] | `}>
-                {howItWorksInfo.map((info) => (
+            <DivToScroll className={` |  | grid grid-cols-1 max-md:gap-y-5 md:grid-cols-3 md:gap-x-[1.875rem] | `}>
+                {howItWorksInfo.map((info, index) => (
                     <div key={info.id} className={`max-md:p-5 md:pt-2 md:px-5 md:pb-[1.875rem] xl:pt-3 xl:px-[1.875rem] | bg-nftCustom-background_secondary | flex md:flex-col justify-between items-center max-md:gap-2 md:gap-5 | rounded-[20px]`}>
                         <Image
                             src={`/${info.image}`}
@@ -47,17 +61,29 @@ const HowItWorksSection = () => {
                         />
 
                         <div className={`md:mb-auto | md:text-center |  | ${language("isEnglish") === "false" && "text-end"}`}>
-                            <h6 className={`mb-2 | text-nftCustom-text text-base |  | ${language("isEnglish") === "true" ? "font-medium xl:text-[1.375rem]" : "md:text-[1.2rem] xl:text-[1.5rem] font-normal xl:font-bold xl:mb-3"}`}>
+                            <MotionH6 
+                                initial={{ x: "20%", opacity: 0, }}
+                                whileInView={{ x: "0%", opacity: 1, }}
+                                transition={{ delay: 0.5 * (index + 0.25), duration: 0.5, ease: "easeInOut", }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                className={`mb-2 | text-nftCustom-text text-base |  | ${language("isEnglish") === "true" ? "font-medium xl:text-[1.375rem]" : "md:text-[1.2rem] xl:text-[1.5rem] font-normal xl:font-bold xl:mb-3"}`}
+                            >
                                 {language("isEnglish") === "true" ? info.titleEn : info.titleFa}
-                            </h6>
+                            </MotionH6>
 
-                            <p className={`xl:w-11/12 xl:mx-auto | text-nftCustom-text text-xs xl:text-base font-light |  | `}>
+                            <MotionP 
+                                initial={{ y: "20%", opacity: 0, }}
+                                whileInView={{ y: "0%", opacity: 1, }}
+                                transition={{ delay: 0.5 * (index + 0.5), duration: 0.5, ease: "easeInOut", }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                className={`xl:w-11/12 xl:mx-auto | text-nftCustom-text text-xs xl:text-base font-light |  | `}
+                            >
                                 {language("isEnglish") === "true" ? info.textEn : info.textFa}
-                            </p>
+                            </MotionP>
                         </div>
                     </div>
                 ))}
-            </div>
+            </DivToScroll>
         </SectionToScroll>
     )
 

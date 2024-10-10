@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import Link from "next/link"
 import SubscribeForm from "./SubscribeForm";
 import { iranSans, spaceMono } from "@/utils/fonts";
+import { MotionA, MotionDiv, MotionH6, MotionP, MotionSpan } from "@/animations/motion-provider";
+import { FooterToScroll } from "@/animations/ScrollAnimations";
 
 const Footer = ({ locale }: { locale: string }) => {
 
@@ -11,21 +13,37 @@ const Footer = ({ locale }: { locale: string }) => {
     const language = useTranslations("language");
 
     return (
-        <footer className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg | flex flex-col | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+        <FooterToScroll className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg | flex flex-col | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <div className={`xl:w-[66rem] xl:mx-auto |  | flex flex-col xl:justify-between xl:items-center  | ${language("isEnglish") === "true" ? "xl:flex-row" : "xl:flex-row-reverse"}`}>
                 <div className={`max-xl:mb-8 xl:w-[18rem] xl:mb-auto |  | flex flex-col justify-start items-start | `}>
                     <Link 
                         href={`/${locale}/`} 
-                        className={` |  | flex justify-center items-center | group ${language("isEnglish") === "false" && "ml-auto"}`}
+                        className={` |  |  | group ${language("isEnglish") === "false" && "ml-auto"}`}
                     >
-                        <StorefrontSVG footer="true" />
-            
-                        <span className={` | text-xl font-semibold text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color ${language("isEnglish") === "true" ? "ml-1 lg:ml-3" : "order-first mr-1 lg:mr-3"}`}>
-                            {translateFooter("logo")}
-                        </span>
+                        <MotionDiv
+                            initial={{ y: "-20px", opacity: 0 }}
+                            whileInView={{ y: "0%", opacity: 1 }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            className={` | flex justify-center items-center |  | `}
+                        >
+                            <StorefrontSVG footer="true" />
+                
+                            <span className={` | text-xl font-semibold text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color ${language("isEnglish") === "true" ? "ml-1 lg:ml-3" : "order-first mr-1 lg:mr-3"}`}>
+                                {translateFooter("logo")}
+                            </span>
+                        </MotionDiv>
                     </Link>
 
-                    <p className={`mt-4 xl:mt-6 mb-3 xl:mb-4 | text-base font-light text-nftCustom-text_accent |  | main-transition-color ${language("isEnglish") === "true" ? "xl:max-w-[12rem]" : "flex flex-row-reverse gap-1 ml-auto"}`}>
+                    <MotionP 
+                        initial={{ x: "-20px", opacity: 0 }}
+                        whileInView={{ x: "0%", opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className={`mt-4 xl:mt-6 mb-3 xl:mb-4 | text-base font-light text-nftCustom-text_accent |  | main-transition-color ${language("isEnglish") === "true" ? "xl:max-w-[12rem]" : "flex flex-row-reverse gap-1 ml-auto"}`}
+                    >
                         <span>
                             {translateFooter("creation")} {" "}
                         </span>
@@ -36,56 +54,96 @@ const Footer = ({ locale }: { locale: string }) => {
                         >
                             FlashScript
                         </Link>
-                    </p>
+                    </MotionP>
 
-                    <span className={`mb-2 xl:mb-3 | text-base font-light text-nftCustom-text_accent |  | ${language("isEnglish") === "false" && "ml-auto"}`}>
+                    <MotionSpan 
+                        initial={{ x: "-20px", opacity: 0 }}
+                        whileInView={{ x: "0%", opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className={`mb-2 xl:mb-3 | text-base font-light text-nftCustom-text_accent |  | ${language("isEnglish") === "false" && "ml-auto"}`}
+                    >
                         {translateFooter("community")}
-                    </span>
+                    </MotionSpan>
                     
                     <div className={` |  | flex gap-2 | ${language("isEnglish") === "false" && "ml-auto"}`}>
-                        {footerIcons.map((icon) => (
-                            <a 
+                        {footerIcons.map((icon, index) => (
+                            <MotionA
                                 key={icon.id}
                                 href="https://github.com/FlashScript-Main"
                                 target="_blank"
+                                initial={{ x: "20%", opacity: 0 }}
+                                whileInView={{ x: "0%", opacity: 1 }}
+                                viewport={{ once: true, margin: "-10px" }}
+                                transition={{ staggerChildren: 0.02, delay: 0.25 * (index + 0.25), duration: 0.25, ease: "easeInOut" }}
                                 className={` |  |  | main-transition-color`}
                             >
                                 <icon.value />
-                            </a>
+                            </MotionA>
                         ))}
                     </div>
                 </div>
 
                 <div className={`max-xl:mb-8 xl:mb-auto |  | flex flex-col gap-3 | ${language("isEnglish") === "false" && "text-end"}`}>
-                    <h6 className={`mb-1 xl:mb-3 | text-nftCustom-text text-2xl font-bold |  | ${language("isEnglish") === "true" ? `${spaceMono}` : `${iranSans}`}`}>
+                    <MotionH6
+                        initial={{ y: "-20px", opacity: 0 }}
+                        whileInView={{ y: "0%", opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        viewport={{ once: true, margin: "-100px" }} 
+                        className={`mb-1 xl:mb-3 | text-nftCustom-text text-2xl font-bold |  | ${language("isEnglish") === "true" ? `${spaceMono}` : `${iranSans}`}`}
+                    >
                         {translateFooter("Explore")}
-                    </h6>
+                    </MotionH6>
 
                     {
-                        footerLinks.map((link) => (
+                        footerLinks.map((link, index) => (
                             <Link 
                                 key={link.id}
                                 href={`/${locale}/${link.href}`}
                                 className={` | text-base font-normal text-nftCustom-text_accent hover:text-nftCustom-cta |  | `}
                             >
-                                {translateFooter(link.language)}
+                                <MotionDiv
+                                    initial={{ x: "-20px", opacity: 0 }}
+                                    whileInView={{ x: "0%", opacity: 1 }}
+                                    viewport={{ once: true, margin: "-10px" }}
+                                    transition={{ staggerChildren: 0.02, delay: 0.25 * (index + 0.25), duration: 0.25, ease: "easeInOut" }}
+                                >
+                                    {translateFooter(link.language)}
+                                </MotionDiv>
                             </Link>
                         ))
                     }
                 </div>
 
                 <div className={`xl:mb-auto xl:w-[24.5rem] |  | flex flex-col gap-3 | ${language("isEnglish") === "false" && "text-end"}`}>
-                    <h6 className={`mb-2 xl:mb-1 | text-nftCustom-text text-[1.4rem] font-bold |  | ${language("isEnglish") === "true" ? `${spaceMono}` : `${iranSans}`}`}>
+                    <MotionH6 
+                        initial={{ y: "-20px", opacity: 0 }}
+                        whileInView={{ y: "0%", opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        viewport={{ once: true, margin: "-50px" }} 
+                        className={`mb-2 xl:mb-1 | text-nftCustom-text text-[1.4rem] font-bold |  | ${language("isEnglish") === "true" ? `${spaceMono}` : `${iranSans}`}`}
+                    >
                         {translateFooter("Digest")}
-                    </h6>
+                    </MotionH6>
 
-                    <p className={` mb-4 | text-nftCustom-text_accent text-base font-normal |  | ${language("isEnglish") === "true" && "xl:w-[20rem]"}`}>
+                    <MotionP 
+                        initial={{ x: "-20px", opacity: 0 }}
+                        whileInView={{ x: "0%", opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        className={` mb-4 | text-nftCustom-text_accent text-base font-normal |  | ${language("isEnglish") === "true" && "xl:w-[20rem]"}`}
+                    >
                         {translateFooter("Exclusive")}
-                    </p>
+                    </MotionP>
                     
-                    <div>
+                    <MotionDiv
+                        initial={{ y: "20px", opacity: 0 }}
+                        whileInView={{ y: "0%", opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        viewport={{ once: true, margin: "-50px" }}
+                    >
                         <SubscribeForm />
-                    </div>
+                    </MotionDiv>
                 </div>
             </div>
 
@@ -110,7 +168,7 @@ const Footer = ({ locale }: { locale: string }) => {
                 </a>
                 for Creating this Beautiful Design and Sharing it for free)
             </div>
-        </footer>
+        </FooterToScroll>
     )
 
 }

@@ -33,6 +33,21 @@ const DivToScroll = ({ children, className }: MotionDivProps) => {
 
 }
 
+const FooterToScroll = ({ children, className }: MotionFooterProps) => {
+
+    const ref = useRef(null);
+    
+    return (
+        <motion.footer
+            ref={ref}
+            className={className}
+        >
+            {children}
+        </motion.footer>
+    )
+
+}
+
 const ShowOnScroll = ({ 
     children, 
     index,
@@ -71,5 +86,6 @@ const ShowOnScroll = ({
 export {
     SectionToScroll,
     DivToScroll,
-    ShowOnScroll
+    FooterToScroll,
+    ShowOnScroll,
 }
