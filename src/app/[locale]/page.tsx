@@ -35,6 +35,12 @@ const Home = ({ locale }: { locale: string }) => {
     // ${language("isEnglish") === "true" ? "" : ""}
     // ${language("isEnglish") === "false" && ""}
 
+    // ⭐ Basic ⭐
+    // initial={{ y: "10%", opacity: 0 }}
+    // whileInView={{ y: "0%", opacity: 1 }}
+    // viewport={{ once: true, margin: "-200px" }}
+    // transition={{ staggerChildren: 0.02, delay: 0.25 * index, duration: 0.5 }}
+    
     return (
         <main className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <div className={`max-md:px-[1.875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>

@@ -13,9 +13,9 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 import { iranSans } from "@/utils/fonts";
+import { MotionDiv, MotionLi } from "@/animations/motion-provider";
 
 const Header = ({ locale }: { locale: string }) => {
-    // ${language("isEnglish") === "true" ? "text-left" : "text-right"}
 
     const translateHeader = useTranslations('Header');
     const language = useTranslations("language");
@@ -45,28 +45,48 @@ const Header = ({ locale }: { locale: string }) => {
             className={`py-2 lg:py-6 | bg-nftCustom-background |  | ${language("isEnglish") === "false" && `${iranSans}`}`}
         >
             <div className={`w-full md:w-[95%] lg:max-w-[74rem] mx-auto |  | flex justify-between items-center | `}>
-                <Link href={`/${locale}/`} className={` |  | flex justify-center items-center | group ${language("isEnglish") === "false" && "order-last"}`}>
-                    <StorefrontSVG />
-        
-                    <span className={` | text-base lg:text-xl text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color ${language("isEnglish") === "true" ? "font-semibold ml-1 lg:ml-3" : `font-bold order-first mr-1 lg:mr-3`}`}>
-                        {translateHeader("logo")}
-                    </span>
+                <Link href={`/${locale}/`} className={` |  |  | group ${language("isEnglish") === "false" && "order-last"}`}>
+                    <MotionDiv
+                        initial={{ y: "-20px", opacity: 0 }}
+                        animate={{ y: "0%", opacity: 1 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className={` |  | flex justify-center items-center | `}
+                    >
+                        <StorefrontSVG />
+            
+                        <span className={` | text-base lg:text-xl text-nftCustom-text group-hover:text-nftCustom-cta |  | main-transition-color ${language("isEnglish") === "true" ? "font-semibold ml-1 lg:ml-3" : `font-bold order-first mr-1 lg:mr-3`}`}>
+                            {translateHeader("logo")}
+                        </span>
+                    </MotionDiv>
                 </Link>
 
                 <div className={`max-lg:hidden |  | flex justify-between items-center gap-7 | `}>
                     <ul className={` |  | flex justify-center items-center gap-7 | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
-                        {navbarLinks.map((link) => (
-                            <li key={link.key}>
+                        {navbarLinks.map((link, index) => (
+                            <MotionLi 
+                                key={link.key}
+                                initial={{ y: "-20px", opacity: 0 }}
+                                animate={{ y: "0%", opacity: 1 }}
+                                transition={{ delay: 0.25 * index, }}
+                            >
                                 <Link 
                                     href={link.href} 
                                     className={` | text-base text-nftCustom-text hover:text-nftCustom-cta font-semibold |  | main-transition-color`}
                                 >
                                     {translateHeader(link.language)}
                                 </Link>
-                            </li>
+                            </MotionLi>
                         ))}
                     </ul>
-
+                    
+                    <MotionDiv 
+                        initial={{ y: "-20px", opacity: 0 }}
+                        animate={{ y: "0%", opacity: 1 }}
+                        transition={{ delay: 1, }}
+                        className={` |  |  | ${language("isEnglish") === "false" && "order-first"}`}
+                    >
                     <CustomButton 
                         translateButton={translateHeader("button-text")} 
                         locale={locale} 
@@ -76,7 +96,7 @@ const Header = ({ locale }: { locale: string }) => {
                         href="sign-up"
                         icon="user"
                     />
-                    
+                    </MotionDiv>
                 </div>
 
                 <NextUINavbarMenu className={`lg:hidden pt-6 | bg-nftCustom-background |  | overflow-hidden`}>

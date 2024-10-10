@@ -10,3 +10,13 @@ type CustomButtonType = {
     icon?: string;
     // onClick: () => void;
 }
+
+interface MotionSectionProps extends ForwardRefComponent<HTMLElement, HTMLMotionProps<"section">> {
+    children: React.ReactNode;
+    className?: string;
+}
+
+interface MotionDivProps extends ForwardRefComponent<HTMLElement, HTMLMotionProps<"div">> {
+    children: React.ReactNode;
+    className?: string;
+}
