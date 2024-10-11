@@ -169,9 +169,9 @@ const Footer = ({ locale }: { locale: string }) => {
                 for Creating this Beautiful Design and Sharing it for free)
             </div>
 
-            <div className={`xl:w-[66rem] xl:mx-auto mt-8 md:mt-10 pt-5 | text-sm font-normal text-nftCustom-text_accent | flex flex-col items-center | border-t border-t-nftCustom-c_l_text main-transition-color ${language("isEnglish") === "true" && "hidden"}`}>
-                <div className={`ml-auto |  | flex items-center gap-[0.15rem] | `}>
-                    <div className={` |  | flex flex-row-reverse items-center gap-1 |`}>
+            <div className={`xl:w-[66rem] xl:mx-auto mt-8 md:mt-10 pt-5 | text-sm font-normal text-nftCustom-text_accent | flex flex-col items-center | border-t border-t-nftCustom-c_l_text main-transition-color ${language("isEnglish") === "true" && "hidden"} `}>
+                <div className={`ml-auto max-md:hidden |  | flex items-center gap-[0.15rem] | `}>
+                    <div className={` |  | flex flex-row-reverse items-center gap-1 | `}>
                         <div className={` |  | flex | `}>
                             <span>.حق کپی رایت با بازار توکن دیجیتال می باشد</span>
                         </div>
@@ -186,7 +186,7 @@ const Footer = ({ locale }: { locale: string }) => {
                     <span>@</span>
                 </div>
 
-                <div className={`ml-auto |  | flex flex-row-reverse items-center gap-[0.15rem] | `}>
+                <div className={`ml-auto max-md:hidden |  | flex flex-row-reverse items-center gap-[0.15rem] | `}>
                     <div>
                         <span>{"تشکر فراوان از طرف)"}</span>
                     </div>
@@ -216,7 +216,7 @@ const Footer = ({ locale }: { locale: string }) => {
                     </div>
                 </div>
 
-                <div className={`mt-2 | text-nftCustom-text |  | `}>
+                <div className={`md:mt-2 | text-nftCustom-text |  | `}>
                     مانا و پیروز باشید
                 </div>
             </div>
