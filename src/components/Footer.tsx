@@ -168,6 +168,58 @@ const Footer = ({ locale }: { locale: string }) => {
                 </a>
                 for Creating this Beautiful Design and Sharing it for free)
             </div>
+
+            <div className={`xl:w-[66rem] xl:mx-auto mt-8 md:mt-10 pt-5 | text-sm font-normal text-nftCustom-text_accent | flex flex-col items-center | border-t border-t-nftCustom-c_l_text main-transition-color ${language("isEnglish") === "true" && "hidden"}`}>
+                <div className={`ml-auto |  | flex items-center gap-[0.15rem] | `}>
+                    <div className={` |  | flex flex-row-reverse items-center gap-1 |`}>
+                        <div className={` |  | flex | `}>
+                            <span>.حق کپی رایت با بازار توکن دیجیتال می باشد</span>
+                        </div>
+                        <div className={` |  | flex flex-row-reverse items-center gap-1 | `}>
+                            <div className={` |  | flex items-center gap-1 | `}>
+                                <span>FlashScript</span>
+                                <span>در صورت انتشار، نام</span>
+                            </div>
+                                <span>.را لحاظ کنید</span>
+                            </div>
+                    </div>
+                    <span>@</span>
+                </div>
+
+                <div className={`ml-auto |  | flex flex-row-reverse items-center gap-[0.15rem] | `}>
+                    <div>
+                        <span>{"تشکر فراوان از طرف)"}</span>
+                    </div>
+                    
+                    <a 
+                        href="https://github.com/FlashScript-Main" 
+                        target="_blank"
+                        className={`mx-[0.15rem] | text-nftCustom-cta hover:text-nftCustom-text font-semibold |  | `}
+                    >
+                        {" "} FlashScript {" "}
+                    </a>
+
+                    <div>
+                        <span>به</span>
+                    </div>
+                    
+                    <a 
+                        href="https://www.figma.com/community/file/1173962104946517060/nft-marketplace-template-create-an-nft-website-in-minutes" 
+                        target="_blank"
+                        className={`mx-[0.15rem] | text-nftCustom-cta hover:text-nftCustom-text font-semibold |  | `}
+                    >
+                        {" "} animaapp.io {" "}
+                    </a>
+
+                    <div>
+                        <span>{"(برای طراحی این دیزاین زیبا و اشتراک گذاری آن به صورت رایگان"}</span>
+                    </div>
+                </div>
+
+                <div className={`mt-2 | text-nftCustom-text |  | `}>
+                    مانا و پیروز باشید
+                </div>
+            </div>
         </FooterToScroll>
     )
 
