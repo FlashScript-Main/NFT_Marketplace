@@ -25,3 +25,13 @@ interface MotionFooterProps extends ForwardRefComponent<HTMLElement, HTMLMotionP
     children: React.ReactNode;
     className?: string;
 }
+
+interface MotionMainProps extends ForwardRefComponent<HTMLElement, HTMLMotionProps<"Main">> {
+    children: React.ReactNode;
+    className?: string;
+}
+
+type WantMotionAnimationType = {
+    wantAnimations: boolean;
+    setWantAnimations: (value: boolean) => void;
+}
