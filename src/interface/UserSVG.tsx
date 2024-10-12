@@ -1,8 +1,11 @@
 import * as React from "react"
 import { SVGProps } from "react"
-const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
+
+type SvgComponentProps = SVGProps<SVGSVGElement> & { header?: string };
+
+const SvgComponent = (props: SvgComponentProps) => (
   <svg
-    className="user-svg"
+    className={`${props.header === "true" ? "user-svg-header" : "user-svg"}`}
     viewBox="0 0 32 32"
     // fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -35,3 +35,10 @@ type WantMotionAnimationType = {
     wantAnimations: boolean;
     setWantAnimations: (value: boolean) => void;
 }
+
+type UserState = {
+    username: string;
+    email: string;
+    password: string;
+    setUser: (user: { username: string; email: string; password: string }) => void;
+}

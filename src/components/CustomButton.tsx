@@ -12,7 +12,7 @@ const CustomButton = ({ locale, translateButton, type, href, className, textClas
                         href={`/${locale}/${href}`} 
                         className={`${className} | main-transition-color | `}
                     >
-                        {icon === "user" && <UserSVG />}
+                        {icon === "user" && <UserSVG header="true" />}
                         {icon === "rocket-launch" && <RocketLaunchSVG />}
                         {icon === "rocket-launch-rankings" && <RocketLaunchSVG place="rankings" />}
                         {icon === "eye" && <EyeSVG />}

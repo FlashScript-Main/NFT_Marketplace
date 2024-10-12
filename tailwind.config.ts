@@ -30,6 +30,9 @@ const config: Config = {
 				},
 
 				countdown_bg: "rgba(var(--nft-countdown-bg))",
+
+				create_account_svg: "var(--nft-create-account-svg)",
+
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

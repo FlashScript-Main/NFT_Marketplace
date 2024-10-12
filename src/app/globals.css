@@ -92,8 +92,10 @@
 
   /* Footer */
   --nft-footer-bg: #3B3B3B;
-
+  
   --nft-countdown-bg: 59, 59, 59;
+
+  --nft-create-account-svg: #BDBDBD;
 }
 
 .red {
@@ -125,16 +127,14 @@
   @apply fill-nftCustom-cta w-8 h-8;
 }
 
-.user-svg {
-  @apply fill-nftCustom-text w-5 h-5 group-hover:fill-nftCustom-cta;
-}
-
-.envelope-simple-svg {
-  @apply fill-nftCustom-text group-hover:fill-nftCustom-cta w-5 h-5 md:hidden;
-}
-
+.user-svg,
+.envelope-simple-svg,
 .lock-key-svg {
-  @apply fill-nftCustom-text;
+  @apply fill-nftCustom-create_account_svg w-5 h-5;
+}
+
+.user-svg-header {
+  @apply fill-nftCustom-text w-5 h-5 group-hover:fill-nftCustom-cta;
 }
 
 .eye-svg {
