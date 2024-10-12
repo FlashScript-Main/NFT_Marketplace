@@ -3,7 +3,8 @@
 import { CreateAccountInputEn, CreateAccountInputFa, createAccountSchemaEn, createAccountSchemaFa } from "@/lib/schema";
 import useUserStore from "@/stores/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Input as NextUIInput } from "@nextui-org/react";
+import { Input as NextUIInput, useDisclosure } from "@nextui-org/react";
+import { Modal as NextUIModal, Button as NextUIButton } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import { useForm } from 'react-hook-form';
 import CreateAccountInputText from "./CreateAccountInputText";
@@ -25,6 +26,8 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
     const toggleConfirmPasswordVisibility = () => setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
+
+    const {isOpen, onOpen, onClose} = useDisclosure();
 
     // const userName = useUserStore((state) => state.username);
     // {userName === "" ? "No UserName" : userName}
@@ -183,6 +186,50 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
             >
                 {translateCreateAccount("Input-button")}
             </button>
+            
+            
+
+
+            <div className="flex flex-wrap gap-3">
+        {backdrops.map((b) => (
+          <Button  
+            key={b}
+            variant="flat" 
+            color="warning" 
+            onPress={() => handleOpen(b)}
+            className="capitalize"
+          >
+           {b}
+          </Button>
+        ))}  
+      </div>
+      <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalBody>
+                <p> 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
+                  dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. 
+                  Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. 
+                  Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur 
+                  proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                </p>
+              </ModalBody>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
         </form>
     );
 }
