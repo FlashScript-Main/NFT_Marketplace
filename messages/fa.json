@@ -100,7 +100,11 @@
         "Input-email": "آدرس ایمیل",
         "Input-password": "رمز عبور",
         "Input-password-confirm": "تأیید رمز عبور",
-        "Input-button": "ایجاد حساب"
+        "Input-button": "ایجاد حساب",
+        "modal-logedin": "کاربر جدید با موفقیت عضو گردید",
+        "modal-sending": "در حال ارسال اطلاعات شما به سرور هستیم، لطفا صبر کنید",
+        "modal-authorized": "کاربر جدید مجوز ورود دریافت کرد و با موفقیت وارد سیستم شده است",
+        "modal-button": "...در حال پردازش"
     },
     "Create-Wallet": {
         "title": "اتصال کیف پول",

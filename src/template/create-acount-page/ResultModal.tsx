@@ -1,8 +1,9 @@
 "use client";
 
 import useCreateAccountModal from "@/stores/useCreateAccountModal";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Spinner} from "@nextui-org/react";
-import { Modal as NextUIModal, Button as NextUIButton } from "@nextui-org/react";
+import { iranSans } from "@/utils/fonts";
+import { ModalContent, ModalBody, Spinner} from "@nextui-org/react";
+import { Modal as NextUIModal } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -21,68 +22,43 @@ const ResultModal = ({ isLoaderActive }: { isLoaderActive: boolean }) => {
     //     isLoading: false,
     // });
 
-    // const handleOpen = () => {
-    //     onOpen();
-    // }
-
-    // <motion.h3
-    //     initial={{ opacity: 0, y: 10, color: "#333" }}
-    //     animate={{ opacity: [1, 0], y: 0, color: ["#333", "#fc0341", "#22c55e"] }}
-    //     transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
-    //     className="text-center text-2xl font-semibold text-green-500"
-    // > 
-    //     {`New User Has been Authorized and Successfully Logged In`}
-    // </motion.h3>
-
     const [state, setState] = useState({
         isCreatedVisible: true,
         isSendingVisible: true,
         isSuccessVisible: true,
     });
 
-  useEffect(() => {
-    // const timer = setTimeout(() => {
-    //   setIsVisible(false);
-    // }, 2000); // Visible for 2 seconds
+    useEffect(() => {
+        if (isModalActive) {
+            const CreatedTimer = setTimeout(() => {
+                setState((prevState) => ({
+                    ...prevState,
+                    isCreatedVisible: false,
+                }));
+            }, 2000); // Visible for 2 seconds
 
-    // const timer2 = setTimeout(() => {
-    //   setIsVisible2(false);
-    // }, 4000); // Visible for 2 seconds
+            const SendingTimer = setTimeout(() => {
+                setState((prevState) => ({
+                    ...prevState,
+                    isSendingVisible: false,
+                }));
+            }, 4000); // Visible for 2 seconds
 
-    // return () => {clearTimeout(timer); clearTimeout(timer2); }; // Cleanup timer
+            const SuccessTimer = setTimeout(() => {
+                setState((prevState) => ({
+                    ...prevState,
+                    isSuccessVisible: false,
+                }));
+            }, 6000); // Visible for 2 seconds
 
-    if (isModalActive) {
-        
-    const CreatedTimer = setTimeout(() => {
-      setState((prevState) => ({
-        ...prevState,
-        isCreatedVisible: false,
-      }));
-    }, 2000); // Visible for 2 seconds
-
-    const SendingTimer = setTimeout(() => {
-      setState((prevState) => ({
-        ...prevState,
-        isSendingVisible: false,
-      }));
-    }, 4000); // Visible for 2 seconds
-
-    const SuccessTimer = setTimeout(() => {
-      setState((prevState) => ({
-        ...prevState,
-        isSuccessVisible: false,
-      }));
-    }, 6000); // Visible for 2 seconds
-
-    return () => { clearTimeout(CreatedTimer); clearTimeout(SendingTimer); clearTimeout(SuccessTimer); }; // Cleanup timer
-    }
-
-  }, [isModalActive]);
+            return () => { clearTimeout(CreatedTimer); clearTimeout(SendingTimer); clearTimeout(SuccessTimer); }; // Cleanup timer
+        }
+    }, [isModalActive]);
 
     const variants = {
-        initial: { opacity: 0, y: 20 }, // Start with opacity 0 and below the viewport (y: 50)
-        fadeInUp: { opacity: 1, y: 0 }, // Move to position (y: 0) and fully visible (opacity: 1)
-        fadeOutDown: { opacity: 0, y: 20 }, // Move downwards (y: 50) and fade out
+        initial: { opacity: 0, y: 20 },
+        fadeInUp: { opacity: 1, y: 0 },
+        fadeOutDown: { opacity: 0, y: 20 },
     };
 
     return (
@@ -101,58 +77,61 @@ const ResultModal = ({ isLoaderActive }: { isLoaderActive: boolean }) => {
             }}
         >
             <ModalContent className="border-nftCustom-cta w-[25rem] h-[15.5rem]">
-                <ModalBody className="border-2 border-yellow-500">
-                    <motion.div className="relative w-full h-full border-2 border-blue-700">
-                        <div style={{ padding: '20px', fontSize: '20px' }} className="absolute inset-0 border-2 border-rose-800">
+                <ModalBody>
+                    <motion.div className={`relative w-full h-full |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+                        <div className={`absolute inset-0 |  |  | `}>
                             {state.isCreatedVisible && (
                                 <motion.div
-                                initial={"initial"}
-                                animate={"fadeInUp"}
-                                exit={"fadeOutDown"}
-                                variants={variants}     
-                                transition={{ duration: 1 }}
+                                    initial={"initial"}
+                                    animate={"fadeInUp"}
+                                    exit={"fadeOutDown"}
+                                    variants={variants}     
+                                    transition={{ duration: 1 }}
+                                    className={`mt-11 | text-center text-xl font-semibold text-green-600 | | `}
                                 >
-                                This text will fade in from bottom and disappear down
+                                    {translateCreateAccount("modal-logedin")}
                                 </motion.div>
                             )}
                         </div>
 
-                        <div style={{ padding: '20px', fontSize: '20px' }} className="absolute inset-0 border-2 border-indigo-600">
+                        <div className={`absolute inset-0 |  |  | `}>
                             {state.isSendingVisible && (
                                 <motion.div
-                                initial="initial"
-                                animate="fadeInUp"
-                                exit="fadeOutDown"
-                                variants={variants}
-                                transition={{ duration: 1, delay: 2 }}
+                                    initial="initial"
+                                    animate="fadeInUp"
+                                    exit="fadeOutDown"
+                                    variants={variants}
+                                    transition={{ duration: 1, delay: 2 }}
+                                    className={`mt-11 | text-center text-xl font-semibold text-green-600 | | `}
                                 >
-                                This text will fade in from bottom and disappear down
+                                    {translateCreateAccount("modal-sending")}
                                 </motion.div>
                             )}
                         </div>
 
-                        <div style={{ padding: '20px', fontSize: '20px' }} className="absolute inset-0 border-2 border-indigo-600">
+                        <div className={`absolute inset-0 |  |  | `}>
                             {state.isSuccessVisible && (
                                 <motion.div
-                                initial="initial"
-                                animate="fadeInUp"
-                                exit="fadeOutDown"
-                                variants={variants}
-                                transition={{ duration: 1, delay: 4 }}
+                                    initial="initial"
+                                    animate="fadeInUp"
+                                    exit="fadeOutDown"
+                                    variants={variants}
+                                    transition={{ duration: 1, delay: 4 }}
+                                    className={`mt-11 | text-center text-xl font-semibold text-green-600 | | `}
                                 >
-                                This text will fade in from bottom and disappear down
+                                    {translateCreateAccount("modal-authorized")}
                                 </motion.div>
                             )}
                         </div>
                     </motion.div>
 
-                    <button>   
+                    <button className={` | text-indigo-600 | flex justify-center items-center gap-4 | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>   
                         <span>
                             {isLoaderActive && <Spinner size="md" color="current" />}
                         </span>
 
-                        <span>
-                            {translateCreateAccount("Input-button")}
+                        <span className={` | text-lg font-semibold |  | `}>
+                            {isLoaderActive && translateCreateAccount("modal-button")}
                         </span>
                     </button>
                 </ModalBody>

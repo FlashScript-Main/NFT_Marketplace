@@ -101,7 +101,7 @@
         "Input-password": "Password",
         "Input-password-confirm": "Confirm Password",
         "Input-button": "Create Account",
-        "modal-logedin": "New User Has been Authorized and Successfully Logged In",
+        "modal-logedin": "New User Has been Successfully Logged In",
         "modal-sending": "Sending your informations to the server, please wait...",
         "modal-authorized": "New User Has been Authorized and Successfully Logged In",
         "modal-button": "Processing..."

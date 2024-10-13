@@ -16,8 +16,9 @@ import useCreateAccountModal from "@/stores/useCreateAccountModal";
 import { useRouter } from "next/navigation";
 
 const NewAccountForm = ({ locale }: { locale: string }) => {
+
     const router = useRouter();
-    // console.log(locale)
+
     const translateCreateAccount = useTranslations('Create-Account');
     const language = useTranslations("language");
 
@@ -34,7 +35,6 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     const { setIsModalActive } = useCreateAccountModal();
 
     const [isLoaderActive, setisLoaderActive] = useState(false);
-    const [isClient, setIsClient] = useState(false);
     
     // const {isOpen, onOpen, onClose} = useDisclosure();
     // const handleOpen = () => {
@@ -46,7 +46,6 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
 
     useEffect(() => {
         useMotionAnimations.persist.rehydrate();
-        setIsClient(true);
     }, []);
 
     const { 
@@ -61,26 +60,17 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     const onSubmit = (data: CreateAccountInputEn | CreateAccountInputFa) => {
         // Save data to Zustand store
         setUser({ username: data.username, email: data.email, password: data.password });
-        setisLoaderActive(true);
 
+        setisLoaderActive(true);
         setIsModalActive(true);
 
         setTimeout(() => {
             setIsModalActive(false);
             setisLoaderActive(false);
-            // if (isClient) {
             router.push(`/${locale}/`);
-            // }
-            // redirect(`/${locale}/`);
-        }, 7000);
+        }, 5300);
+        // }, 6500);
         
-        // setTimeout(() => {
-        //     setIsModalActive(false);
-        // }, 5000);
-
-        // setTimeout(() => {
-        //     setIsModalActive(false);
-        // }, 4000);
         reset();
     };
 
