@@ -36,6 +36,11 @@ type WantMotionAnimationType = {
     setWantAnimations: (value: boolean) => void;
 }
 
+type CreateAccountModalType = {
+    isModalActive: boolean;
+    setIsModalActive: (value: boolean) => void;
+}
+
 type UserState = {
     username: string;
     email: string;

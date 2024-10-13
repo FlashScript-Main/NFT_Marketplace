@@ -8,8 +8,8 @@ const CreateAccountSection = ({ locale }: { locale: string }) => {
     const language = useTranslations("language");
 
     return (
-        <section className={`xl:h-[48rem] |  | flex flex-col md:flex-row gap-[1.875rem] md:gap-10 xl:gap-[3.75rem] | border-2 border-indigo-500`}>
-            <div className={` |  | md:basis-1/2 | border-2 border-rose-600`}>
+        <section className={`xl:h-[48rem] |  | flex flex-col md:flex-row gap-[1.875rem] md:gap-10 xl:gap-[3.75rem] | `}>
+            <div className={` |  | md:basis-1/2 | `}>
                 <Image 
                     src="/create-account.jpg"
                     alt="NFT Space-Ship"
@@ -19,7 +19,7 @@ const CreateAccountSection = ({ locale }: { locale: string }) => {
                 />
             </div>
 
-            <div className={`max-md:max-w-[19.6875rem] md:max-w-[20.3125rem] xl:max-w-[28.75rem] max-md:mx-auto max-md:mb-10 md:py-20 xl:py-[6.25rem] |  | md:basis-1/2 | border-2 border-green-500`}>
+            <div className={`max-md:max-w-[19.6875rem] md:max-w-[20.3125rem] xl:max-w-[28.75rem] max-md:mx-auto max-md:mb-10 md:py-20 xl:py-[6.25rem] |  | md:basis-1/2 | `}>
                 <h1 className={` | text-[2.375rem] xl:text-[3.1875rem] leading-[120%] xl:leading-[110%] font-semibold text-nftCustom-text |  | ${language("isEnglish") === "false" && "text-end"}`}>
                     {translateCreateAccount("title")}
                 </h1>

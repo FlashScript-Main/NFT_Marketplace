@@ -100,7 +100,11 @@
         "Input-email": "Email Address",
         "Input-password": "Password",
         "Input-password-confirm": "Confirm Password",
-        "Input-button": "Create Account"
+        "Input-button": "Create Account",
+        "modal-logedin": "New User Has been Authorized and Successfully Logged In",
+        "modal-sending": "Sending your informations to the server, please wait...",
+        "modal-authorized": "New User Has been Authorized and Successfully Logged In",
+        "modal-button": "Processing..."
     },
     "Create-Wallet": {
         "title": "Connect Wallet",
