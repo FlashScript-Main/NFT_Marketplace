@@ -14,6 +14,7 @@ import ResultModal from "./ResultModal";
 import { Input as NextUIInput, Spinner } from "@nextui-org/react";
 import useCreateAccountModal from "@/stores/useCreateAccountModal";
 import { useRouter } from "next/navigation";
+import { motion } from 'framer-motion';
 
 const NewAccountForm = ({ locale }: { locale: string }) => {
 
@@ -75,8 +76,12 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     };
 
     return (
-        <form 
+        <motion.form 
             onSubmit={handleSubmit(onSubmit)} 
+            initial={{ y: "20%", opacity: 0 }}
+            whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true, }}
+            transition={{ delay: 0.5, duration: 0.75, ease: "easeInOut" }}
             className={`xl:max-w-[20.625rem] |  | flex flex-col gap-y-[0.9375rem] | ${language("isEnglish") === "false" && "xl:ml-auto"}`}
         >
             <NextUIInput 
@@ -208,7 +213,7 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
             </button>
 
             <ResultModal isLoaderActive={isLoaderActive} />
-        </form>
+        </motion.form>
     );
 }
 
