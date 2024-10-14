@@ -363,3 +363,24 @@ export const howItWorksInfo = [
         textFa: "بین حراج‌ها و لیست‌های با قیمت ثابت انتخاب کنید و با فروش توکن‌های دیجیتال خود یا معامله آنها شروع به کسب درآمد کنید",
     },
 ];
+
+export const connectWalletProviders = [
+    {
+        id: 1,
+        image: "metamask.png",
+        imageAlt: "Metamask",
+        title: "Metamask",
+    },
+    {
+        id: 2,
+        image: "wallet-connect.png",
+        imageAlt: "Wallet Connect",
+        title: "Wallet Connect",
+    },
+    {
+        id: 3,
+        image: "coinbase.png",
+        imageAlt: "Coinbase",
+        title: "Coinbase",
+    },
+];
