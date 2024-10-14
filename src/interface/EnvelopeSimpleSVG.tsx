@@ -1,8 +1,11 @@
 import * as React from "react"
 import { SVGProps } from "react"
-const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
+
+type SvgComponentProps = SVGProps<SVGSVGElement> & { newAccount?: string };
+
+const SvgComponent = (props: SvgComponentProps) => (
   <svg
-    className="envelope-simple-svg"
+    className={`${props.newAccount === "true" ? "envelope-simple-svg-newAccount" : "envelope-simple-svg"}`}
     // width={32}
     // height={32}
     viewBox="0 0 32 32"

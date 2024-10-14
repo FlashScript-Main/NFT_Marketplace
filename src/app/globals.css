@@ -128,13 +128,17 @@
 }
 
 .user-svg,
-.envelope-simple-svg,
+.envelope-simple-svg-newAccount,
 .lock-key-svg {
   @apply fill-nftCustom-create_account_svg w-5 h-5;
 }
 
 .user-svg-header {
   @apply fill-nftCustom-text w-5 h-5 group-hover:fill-nftCustom-cta;
+}
+
+.envelope-simple-svg {
+  @apply fill-nftCustom-text group-hover:fill-nftCustom-cta w-5 h-5 md:hidden;
 }
 
 .eye-svg {
