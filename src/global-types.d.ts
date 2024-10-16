@@ -47,3 +47,9 @@ type UserState = {
     password: string;
     setUser: (user: { username: string; email: string; password: string }) => void;
 }
+
+type ArtistPagePropsType = {
+    params: { 
+        name: string 
+    };
+}
