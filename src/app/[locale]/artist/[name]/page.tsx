@@ -8,14 +8,20 @@ const ArtistPage = ({ params: { name } }: ArtistPagePropsType) => {
 
     const language = useTranslations("language");
     
-    console.log(name);
-    
-    return (
-        <GlobalMotionMain className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
-            <ArtistInfo />
-            <ArtistTabs />
-        </GlobalMotionMain>
-    )
+    if (name) {
+        return (
+            <GlobalMotionMain className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+                <ArtistInfo />
+                <ArtistTabs />
+            </GlobalMotionMain>
+        )
+    } 
+    else {
+        return (
+            <div></div>
+            // <ArtistNotFound />
+        )
+    }
 
 }
 
