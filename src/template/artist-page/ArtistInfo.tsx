@@ -1,4 +1,6 @@
 import Image from "next/image"
+import CopyNFTCodeButton from "./CopyNFTCodeButton"
+import FollowArtist from "./FollowArtist"
 
 const ArtistInfo = () => {
 
@@ -27,15 +29,15 @@ const ArtistInfo = () => {
                     />
                 </div>
 
-                <div className={`pt-20 xl:pt-24 |  | flex flex-col xl:flex-row xl:justify-between xl:items-center | border-2 border-green-500`}>
-                    <h1 className={`max-xl:mb-[1.875rem] |  |  | `}>
-                        Animakid // 👈🏻 Start From Here
+                <div className={`pt-20 xl:pt-24 relative z-30 |  | flex flex-col xl:flex-row xl:justify-between xl:items-center | border-2 border-green-500`}>
+                    <h1 className={`max-xl:mb-[1.875rem] | text-nftCustom-text text-[1.75rem] md:text-[2.375rem] xl:text-[3.1875rem] leading-[140%] md:leading-[120%] xl:leading-[110%] font-semibold |  | `}>
+                        Animakid
                     </h1>
 
-                    <div>
-                        {/* Copy NFT Code Button */}
+                    <div className={` |  | flex flex-col md:flex-row gap-5 | `}>
+                        <CopyNFTCodeButton />
 
-                        {/* Follow Button */}
+                        <FollowArtist />
                     </div>
                 </div>
 

@@ -1,0 +1,56 @@
+"use client";
+
+import { useToast } from "@/hooks/use-toast";
+import { PlusSVG } from "@/interface";
+import { iranSans } from "@/utils/fonts";
+import { CheckCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useState } from "react"
+
+const FollowArtist = () => {
+
+    const language = useTranslations("language");
+    
+    const [isFollowed, setisFollowed] = useState(false);
+
+    const { toast } = useToast();
+    
+    const handleFollow = () => {
+        setisFollowed(true);
+        
+        toast({
+            title: (language("isEnglish") === "true" ? "Successfully Followed" : "با موفقیت دنبال شد"),
+            className: `bg-green-600 text-white border-4 border-green-900 ${language("isEnglish") === "false" && `${iranSans} flex items-center justify-end`}`,
+            duration: 4000
+        })
+    };
+
+    return (
+        <button 
+            onClick={handleFollow} 
+            disabled={isFollowed}
+            className={`max-md:w-full h-[3.75rem] md:px-6 | text-[1rem] leading-[140%] font-semibold ${isFollowed ? "bg-nftCustom-text disabled:cursor-not-allowed" : "bg-nftCustom-background hover:bg-nftCustom-text"} | flex justify-center items-center gap-3 | border-4 border-nftCustom-cta rounded-[20px] main-transition-color group ${language("isEnglish") === "false" && "flex-row-reverse"}`}
+        >
+            <span>
+                {
+                    isFollowed ? 
+                    <div className={`w-5 h-5 | text-nftCustom-cta ${!isFollowed && "group-hover:text-nftCustom-text"} | grid place-content-center | `}>
+                        <CheckCheck />
+                    </div> 
+                    : <PlusSVG />
+                }
+            </span>
+
+            <span className={` |  ${isFollowed ? "text-nftCustom-cta" : "text-nftCustom-text group-hover:text-nftCustom-cta"} |  | `}>
+                {
+                    isFollowed ? 
+                    language("isEnglish") === "true" ? "Followed" : "دنبال گردید"
+                    : language("isEnglish") === "true" ? "Follow" : "دنبال کنید"
+                }
+            </span>
+        </button>
+    )
+
+}
+
+export default FollowArtist

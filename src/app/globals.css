@@ -186,7 +186,7 @@
 }
 
 .plus-svg {
-  @apply fill-nftCustom-text;
+  @apply fill-nftCustom-cta w-5 h-5 group-hover:fill-nftCustom-cta;
 }
 
 .magnifying-glass-svg {
@@ -202,7 +202,7 @@
 }
 
 .copy-svg {
-  @apply fill-nftCustom-text;
+  @apply fill-nftCustom-text w-5 h-5 group-hover:fill-nftCustom-cta;
 }
 
 .discord-logo-svg {
