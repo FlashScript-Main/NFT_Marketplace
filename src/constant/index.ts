@@ -384,3 +384,31 @@ export const connectWalletProviders = [
         title: "Coinbase",
     },
 ];
+
+export const ArtistInfoLinks = [
+    {
+        id: 1,
+        svgIcon: "GlobeSVG",
+        imageAlt: "Website",
+    },
+    {
+        id: 2,
+        svgIcon: "DiscordLogoSVG",
+        imageAlt: "Twitter",
+    },
+    {
+        id: 3,
+        svgIcon: "YoutubeLogoSVG",
+        imageAlt: "YouTube",
+    },
+    {
+        id: 4,
+        svgIcon: "TwitterLogoSVG",
+        imageAlt: "Twitter",
+    },
+    {
+        id: 5,
+        svgIcon: "InstagramLogoSVG",
+        imageAlt: "Instagram",
+    },
+];

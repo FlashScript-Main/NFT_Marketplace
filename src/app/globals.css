@@ -177,6 +177,17 @@
   @apply fill-nftCustom-text;
 }
 
+.globe-svg-artist-page,
+.discord-logo-svg-artist-page,
+.youtube-logo-svg-artist-page,
+.instagram-logo-svg-artist-page {
+  @apply fill-nftCustom-c_l_text w-6 h-6 xl:w-8 xl:h-8 hover:fill-nftCustom-cta;
+}
+
+.twitter-logo-svg-artist-page {
+  @apply stroke-nftCustom-c_l_text fill-nftCustom-background w-6 h-6 xl:w-8 xl:h-8 hover:stroke-nftCustom-cta;
+}
+
 .trend-up-svg {
   @apply fill-nftCustom-text;
 }

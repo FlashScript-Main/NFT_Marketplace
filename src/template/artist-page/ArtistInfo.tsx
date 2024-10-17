@@ -3,6 +3,10 @@ import CopyNFTCodeButton from "./CopyNFTCodeButton"
 import FollowArtist from "./FollowArtist"
 import { useTranslations } from "next-intl";
 import ArtistInfoCountUp from "./ArtistInfoCountUp";
+import { spaceMono } from "@/utils/fonts";
+import { ArtistInfoLinks } from "@/constant";
+import { DiscordLogoSVG, GlobeSVG, InstagramLogoSVG, TwitterLogoSVG, YoutubeLogoSVG } from "@/interface";
+import { MotionA } from "@/animations/motion-provider";
 
 const ArtistInfo = ({ artist }: { artist: ArtistParamsType }) => {
 
@@ -45,27 +49,45 @@ const ArtistInfo = ({ artist }: { artist: ArtistParamsType }) => {
                     </div>
                 </div>
 
-                <div className={`relative z-30 mt-[1.875rem] |  |  | border-2 border-rose-700`}>
+                <div className={`relative z-30 mt-[1.875rem] mb-[1.875rem] |  |  | `}>
                     <ArtistInfoCountUp artist={artist} />
                 </div>
 
-                <div>
-                    <h5>
-                        Bio
+                <div className={`relative z-30 | text-[1rem] xl:text-[1.375rem] leading-[140%] xl:leading-[160%] |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                    <h5 className={` | text-nftCustom-c_l_text font-bold ${spaceMono} |  | `}>
+                        {language("isEnglish") === "true" ? "Bio" : "توضیحات"}
                     </h5>
 
-                    <p>
-                        {"The Internet's Friendliest Designer Kid."}
+                    <p className={`mt-[0.625rem] mb-[1.875rem] | text-nftCustom-text font-normal |  | `}>
+                        {language("isEnglish") === "true" ? artist.bioEn : artist.bioFa}
                     </p>
                 </div>
 
-                <div>
-                    <h5>
-                        Links
+                <div className={`relative z-30 |  |  | border-2 border-indigo-500`}>
+                    <h5 className={`mb-[0.625rem] | text-nftCustom-c_l_text text-[1rem] xl:text-[1.375rem] leading-[140%] xl:leading-[160%] font-bold ${spaceMono} |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                        {language("isEnglish") === "true" ? "Links" : "لینک ها"}
                     </h5>
 
-                    <div>
-                        {/* {ArtistInfoLinks} */}
+                    <div className={`w-fit |  | flex items-center gap-[0.625rem] | ${language("isEnglish") === "false" && "ml-auto flex-row-reverse"} border-2 border-rose-500`}>
+                        {ArtistInfoLinks.map((link, index) => (
+                            <MotionA
+                                key={link.id}
+                                href="https://github.com/FlashScript-Main"
+                                target="_blank"
+                                initial={{ y: "20%", opacity: 0 }}
+                                whileInView={{ y: "0%", opacity: 1 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ staggerChildren: 0.02, delay: 0.25 * (index + 0.25), duration: 0.25, ease: "easeInOut" }}
+                                aria-label={`${link.imageAlt} Link`}
+                                className={` |  |  | main-transition-color`}
+                            >
+                                {link.svgIcon === "GlobeSVG" && <GlobeSVG place="artist-page" />}
+                                {link.svgIcon === "DiscordLogoSVG" && <DiscordLogoSVG place="artist-page" />}
+                                {link.svgIcon === "YoutubeLogoSVG" && <YoutubeLogoSVG place="artist-page" />}
+                                {link.svgIcon === "TwitterLogoSVG" && <TwitterLogoSVG place="artist-page" />}
+                                {link.svgIcon === "InstagramLogoSVG" && <InstagramLogoSVG place="artist-page" />}
+                            </MotionA>
+                        ))}
                     </div>
                 </div>
             </div>

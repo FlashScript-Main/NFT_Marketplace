@@ -10,7 +10,7 @@ const ArtistInfoCountUp = ({ artist }: { artist: ArtistParamsType }) => {
     const language = useTranslations("language");
 
     return (
-        <div className={`w-full md:w-8/12 xl:w-6/12 |  | flex justify-between | ${language("isEnglish") === "false" && "md:ml-auto flex-row-reverse"} border-2 border-green-500`}>
+        <div className={`w-full md:w-8/12 xl:w-6/12 |  | flex justify-between | ${language("isEnglish") === "false" && "md:ml-auto flex-row-reverse"}`}>
             {Object.entries(artist.achievements).map(([key, value], index) => (
                 <motion.div
                     key={index}
@@ -18,7 +18,7 @@ const ArtistInfoCountUp = ({ artist }: { artist: ArtistParamsType }) => {
                     animate={{ y: "0%", opacity: 1 }}
                     transition={{ delay: 0.25 * (index + 0.5), duration: 0.5, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className={` |  | flex flex-col justify-center | border-2 border-blue-600`}
+                    className={` |  | flex flex-col justify-center | `}
                 >   
                     <span className={` | text-[1.375rem] xl:text-[1.75rem] leading-[160%] xl:leading-[140%] font-bold text-nftCustom-text ${spaceMono} |  | ${language("isEnglish") === "false" && "text-center"}`}>
                         <CountUp
