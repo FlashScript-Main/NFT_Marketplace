@@ -13,7 +13,7 @@ const ArtistInfo = ({ artist }: { artist: ArtistParamsType }) => {
     const language = useTranslations("language");
 
     return (
-        <section className={` |  |  | border-2 border-indigo-500`}>
+        <section className={` |  |  | border-b border-b-nftCustom-background_secondary `}>
             <div className={`w-full relative |  |  | `}>
                 <Image 
                     src={`/${artist.topImage}`}
@@ -26,7 +26,7 @@ const ArtistInfo = ({ artist }: { artist: ArtistParamsType }) => {
                 <div className={`w-full h-full absolute inset-0 z-10 | bg-gradient-to-b from-transparent to-nftCustom-cta to-[110%] |  | `} />
             </div>
 
-            <div className={`relative max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | border-2 border-yellow-400`}>
+            <div className={`relative max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>
                 <div className={`absolute inset-0 -top-[4.5rem] z-20 |  |  | `}>
                     <Image 
                         src={`/${artist.avatar}`}
@@ -63,12 +63,12 @@ const ArtistInfo = ({ artist }: { artist: ArtistParamsType }) => {
                     </p>
                 </div>
 
-                <div className={`relative z-30 |  |  | border-2 border-indigo-500`}>
+                <div className={`relative z-30 |  |  | `}>
                     <h5 className={`mb-[0.625rem] | text-nftCustom-c_l_text text-[1rem] xl:text-[1.375rem] leading-[140%] xl:leading-[160%] font-bold ${spaceMono} |  | ${language("isEnglish") === "false" && "text-end"}`}>
                         {language("isEnglish") === "true" ? "Links" : "لینک ها"}
                     </h5>
 
-                    <div className={`w-fit |  | flex items-center gap-[0.625rem] | ${language("isEnglish") === "false" && "ml-auto flex-row-reverse"} border-2 border-rose-500`}>
+                    <div className={`w-fit mb-[1.875rem] xl:mb-10 |  | flex items-center gap-[0.625rem] | ${language("isEnglish") === "false" && "ml-auto flex-row-reverse"}`}>
                         {ArtistInfoLinks.map((link, index) => (
                             <MotionA
                                 key={link.id}
