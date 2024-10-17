@@ -1,5 +1,5 @@
 
-const ArtistTabs = () => {
+const ArtistTabs = ({ artist }: { artist: ArtistParamsType }) => {
 
     return (
         <div>ArtistTabs</div>

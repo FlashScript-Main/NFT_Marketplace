@@ -53,3 +53,18 @@ type ArtistPagePropsType = {
         name: string 
     };
 }
+
+type ArtistParamsType = {
+    paramsName: string;
+    artistNameEn: string;
+    artistNameFa: string;
+    bioEn: string;
+    bioFa: string;
+    topImage: string;
+    avatar: string;
+    achievements: {
+        volume: number;
+        soldNFTs: number;
+        followers: number;
+    }
+}
