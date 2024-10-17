@@ -25,11 +25,20 @@ const FollowArtist = () => {
         })
     };
 
+    const handleUnFollow = () => {
+        setisFollowed(false);
+        
+        toast({
+            title: (language("isEnglish") === "true" ? "Successfully Unfollowed" : "با موفقیت لغو دنبال گردید"),
+            className: `bg-red-600 text-white border-4 border-red-900 ${language("isEnglish") === "false" && `${iranSans} flex items-center justify-end`}`,
+            duration: 4000
+        })
+    };
+
     return (
         <button 
-            onClick={handleFollow} 
-            disabled={isFollowed}
-            className={`max-md:w-full h-[3.75rem] md:px-6 | text-[1rem] leading-[140%] font-semibold ${isFollowed ? "bg-nftCustom-text disabled:cursor-not-allowed" : "bg-nftCustom-background hover:bg-nftCustom-text"} | flex justify-center items-center gap-3 | border-4 border-nftCustom-cta rounded-[20px] main-transition-color group ${language("isEnglish") === "false" && "flex-row-reverse"}`}
+            onClick={isFollowed ? handleUnFollow : handleFollow} 
+            className={`max-md:w-full h-[3.75rem] md:px-6 | text-[1rem] leading-[140%] font-semibold ${isFollowed ? "bg-nftCustom-text" : "bg-nftCustom-background hover:bg-nftCustom-text"} | flex justify-center items-center gap-3 | border-4 border-nftCustom-cta rounded-[20px] main-transition-color group ${language("isEnglish") === "false" && "flex-row-reverse"}`}
         >
             <span>
                 {

@@ -7,6 +7,7 @@ import { getMessages } from 'next-intl/server';
 import { Footer, Header } from "@/components";
 import { workSans } from "@/utils/fonts";
 import { Toaster } from "@/components/ui/toaster"
+// import FixHydrationFailure from "@/components/FixHydrationFailure";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -26,6 +27,7 @@ export default async function RootLayout({
     return (
         <html lang={locale} className={` |  |  | scroll-smooth overflow-x-hidden`}>
             <body className={`relative | bg-nftCustom-background ${workSans} |  | `}>
+                {/* <FixHydrationFailure> */}
                 <NextIntlClientProvider messages={messages}>
                     <ThemeProvider 
                         attribute="class"
@@ -44,6 +46,7 @@ export default async function RootLayout({
                         </Providers>
                     </ThemeProvider>
                 </NextIntlClientProvider>
+                {/* </FixHydrationFailure> */}
             </body>
         </html>
     );
