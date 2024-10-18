@@ -1,5 +1,5 @@
 
-const ArtistCollectionTab = () => {
+const ArtistCollectionTab = ({ artist }: { artist: ArtistParamsType }) => {
 
     return (
         <div>ArtistCollectionTab</div>

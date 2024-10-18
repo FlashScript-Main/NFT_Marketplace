@@ -10,7 +10,7 @@ const ArtistTabs = ({ artist }: { artist: ArtistParamsType }) => {
   const language = useTranslations("language");
 
     return (
-        <section className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto | bg-nftCustom-background_secondary |  | border-2 border-indigo-500`}>
+        <section className={`mt-2 max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto | bg-nftCustom-background_secondary |  | border-2 border-indigo-500`}>
             <Tabs 
                 aria-label="Options" 
                 items={artistTabsDetails}
@@ -18,46 +18,33 @@ const ArtistTabs = ({ artist }: { artist: ArtistParamsType }) => {
                 variant="underlined" 
                 classNames={{
                     cursor: "w-full bg-nftCustom-c_l_text -mb-[0.16rem]",
-                    tab: `h-12`,
+                    tab: `h-12 xl:h-16`,
                     tabContent: "group-data-[selected=true]:text-nftCustom-text text-nftCustom-c_l_text font-semibold text-[1rem] leading-[140%] xl:text-[1.375rem] main-transition-color",
                     tabList: `${language("isEnglish") === "false" && "flex-row-reverse"}`
                 }}
                 className={` | bg-nftCustom-background  |  | `}
-                // classNames={{
-                //     tabList: "gap-6 w-full relative rounded-none p-0 border-b border-divider",
-                //     cursor: "w-full bg-nftCustom-c_l_text",
-                //     tab: "max-w-fit px-0 h-12",
-                //     tabContent: "group-data-[selected=true]:text-[#06b6d4]",
-                    // base,
-                    // cursor,
-                    // panel,
-                    // tab,
-                    // tabContent,
-                    // tabList,
-                    // wrapper
             >
-            {(item) => (
-          <Tab 
-          key={item.id} 
-          title={
-              <div className={` |  | flex gap-4 items-center |  | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
-                <span className={` | text-[1rem] xl:text-[1.375rem] leading-[140%] font-semibold |  | `}>
-                    {language("isEnglish") === "true" ? item.titleEn : item.titleFa}
-                </span>
+                {(item) => (
+                  <Tab 
+                      key={item.id} 
+                      title={
+                          <div className={` |  | flex gap-4 items-center |  | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
+                            <span className={` | text-[1rem] xl:text-[1.375rem] leading-[140%] font-semibold |  | `}>
+                                {language("isEnglish") === "true" ? item.titleEn : item.titleFa}
+                            </span>
 
-                <span className={`max-md:hidden py-[0.3125rem] px-[0.625rem] | text-nftCustom-text text-[0.75rem] leading-[110%] font-normal ${spaceMono} group-data-[selected=true]:bg-nftCustom-c_l_text bg-nftCustom-background_secondary |  | rounded-full`}>
-                  {item.titleEn === "Created" && artist.createdCount}
-                  {item.titleEn === "Owned" && artist.ownedCount}
-                  {item.titleEn === "Collection" && artist.collectionCount}
-                </span>
-              </div>
-            }
-            
-          >
-              <item.content />
-          </Tab>
-        )}
-      </Tabs>
+                            <span className={`max-md:hidden py-[0.3125rem] px-[0.625rem] | text-nftCustom-text text-[0.75rem] leading-[110%] font-normal ${spaceMono} group-data-[selected=true]:bg-nftCustom-c_l_text bg-nftCustom-background_secondary |  | rounded-full`}>
+                              {item.titleEn === "Created" && artist.createdCount}
+                              {item.titleEn === "Owned" && artist.ownedCount}
+                              {item.titleEn === "Collection" && artist.collectionCount}
+                            </span>
+                          </div>
+                        }
+                  >
+                      <item.content artist={artist} />
+                  </Tab>
+                )}
+            </Tabs>
         </section>
     )
 

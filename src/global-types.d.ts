@@ -70,4 +70,15 @@ type ArtistParamsType = {
     createdCount: number;
     ownedCount: number;
     collectionCount: number;
+    createdTabInfo: ArtistCreatedTabType[];
+}
+
+type ArtistCreatedTabType = {
+    id: number;
+    href: string;
+    image: string;
+    titleEn: string;
+    titleFa: string;
+    price: string;
+    highestBid: string;
 }

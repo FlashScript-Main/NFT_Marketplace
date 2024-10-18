@@ -1,8 +1,8 @@
 
-const ArtistOwnedTab = () => {
+const ArtistOwnedTab = ({ artist }: { artist: ArtistParamsType }) => {
 
     return (
-        <div className={`w-full bg-nftCustom-background_secondary |  |  | `}>ArtistOwnedTab</div>
+        <div>ArtistOwnedTab</div>
     )
 
 }

@@ -12,9 +12,20 @@ export const artists = [
             soldNFTs: 50,
             followers: 3000
         },
-        createdCount: 302,
-        ownedCount: 67,
-        collectionCount: 4,
+        createdCount: 9,
+        ownedCount: 4,
+        collectionCount: 2,
+        createdTabInfo: [
+          {
+            id: 1,
+            href: "/",
+            image: "distant-galaxy.jpg",
+            titleEn: "Distant Galaxy",
+            titleFa: "کهکشان دوردست",
+            price: "1.63",
+            highestBid: "0.33",
+          }
+        ]
     },
 ]
 
