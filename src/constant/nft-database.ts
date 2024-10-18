@@ -12,6 +12,9 @@ export const artists = [
             soldNFTs: 50,
             followers: 3000
         },
+        createdCount: 302,
+        ownedCount: 67,
+        collectionCount: 4,
     },
 ]
 

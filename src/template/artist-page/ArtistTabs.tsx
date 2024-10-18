@@ -1,26 +1,28 @@
 "use client";
 
-import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
+import { artistTabsDetails } from "@/constant";
+import { spaceMono } from "@/utils/fonts";
+import { Tabs, Tab } from "@nextui-org/react";
+import { useTranslations } from "next-intl";
 
 const ArtistTabs = ({ artist }: { artist: ArtistParamsType }) => {
 
-    console.log(artist);
+  const language = useTranslations("language");
 
     return (
-        <section className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | border-2 border-indigo-500`}>
+        <section className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto | bg-nftCustom-background_secondary |  | border-2 border-indigo-500`}>
             <Tabs 
                 aria-label="Options" 
+                items={artistTabsDetails}
                 fullWidth 
                 variant="underlined" 
                 classNames={{
-                    cursor: " bg-nftCustom-c_l_text",
-                    tab: "h-12",
+                    cursor: "w-full bg-nftCustom-c_l_text -mb-[0.16rem]",
+                    tab: `h-12`,
                     tabContent: "group-data-[selected=true]:text-nftCustom-text text-nftCustom-c_l_text font-semibold text-[1rem] leading-[140%] xl:text-[1.375rem] main-transition-color",
+                    tabList: `${language("isEnglish") === "false" && "flex-row-reverse"}`
                 }}
-                className={` |   |  | `}
-                // aria-label="Options" 
-                // variant="underlined"
-                // fullWidth
+                className={` | bg-nftCustom-background  |  | `}
                 // classNames={{
                 //     tabList: "gap-6 w-full relative rounded-none p-0 border-b border-divider",
                 //     cursor: "w-full bg-nftCustom-c_l_text",
@@ -34,13 +36,49 @@ const ArtistTabs = ({ artist }: { artist: ArtistParamsType }) => {
                     // tabList,
                     // wrapper
             >
-        <Tab key="photos" title="Photos"
-            // title={
-            //   <div style={{ display: 'flex', alignItems: 'center' }}>
-            //     <Text>Created</Text>
-            //     <div style={circleStyle}>10</div>
-            //   </div>
-            // }
+            {(item) => (
+          <Tab 
+          key={item.id} 
+          title={
+              <div className={` |  | flex gap-4 items-center |  | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
+                <span className={` | text-[1rem] xl:text-[1.375rem] leading-[140%] font-semibold |  | `}>
+                    {language("isEnglish") === "true" ? item.titleEn : item.titleFa}
+                </span>
+
+                <span className={`max-md:hidden py-[0.3125rem] px-[0.625rem] | text-nftCustom-text text-[0.75rem] leading-[110%] font-normal ${spaceMono} group-data-[selected=true]:bg-nftCustom-c_l_text bg-nftCustom-background_secondary |  | rounded-full`}>
+                  {item.titleEn === "Created" && artist.createdCount}
+                  {item.titleEn === "Owned" && artist.ownedCount}
+                  {item.titleEn === "Collection" && artist.collectionCount}
+                </span>
+              </div>
+            }
+            
+          >
+              <item.content />
+          </Tab>
+        )}
+      </Tabs>
+        </section>
+    )
+
+}
+
+export default ArtistTabs
+
+/*
+
+*/
+
+
+/*
+<Tabs aria-label="Dynamic tabs" items={tabs}>
+        
+      </Tabs>
+*/
+
+/*
+<Tab key="photos" title="Photos"
+            
         >
           <div>
             Hello
@@ -60,10 +98,4 @@ const ArtistTabs = ({ artist }: { artist: ArtistParamsType }) => {
             </CardBody>
           </Card>  
         </Tab>
-      </Tabs>
-        </section>
-    )
-
-}
-
-export default ArtistTabs
+*/

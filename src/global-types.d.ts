@@ -67,4 +67,7 @@ type ArtistParamsType = {
         soldNFTs: number;
         followers: number;
     }
+    createdCount: number;
+    ownedCount: number;
+    collectionCount: number;
 }

@@ -1,4 +1,7 @@
 import { DiscordLogoSVG, InstagramLogoSVG, TwitterLogoSVG, YoutubeLogoSVG } from "@/interface"
+import ArtistCollectionTab from "@/template/artist-page/ArtistCollectionTab";
+import ArtistCreatedTab from "@/template/artist-page/ArtistCreatedTab";
+import ArtistOwnedTab from "@/template/artist-page/ArtistOwnedTab";
 
 export const homeInfo = [
     { key: "title", value: "Landing page", className: "text-nftCustom-text" },
@@ -410,5 +413,26 @@ export const ArtistInfoLinks = [
         id: 5,
         svgIcon: "InstagramLogoSVG",
         imageAlt: "Instagram",
+    },
+];
+
+export const artistTabsDetails = [
+    {
+        id: 1,
+        titleEn: "Created",
+        titleFa: "ایجاد شده",
+        content: ArtistCreatedTab
+    },
+    {
+        id: 2,
+        titleEn: "Owned",
+        titleFa: "مالک",
+        content: ArtistOwnedTab
+    },
+    {
+        id: 3,
+        titleEn: "Collection",
+        titleFa: "مجموعه",
+        content: ArtistCollectionTab
     },
 ];
