@@ -10,7 +10,7 @@ const ArtistCreatedTab = ({ artist }: { artist: ArtistParamsType }) => {
     const language = useTranslations("language");
 
     return (
-        <div className={`mt-[3.5rem] |  |  | border-2 border-rose-600`}>
+        <div className={`mt-[3.5rem] |  |  | `}>
             <DivToScroll className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[1.875rem] | `}>
                 {artist.createdTabInfo.map((card, index) => (
                     <MotionDiv
