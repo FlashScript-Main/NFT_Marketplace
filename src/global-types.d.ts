@@ -50,7 +50,8 @@ type UserState = {
 
 type ArtistPagePropsType = {
     params: { 
-        name: string 
+        name: string;
+        locale: string;
     };
 }
 

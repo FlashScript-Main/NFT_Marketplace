@@ -1,14 +1,16 @@
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
 import { artists } from "@/constant/nft-database";
 import ArtistInfo from "@/template/artist-page/ArtistInfo";
+import ArtistNotFound from "@/template/artist-page/ArtistNotFound";
 import ArtistTabs from "@/template/artist-page/ArtistTabs";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 
-const ArtistPage = ({ params: { name } }: ArtistPagePropsType) => {
+const ArtistPage = ({ params: { name, locale } }: ArtistPagePropsType) => {
 
     const language = useTranslations("language");
     
+    console.log(locale)
     // const hasArtistName = artists.map(item => item.paramsName).includes(name);
     const artist = artists.find(artist => artist.paramsName === name);
 
@@ -22,8 +24,10 @@ const ArtistPage = ({ params: { name } }: ArtistPagePropsType) => {
     } 
     else {
         return (
-            <div>NotFound</div>
-            // <ArtistNotFound />
+            <ArtistNotFound 
+              name={name} 
+              locale={locale} 
+            />
         )
     }
 
