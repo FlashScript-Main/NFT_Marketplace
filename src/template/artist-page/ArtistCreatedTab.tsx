@@ -25,7 +25,7 @@ const ArtistCreatedTab = ({ artist }: { artist: ArtistParamsType }) => {
                             href={`/${card.href}`}
                             // href={`/${locale}/${card.href}`}
                         >
-                            <div className={`overflow-hidden  |  |  | `}>
+                            <div className={`w-[19.6875rem] h-[14.875rem] md:w-[20.625rem] md:h-[18.4375rem] overflow-hidden |  |  | `}>
                                 <Image 
                                     src={`/${card.image}`}
                                     alt={`${card.titleEn} Image`}

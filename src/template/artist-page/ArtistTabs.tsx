@@ -10,7 +10,7 @@ const ArtistTabs = ({ artist }: { artist: ArtistParamsType }) => {
   const language = useTranslations("language");
 
     return (
-        <section className={`mt-2 max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto | bg-nftCustom-background_secondary |  | border-2 border-indigo-500`}>
+        <section className={`pb-[3.5rem] mt-2 max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto | bg-nftCustom-background_secondary |  | border-b-4 border-b-nftCustom-background`}>
             <Tabs 
                 aria-label="Options" 
                 items={artistTabsDetails}
