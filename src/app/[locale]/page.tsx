@@ -57,6 +57,11 @@ const Home = ({ locale }: { locale: string }) => {
     // viewport={{ once: true, margin: "-50px" }}
     // transition={{ staggerChildren: 0.02, delay: 0.2 * (index + 0.25), duration: 0.25, ease: "easeInOut" }}
     
+    // initial={{ x: language("isEnglish") === "true" ? "-10%" : "10%", opacity: 0 }}
+    // whileInView={{ x: "0%", opacity: 1 }}
+    // viewport={{ once: true, margin: "-200px" }}
+    // transition={{ delay: 0.5, duration: 0.5 }}
+
     return (
         <GlobalMotionMain className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <div className={`max-md:px-[1.875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>

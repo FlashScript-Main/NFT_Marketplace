@@ -6,6 +6,7 @@ import { iranSans } from "@/utils/fonts";
 import { CheckCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react"
+import { motion } from "framer-motion";
 
 const FollowArtist = () => {
 
@@ -36,8 +37,12 @@ const FollowArtist = () => {
     };
 
     return (
-        <button 
+        <motion.button 
             onClick={isFollowed ? handleUnFollow : handleFollow} 
+            initial={{ y: "10%", opacity: 0 }}
+            whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ staggerChildren: 0.02, delay: 0.75, duration: 0.25 }}
             className={`max-md:w-full h-[3.75rem] md:px-6 | text-[1rem] leading-[140%] font-semibold ${isFollowed ? "bg-nftCustom-text" : "bg-nftCustom-background hover:bg-nftCustom-text"} | flex justify-center items-center gap-3 | border-4 border-nftCustom-cta rounded-[20px] main-transition-color group ${language("isEnglish") === "false" && "flex-row-reverse"}`}
         >
             <span>
@@ -57,7 +62,7 @@ const FollowArtist = () => {
                     : language("isEnglish") === "true" ? "Follow" : "دنبال کنید"
                 }
             </span>
-        </button>
+        </motion.button>
     )
 
 }
