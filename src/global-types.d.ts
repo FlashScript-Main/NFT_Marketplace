@@ -104,3 +104,23 @@ type ArtistCollectionTabType = {
     titleEn: string;
     titleFa: string;
 }
+
+type NFTPagePropsType = {
+    params: { 
+        name: string;
+        locale: string;
+    };
+}
+
+type NFTParamsType = {
+    paramsName: string;
+    artistNameEn: string;
+    artistNameFa: string;
+    releaseDate: string;
+    createdArtistEn: string;
+    createdArtistFa: string;
+    artistHref: string;
+    descriptionFa: string;    
+    topImage: string;
+    artistImage: string;
+}

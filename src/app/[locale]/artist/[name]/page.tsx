@@ -10,8 +10,6 @@ const ArtistPage = ({ params: { name, locale } }: ArtistPagePropsType) => {
 
     const language = useTranslations("language");
     
-    console.log(locale)
-    // const hasArtistName = artists.map(item => item.paramsName).includes(name);
     const artist = artists.find(artist => artist.paramsName === name);
 
     if (artist) {
