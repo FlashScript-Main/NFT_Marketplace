@@ -53,7 +53,7 @@ const CountDownTimer = ({ bid }: { bid?: boolean }) => {
     const language = useTranslations("language");
 
     return (
-        <div className={`p-[1.875rem] md:w-[18.4375rem] | bg-nftCustom-countdown_bg/50 |  | rounded-[20px] ${bid && "max-md:my-5 md:absolute md:inset-0 md:ml-auto md:h-[14.8125rem] md:mt-10"}`}>
+        <div className={`p-[1.875rem] md:w-[18.4375rem] | bg-nftCustom-countdown_bg/50 |  | rounded-[20px] ${bid && `max-md:my-5 md:absolute md:inset-0 md:mt-10 ${language("isEnglish") === "true" ? "md:ml-auto md:h-[14.8125rem]" : "md:mr-auto md:h-[15.3rem]"}`}`}>
             <h6 className={`mb-1 | text-nftCustom-text |  | ${language("isEnglish") === "true" ? `${spaceMono} text-xs font-normal` : `${iranSans} text-sm font-bold text-end`}`}>
                 {language("isEnglish") === "true" ? "Auction ends in:" : ":پایان تخفیفات جشنواره"}
             </h6>

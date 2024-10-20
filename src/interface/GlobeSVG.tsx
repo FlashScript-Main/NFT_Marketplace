@@ -5,7 +5,7 @@ type SvgComponentProps = SVGProps<SVGSVGElement> & { place?: string };
 
 const SvgComponent = (props: SvgComponentProps) => (
   <svg
-    className={`globe-svg ${props.place === "artist-page" && "globe-svg-artist-page"}`}
+    className={`globe-svg ${props.place === "artist-page" && "globe-svg-artist-page"} ${props.place === "nft-page" && "globe-svg-nft-page"}`}
     // width={32}
     // height={32}
     viewBox="0 0 32 32"

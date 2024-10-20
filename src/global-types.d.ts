@@ -120,6 +120,7 @@ type NFTParamsType = {
     createdArtistEn: string;
     createdArtistFa: string;
     artistHref: string;
+    descriptionEn: string;    
     descriptionFa: string;    
     topImage: string;
     artistImage: string;

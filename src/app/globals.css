@@ -188,6 +188,10 @@
   @apply stroke-nftCustom-c_l_text fill-nftCustom-background w-6 h-6 xl:w-8 xl:h-8 hover:stroke-nftCustom-cta;
 }
 
+.globe-svg-nft-page {
+  @apply fill-nftCustom-c_l_text w-6 h-6 xl:w-8 xl:h-8 group-hover:fill-nftCustom-cta;
+}
+
 .trend-up-svg {
   @apply fill-nftCustom-text;
 }

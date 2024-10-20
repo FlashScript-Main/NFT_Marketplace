@@ -3674,7 +3674,7 @@ export const nfts = [
     releaseDate: "Sep 30, 2022",
     createdArtistEn: "Orbitian",
     createdArtistFa: "مداری",
-    artistHref: "/artist/orbitians",
+    artistHref: "artist/orbitians",
     descriptionEn: "The Orbitians is a collection of 10,000 unique NFTs on the Ethereum blockchain, There are all sorts of beings in the NFT Universe. The most advanced and friendly of the bunch are Orbitians. These Orbitians are a peaceful race, but they have been at war with a group of invaders for many generations. The invaders are called Upside-Downs, because of their inverted bodies that live on the ground, yet do not know any other way to be. Upside-Downs believe that they will be able to win this war if they could only get an eye into Orbitian territory, so they've taken to make human beings their target.",
     descriptionFa: "مدارگردها مجموعه ای از 10000 توکن منحصر به فرد در بلاک چین اتریوم است، همه نوع موجودی در جهان توکن وجود دارد. پیشرفته ترین و دوستانه ترین آنها مدارها هستند. آنها در یک ماشین فضایی فلزی در بالای آسمان زندگی می کنند و فقط یک پا روی زمین دارند. این مدار ها یک نژاد صلح آمیز هستند، اما آنها برای نسل های زیادی با گروهی از مهاجمان در جنگ بوده اند. مهاجمان وارونه نامیده می شوند، زیرا بدن های وارونه آنها روی زمین زندگی می کنند، اما راه دیگری برای بودن نمی دانند. وارونه ها بر این باورند که در صورتی می توانند در این جنگ پیروز شوند که فقط بتوانند چشمی به قلمرو مداری بیندازند، بنابراین تلاش کرده اند تا انسان ها را هدف خود قرار دهند",
     topImage: "sunset-dimension-two.jpg",

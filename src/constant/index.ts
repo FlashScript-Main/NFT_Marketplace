@@ -436,3 +436,26 @@ export const artistTabsDetails = [
         content: ArtistCollectionTab
     },
 ];
+
+export const nftInfoTags = [
+    {
+        id: 1,
+        textEn: "animation",
+        textFa: "انیمیشن",
+    },
+    {
+        id: 2,
+        textEn: "illustration",
+        textFa: "تصویرسازی",
+    },
+    {
+        id: 3,
+        textEn: "moon",
+        textFa: "ماه",
+    },
+    {
+        id: 4,
+        textEn: "spaceship",
+        textFa: "سفینه فضایی",
+    },
+];
