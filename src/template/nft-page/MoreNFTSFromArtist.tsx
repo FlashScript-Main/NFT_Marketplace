@@ -1,4 +1,5 @@
-import { MotionDiv, MotionH5, MotionP, MotionSpan } from "@/animations/motion-provider";
+import { MotionDiv, MotionH2, MotionH5, MotionP, MotionSpan } from "@/animations/motion-provider";
+import { charVariants } from "@/animations/motion-variants";
 import { DivToScroll, SectionToScroll } from "@/animations/ScrollAnimations";
 import { CustomButton } from "@/components";
 import { spaceMono } from "@/utils/fonts";
@@ -13,11 +14,25 @@ const MoreNFTSFromArtist = ({ nft, locale }: { nft: NFTParamsType; locale: strin
 
     return (
         <SectionToScroll>
-            <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto py-10 xl:py-20 |  |  | border-2 border-rose-600`}>
+            <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto py-10 xl:py-20 |  |  | `}>
                 <div className={`max-md:mb-[1.875rem] md:mb-[3.75rem] |  | md:flex md:items-center md:justify-between | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
-                    <h2 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] leading-[140%] xl:leading-[120%] font-semibold |  | `}>
-                        {translateMoreNFTs("title")}
-                    </h2>
+                    <MotionH2 
+                        initial="hidden"
+                        whileInView="reveal"
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ staggerChildren: 0.02, delay: 1.5 }} 
+                        className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] leading-[140%] xl:leading-[120%] font-semibold |  | ${language("isEnglish") === "false" && "text-end"}`}
+                    >
+                        {translateMoreNFTs("title").split("").map(char => (
+                            <MotionSpan
+                                key={char}
+                                transition={{ duration: 1 }}
+                                variants={charVariants}
+                            >
+                                {char}
+                            </MotionSpan>
+                        ))}
+                    </MotionH2>
 
                     <MotionDiv 
                         initial={{ x: "20%", opacity: 0, }}
