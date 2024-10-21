@@ -124,4 +124,15 @@ type NFTParamsType = {
     descriptionFa: string;    
     topImage: string;
     artistImage: string;
+    MoreNFTsFromArtist: MoreNFTsFromArtistType[];
+}
+
+type MoreNFTsFromArtistType = {
+    id: number;
+    href: string;
+    image: string;
+    titleEn: string;
+    titleFa: string;
+    price: string;
+    highestBid: string;
 }

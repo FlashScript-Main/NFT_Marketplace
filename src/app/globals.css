@@ -192,6 +192,10 @@
   @apply fill-nftCustom-c_l_text w-6 h-6 xl:w-8 xl:h-8 group-hover:fill-nftCustom-cta;
 }
 
+.arrow-right-svg-nft-page {
+  @apply fill-nftCustom-cta w-5 h-5 group-hover:fill-nftCustom-cta group-hover:translate-x-2 transition-all;
+}
+
 .trend-up-svg {
   @apply fill-nftCustom-text;
 }
