@@ -208,6 +208,9 @@
   @apply fill-nftCustom-cta w-5 h-5 group-hover:fill-nftCustom-cta;
 }
 
+.plus-svg-marketplace-page {
+  @apply fill-nftCustom-cta w-5 h-5 group-hover:fill-nftCustom-cta group-hover:rotate-180 transition-all;
+}
 .magnifying-glass-svg {
   @apply fill-nftCustom-text;
 }

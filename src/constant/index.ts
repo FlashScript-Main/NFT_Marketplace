@@ -2,6 +2,9 @@ import { DiscordLogoSVG, InstagramLogoSVG, TwitterLogoSVG, YoutubeLogoSVG } from
 import ArtistCollectionTab from "@/template/artist-page/ArtistCollectionTab";
 import ArtistCreatedTab from "@/template/artist-page/ArtistCreatedTab";
 import ArtistOwnedTab from "@/template/artist-page/ArtistOwnedTab";
+import MarketplaceCollectionsTab from "@/template/marketplace-page/MarketplaceCollectionsTab";
+import MarketplaceNFTsTab from "@/template/marketplace-page/MarketplaceNFTsTab";
+import MarketplaceSearchTab from "@/template/marketplace-page/MarketplaceSearchTab";
 
 export const homeInfo = [
     { key: "title", value: "Landing page", className: "text-nftCustom-text" },
@@ -457,5 +460,26 @@ export const nftInfoTags = [
         id: 4,
         textEn: "spaceship",
         textFa: "سفینه فضایی",
+    },
+];
+
+export const marketplaceTabsDetails = [
+    {
+        id: 1,
+        titleEn: "NFTs",
+        titleFa: "توکن ها",
+        content: MarketplaceNFTsTab
+    },
+    {
+        id: 2,
+        titleEn: "Collections",
+        titleFa: "مجموعه ها",
+        content: MarketplaceCollectionsTab
+    },
+    {
+        id: 3,
+        titleEn: "Search",
+        titleFa: "جستجو",
+        content: MarketplaceSearchTab
     },
 ];

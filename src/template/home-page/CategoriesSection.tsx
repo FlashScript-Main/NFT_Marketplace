@@ -44,7 +44,7 @@ const CategoriesSection = ({ locale }: { locale: string }) => {
                             href={`/${locale}/${category.href}`}
                             className={`overflow-hidden | flex flex-col |  | rounded-[20px] group`}
                         >
-                            <div className={`relative overflow-hidden inline-block h-[142px] w-[147.5] xl:h-[240px] xl:w-[240px]  |  |  | `}>
+                            <div className={`relative overflow-hidden inline-block h-[142px] w-[147.5] xl:h-[240px] xl:w-full  |  |  | `}>
                                 <Image 
                                     src={`/${category.blurImage}`}
                                     alt={`${category.titleEn} Category`}
