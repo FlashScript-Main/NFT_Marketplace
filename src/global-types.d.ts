@@ -136,3 +136,9 @@ type MoreNFTsFromArtistType = {
     price: string;
     highestBid: string;
 }
+
+type MarketplacePagePropsType = {
+    params: { 
+        locale: string;
+    };
+}
