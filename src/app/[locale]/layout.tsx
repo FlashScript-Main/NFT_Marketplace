@@ -7,6 +7,7 @@ import { getMessages } from 'next-intl/server';
 import { Footer, Header } from "@/components";
 import { workSans } from "@/utils/fonts";
 import { Toaster } from "@/components/ui/toaster"
+import TanstackProvider from "@/providers/TanstackProvider";
 // import FixHydrationFailure from "@/components/FixHydrationFailure";
 
 export const metadata: Metadata = {
@@ -37,12 +38,14 @@ export default async function RootLayout({
                         themes={["nftDefault", "red", "green", "blue"]}
                     >
                         <Providers>
-                            <div>
-                                <Header locale={locale} />
-                                {children}
-                                <Footer locale={locale} />
-                                <Toaster />
-                            </div>
+                            <TanstackProvider>
+                                <div>
+                                    <Header locale={locale} />
+                                    {children}
+                                    <Footer locale={locale} />
+                                    <Toaster />
+                                </div>
+                            </TanstackProvider>
                         </Providers>
                     </ThemeProvider>
                 </NextIntlClientProvider>

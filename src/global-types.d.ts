@@ -142,3 +142,11 @@ type MarketplacePagePropsType = {
         locale: string;
     };
 }
+
+type FetchedNFTsDataType = {
+    collection: string;
+    image_url: string;
+    display_image_url: string;
+    metadata_url: string;
+    opensea_url: string;
+}
