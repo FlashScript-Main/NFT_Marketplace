@@ -3869,7 +3869,7 @@ export const marketplaceNFTsTabInfo = [
     {
         id: 12,
         href: "/",
-        image: "icecream-ape.jpg",
+        image: "colorfull-dog-three.jpg",
         titleEn: "Colorful Dog 0344",
         titleFa: "سگ رنگارنگ 0344",
         artistName: "PuppyPower",
