@@ -1,11 +1,11 @@
 "use client";
 
-import { MotionDiv, MotionH5, MotionP, MotionSpan } from "@/animations/motion-provider";
+import { MotionDiv } from "@/animations/motion-provider";
 import { DivToScroll } from "@/animations/ScrollAnimations";
 import { users } from "@/constant";
 import useNFTCollections from "@/hooks/useNFTCollections";
 import { spaceMono } from "@/utils/fonts";
-import { Autocomplete, AutocompleteItem, Avatar, Button } from "@nextui-org/react";
+import { Autocomplete, AutocompleteItem, Avatar, Button, CircularProgress } from "@nextui-org/react";
 import { SearchIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -25,8 +25,9 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
         }
     }, []);
 
-    const { isLoading } = useNFTCollections(selectedKey, setFetchedNFTs);
+    const { isLoading, isFetched } = useNFTCollections(selectedKey, setFetchedNFTs);
 
+    const x = true;
     console.log(fetchedNFTs);
 
     return (
@@ -116,115 +117,80 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
 
                 <p className="mt-1 text-small text-default-500">Current selected animal: {selectedKey}</p>
             </div>
-
-            <DivToScroll className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[1.875rem] | border-2 border-r-rose-500`}>
-                {fetchedNFTs && fetchedNFTs.map((card, index) => 
-                    card.image_url && (
-                        <MotionDiv
-                            initial={{ y: "20%", opacity: 0, }}
-                            whileInView={{ y: "0%", opacity: 1, }}
-                            transition={{ delay: 0.025 * (index + 0.025), duration: 0.5, ease: "easeInOut", }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            key={card.id}
-                            className={`overflow-hidden |  |  | rounded-[20px] group `}
-                        >
-                            <a 
-                                // href={`/${locale}/${card.href}`}
+            
+            {x ? (
+                <div className={`w-full | text-nftCustom-text | grid place-content-center | `}>
+                    <CircularProgress 
+                        classNames={{
+                            svg: "w-12 h-12 drop-shadow-md",
+                            indicator: "stroke-nftCustom-text",
+                            track: "stroke-nftCustom-cta",
+                        }}
+                    />
+                </div>
+                ) : (
+                <>
+                <DivToScroll className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[1.875rem] | `}>
+                    {fetchedNFTs && isFetched && fetchedNFTs.map((card, index) => 
+                        card.image_url && (
+                            <MotionDiv
+                                initial={{ y: "20%", opacity: 0, }}
+                                whileInView={{ y: "0%", opacity: 1, }}
+                                transition={{ delay: 0.025 * (index + 0.025), duration: 0.5, ease: "easeInOut", }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                key={index}
+                                className={`overflow-hidden |  |  | rounded-[20px] group transition-all`}
                             >
-                                <div className={`w-[19.6875rem] h-[14.875rem] md:w-[20.625rem] md:h-[18.4375rem] overflow-hidden |  |  | `}>
-                                    <Image 
-                                        src={`/${card.image}`}
-                                        alt={`${card.titleEn} Image`}
-                                        width={330}
-                                        height={295}
-                                        className={`max-md:w-[19.6875rem] max-md:h-[14.875rem] md:w-full object-cover |  |  | group-hover:scale-110 duration-500 transition-transform`}
-                                    />
-                                </div>
-
-                                <div className={`px-5 pt-5 pb-6 | bg-nftCustom-background | flex flex-col gap-[1.5625rem] | `}>
-                                    <div>
-                                        <MotionH5 
-                                            initial={{ x: "20%", opacity: 0 }}
-                                            whileInView={{ x: "0%", opacity: 1 }}
-                                            viewport={{ once: true, margin: "-50px" }}
-                                            transition={{ staggerChildren: 0.02, delay: 0.025 * (index + 0.05), duration: 0.5 }}
-                                            className={`mb-[0.3125rem] | text-nftCustom-text group-hover:text-nftCustom-cta text-[1.375rem] font-semibold capitalize |  | main-transition-color ${language("isEnglish") === "false" && "text-end"}`}
-                                        >
-                                            {language("isEnglish") === "true" ? card.titleEn : card.titleFa}
-                                        </MotionH5>
-
-                                        <MotionDiv
-                                            initial={{ x: "-20%", opacity: 0 }}
-                                            whileInView={{ x: "0%", opacity: 1 }}
-                                            viewport={{ once: true, margin: "-50px" }}
-                                            transition={{ staggerChildren: 0.02, delay: 0.025 * (index + 0.075), duration: 0.5 }} 
-                                            className={` |  | flex items-center gap-3 | ${language("isEnglish") === "true" ? "justify-start" : "justify-end"}`}
-                                        >
-                                            <Image 
-                                                src={`/${card.artistAvatar}`}
-                                                alt={`${card.artistName} Avatar`}
-                                                width={300}
-                                                height={300}
-                                                className={`w-6 h-6 object-cover rounded-full |  |  | `}
-                                            />
-
-                                            <span className={` | text-nftCustom-text text-base font-normal ${spaceMono} |  | `}>
-                                                {card.artistName}
-                                            </span>
-                                        </MotionDiv>
+                                <a 
+                                    href={`${card.opensea_url}`}
+                                    target="_blank"
+                                >
+                                    <div className={`w-[19.6875rem] h-[14.875rem] md:w-[20.625rem] md:h-[18.4375rem] overflow-hidden |  |  | `}>
+                                        <Image 
+                                            src={`${card.image_url}`}
+                                            alt={`${card.metadata_url} Image`}
+                                            width={330}
+                                            height={295}
+                                            className={`w-[19.6875rem] h-[14.875rem] md:w-full md:h-auto object-cover |  |  | group-hover:scale-110 duration-500 transition-transform`}
+                                        />
                                     </div>
 
-                                    <div className={` |  | flex flex-col gap-2 md:gap-[0.4rem] | `}>
-                                        <div className={` |  | flex justify-between items-center | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
-                                            <MotionP
+                                    <div className={`w-full h-[5.75rem] relative | bg-nftCustom-background | flex flex-col justify-center items-center gap-[1.5625rem] | `}>
+                                        <div className={` |  |  | group-hover:opacity-0 opacity-100 transition-all`}>
+                                            <MotionDiv
                                                 initial={{ x: "-20%", opacity: 0 }}
                                                 whileInView={{ x: "0%", opacity: 1 }}
                                                 viewport={{ once: true, margin: "-50px" }}
-                                                transition={{ staggerChildren: 0.02, delay: 0.01 * (index + 0.025), duration: 0.5, ease: "easeIn" }} 
-                                                className={` | text-nftCustom-c_l_text text-xs font-normal ${spaceMono} |  | `}
+                                                transition={{ staggerChildren: 0.02, delay: 0.025 * (index + 0.075), duration: 0.5 }} 
+                                                className={` |  | flex items-center justify-center gap-3 | ${language("isEnglish") === "true" ? "justify-start" : "justify-end"}`}
                                             >
-                                                {language("isEnglish") === "true" ? "Price" : "قیمت"}
-                                            </MotionP>
+                                                <Image 
+                                                    src={`/${card.collection}.png`}
+                                                    alt={`${card.collection} Avatar`}
+                                                    width={300}
+                                                    height={300}
+                                                    className={`w-14 h-14 object-cover rounded-full |  |  | `}
+                                                />
 
-                                            <MotionP 
-                                                initial={{ x: "-20%", opacity: 0 }}
-                                                whileInView={{ x: "0%", opacity: 1 }}
-                                                viewport={{ once: true, margin: "-50px" }}
-                                                transition={{ staggerChildren: 0.02, delay: 0.01 * (index + 0.025), duration: 0.5, ease: "easeIn" }} 
-                                                className={` | text-nftCustom-c_l_text text-xs font-normal ${spaceMono} |  | `}
-                                            >
-                                                {language("isEnglish") === "true" ? "Highest Bid" : "بالاترین پیشنهاد"}
-                                            </MotionP>
+                                                <span className={` | text-nftCustom-text text-lg font-normal ${spaceMono} |  | `}>
+                                                    {card.collection}
+                                                </span>
+                                            </MotionDiv>
                                         </div>
 
-                                        <div className={` |  | flex justify-between items-center | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
-                                            <MotionSpan 
-                                                initial={{ y: "20%", opacity: 0 }}
-                                                whileInView={{ y: "0%", opacity: 1 }}
-                                                viewport={{ once: true, margin: "-50px" }}
-                                                transition={{ staggerChildren: 0.02, delay: 0.01 * (index + 0.025), duration: 0.5, ease: "easeInOut" }} 
-                                                className={` | text-nftCustom-text text-xs md:text-base font-normal ${spaceMono} |  | `}
-                                            >
-                                                {card.price} ETH
-                                            </MotionSpan>
-
-                                            <MotionSpan 
-                                                initial={{ y: "20%", opacity: 0 }}
-                                                whileInView={{ y: "0%", opacity: 1 }}
-                                                viewport={{ once: true, margin: "-50px" }}
-                                                transition={{ staggerChildren: 0.02, delay: 0.01 * (index + 0.025), duration: 0.5, ease: "easeInOut" }} 
-                                                className={` | text-nftCustom-text text-xs md:text-base font-normal ${spaceMono} |  | `}
-                                            >
-                                                {card.highestBid} wETH
-                                            </MotionSpan>
+                                        <div className={`absolute inset-0 w-full h-full group-hover:opacity-100 opacity-0 transition-all |  | grid place-content-center | `}>
+                                            <button className={`py-2 px-4 | bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text hover:text-nftCustom-cta text-base font-normal | flex items-center gap-2 | rounded-[20px] border-4 border-nftCustom-cta`}>
+                                                {language("isEnglish") === "true" ? "Visit NFT" : "دیدن توکن"}
+                                            </button>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </MotionDiv>
-                    )
-                )}
-            </DivToScroll>
+                                </a>
+                            </MotionDiv>
+                        )
+                    )}
+                </DivToScroll>
+                </>
+            )}
         </div>
     )
 

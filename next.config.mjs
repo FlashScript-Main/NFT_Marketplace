@@ -11,6 +11,9 @@ const nextConfig = {
     // typescript: {
     //     ignoreBuildErrors: true,
     // },
+    images: {
+        domains: ["ipfs.io"]
+    }
 };
 
 export default withNextIntl(nextConfig);

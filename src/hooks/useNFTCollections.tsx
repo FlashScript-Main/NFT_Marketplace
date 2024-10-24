@@ -10,7 +10,7 @@ const useNFTCollections = (selectedKey: string | number | bigint | null, setFetc
 
     const options = {
         method: 'GET',
-        url: `https://opensea15.p.rapidapi.com/api/v2/collection/${selectedKey}/nfts`,
+        url: `https://opensea15.p.rapidapi.com/api/v2/collection/boredapeyachtclub/nfts`,
         params: { 
             limit: '20' 
         },
@@ -39,7 +39,8 @@ const useNFTCollections = (selectedKey: string | number | bigint | null, setFetc
       
             return nfts;
         },
-        enabled: shouldFetch,
+        // enabled: shouldFetch,
+        enabled: false,
         select: (data) => {
             return data.map((nft: FetchedNFTsDataType) => ({
                 collection: nft.collection,
