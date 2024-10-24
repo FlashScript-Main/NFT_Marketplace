@@ -2,7 +2,7 @@
 
 import { MotionDiv } from "@/animations/motion-provider";
 import { DivToScroll } from "@/animations/ScrollAnimations";
-import { users } from "@/constant";
+import { topCollectionUsers } from "@/constant";
 import useNFTCollections from "@/hooks/useNFTCollections";
 import { spaceMono } from "@/utils/fonts";
 import { Autocomplete, AutocompleteItem, Avatar, Button, CircularProgress } from "@nextui-org/react";
@@ -27,33 +27,28 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
 
     const { isLoading, isFetched } = useNFTCollections(selectedKey, setFetchedNFTs);
 
-    const x = true;
-    console.log(fetchedNFTs);
-
     return (
-        <div className={`mt-[3.5rem] |  |  | border-2 border-indigo-500`}>
-            <div className={` |  |  | border-2 border-yellow-500`}>
+        <div className={`mt-[3.5rem] |  |  | `}>
+            <div>
                 <Autocomplete
-                    placeholder="Search Top Collections"
+                    placeholder={`${language("isEnglish") === "true" ? "Search Top Collections" : "مجموعه های برتر را جستجو کنید"}`}
                     isDisabled={isLoading}
                     radius="lg"
                     variant="faded"
-                    startContent={<SearchIcon className="text-rose-400" strokeWidth={2.5} size={20} />}
+                    startContent={<SearchIcon className={`text-nftCustom-cta ${language("isEnglish") === "false" && "max-md:hidden md:absolute md:right-3 xl:right-3"}`} strokeWidth={2.5} size={20} />}
                     scrollShadowProps={{ isEnabled: false }}
                     onSelectionChange={onSelectionChange}
-                    // listboxProps={{
-                    //     emptyContent: 'Your own empty content text.'
-                    // }}
                     classNames={{
-                        base: "w-[20rem] mx-auto",
+                        base: "w-full mx-auto",
                         listboxWrapper: "max-h-[320px]",
-                        selectorButton: "text-default-500"
+                        selectorButton: `text-nftCustom-cta ${language("isEnglish") === "false" && "absolute -left-1"}`,
+                        clearButton: `${language("isEnglish") === "false" && "absolute left-6"}`,
                     }}
-                    defaultItems={users}
+                    defaultItems={topCollectionUsers}
                     inputProps={{
                         classNames: {
-                            input: "ml-1",
-                            inputWrapper: "h-[48px]",
+                            input: `text-base xl:text-lg text-nftCustom-background ${language("isEnglish") === "true" ? "ml-1" : "text-end right-1 md:right-8 xl:right-10 absolute"}`,
+                            inputWrapper: "h-[3rem] md:h-[3.5rem] bg-nftCustom-text text-nftCustom-cta",
                         },
                     }}
                     listboxProps={{
@@ -61,14 +56,13 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                         itemClasses: {
                             base: [
                                 "rounded-medium",
-                                "text-default-500",
-                                "transition-opacity",
-                                "data-[hover=true]:text-foreground",
-                                "dark:data-[hover=true]:bg-default-50",
-                                "data-[pressed=true]:opacity-70",
-                                "data-[hover=true]:bg-default-200",
-                                "data-[selectable=true]:focus:bg-default-100",
-                                "data-[focus-visible=true]:ring-default-500",
+                                "text-nftCustom-background text-xl font-semibold",
+                                // "transition-opacity",
+                                "data-[hover=true]:text-nftCustom-text",
+                                "data-[hover=true]:bg-nftCustom-cta",
+                                // "data-[pressed=true]:opacity-70",
+                                // "data-[selectable=true]:focus:bg-default-100",
+                                // "data-[focus-visible=true]:ring-default-500",
                             ],
                         },
                     }}
@@ -77,48 +71,47 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                         offset: 10,
                         classNames: {
                             base: "rounded-large",
-                            content: "p-1 border-small border-default-100 bg-background border-2 border-rose-500",
+                            content: "p-1 bg-nftCustom-text border-2 border-nftCustom-cta",
                         },
                     }}
-                    className="max-w-xs"
+                    className="w-full md:w-10/12 md:mx-auto md:grid xl:w-8/12 hover:border-nftCustom-cta"
                 >
                     {(item) => (
                         <AutocompleteItem 
                             key={item.value} 
                             textValue={item.name}
+                            className={` |  |  | group `}
                         >
-                        <div className="flex justify-between items-center">
+                        <div className={` |  | flex justify-between items-center | `}>
                             <div className="flex gap-2 items-center">
                                 <Avatar 
                                     alt={item.name} 
-                                    className="flex-shrink-0" 
-                                    size="sm" 
-                                    src={item.avatar} 
+                                    className="flex-shrink-0 border-2 border-nftCustom-cta group-hover:border-nftCustom-text" 
+                                    size="md" 
+                                    src={`/${item.avatar}`} 
                                 />
 
                                 <div className="flex flex-col">
-                                    <span className="text-small">{item.name}</span>
-                                    <span className="text-tiny text-default-400">{item.team}</span>
+                                    <span className={` |  line-clamp-1 |  | ${language("isEnglish") === "true" ? "text-sm md:text-base font-semibold" : "text-base font-semibold"}`}>
+                                        {item.name}
+                                    </span>
+
+                                    <span className={` |  ${spaceMono} |  | ${language("isEnglish") === "true" ? "text-xs md:text-sm font-normal" : "text-xs font-light"}`}>
+                                        {language("isEnglish") === "true" ? `Sold Volume: ${item.volume} ETH` : `${item.volume} ETH :توکن فروخته شده`}
+                                    </span>
                                 </div>
                             </div>
 
-                            <Button
-                                className="border-small mr-0.5 font-medium shadow-small"
-                                radius="full"
-                                size="sm"
-                                variant="bordered"
-                            >
-                                Add
-                            </Button>
+                            <button className={`max-md:hidden px-4 py-2 | bg-nftCustom-cta group-hover:bg-nftCustom-text text-nftCustom-text group-hover:text-nftCustom-cta |  | rounded-full mr-0.5 font-medium shadow-small`}>
+                                {language("isEnglish") === "true" ? "Search" : "جستجو"}
+                            </button>
                         </div>
                         </AutocompleteItem>
                     )}
                 </Autocomplete>
-
-                <p className="mt-1 text-small text-default-500">Current selected animal: {selectedKey}</p>
             </div>
             
-            {x ? (
+            {isLoading ? (
                 <div className={`w-full | text-nftCustom-text | grid place-content-center | `}>
                     <CircularProgress 
                         classNames={{
@@ -130,7 +123,7 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                 </div>
                 ) : (
                 <>
-                <DivToScroll className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[1.875rem] | `}>
+                <DivToScroll className={`mt-4 md:mt-8 xl:mt-10 |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[1.875rem] | `}>
                     {fetchedNFTs && isFetched && fetchedNFTs.map((card, index) => 
                         card.image_url && (
                             <MotionDiv
@@ -169,11 +162,11 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                                                     alt={`${card.collection} Avatar`}
                                                     width={300}
                                                     height={300}
-                                                    className={`w-14 h-14 object-cover rounded-full |  |  | `}
+                                                    className={`w-10 h-10 xl:w-14 xl:h-14 object-cover rounded-full |  |  | `}
                                                 />
 
-                                                <span className={` | text-nftCustom-text text-lg font-normal ${spaceMono} |  | `}>
-                                                    {card.collection}
+                                                <span className={` | text-nftCustom-text text-base xl:text-lg font-normal ${spaceMono} |  | `}>
+                                                    {(topCollectionUsers.find(user => user.value === selectedKey))?.name}
                                                 </span>
                                             </MotionDiv>
                                         </div>

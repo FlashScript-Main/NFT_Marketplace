@@ -12,7 +12,7 @@ const nextConfig = {
     //     ignoreBuildErrors: true,
     // },
     images: {
-        domains: ["ipfs.io"]
+        domains: ["ipfs.io", "images.wrappedpunks.com", "clonex-assets.rtfkt.com"]
     }
 };
 
