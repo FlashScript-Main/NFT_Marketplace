@@ -4,21 +4,22 @@ import { SectionToScroll } from "@/animations/ScrollAnimations";
 import { spaceMono } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import CategoryInfoCountUp from "./CategoryInfoCountUp";
 
-const CategoryInfo = ({ category, locale }: { category: CategoryParamsType, locale: string }) => {
+const CategoryInfo = ({ category }: { category: CategoryParamsType }) => {
 
     const language = useTranslations("language");
 
     return (
         <SectionToScroll className={` |  |  | border-b border-b-nftCustom-background_secondary `}>
             <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>
-                <div className={` |  | flex flex-col xl:flex-row-reverse xl:justify-between xl:items-center | border-2 border-indigo-700`}>
+                <div className={` |  | flex flex-col xl:flex-row-reverse xl:justify-between xl:items-center | `}>
                     <MotionDiv 
                         initial={{ x: language("isEnglish") === "true" ? "-10%" : "10%", opacity: 0 }}
                         whileInView={{ x: "0%", opacity: 1 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: 0.5, duration: 0.5 }}
-                        className={`mb-4 md:mb-6 mt-2 md:mt-3 xl:mt-5 |  |  | ${language("isEnglish") === "false" && "xl:order-last"} border-2 border-rose-700`}
+                        className={`mb-4 md:mb-6 mt-2 md:mt-3 xl:mt-5 |  |  | ${language("isEnglish") === "false" && "xl:order-last"}`}
                     >
                         <Image 
                             src={`/${category.topImage}`}
@@ -63,7 +64,7 @@ const CategoryInfo = ({ category, locale }: { category: CategoryParamsType, loca
                     </MotionH1>
                 </div>
 
-                <div className={`mt-[1.875rem] mb-[1.875rem] | text-[1rem] xl:text-[1.375rem] leading-[140%] xl:leading-[160%] |  | ${language("isEnglish") === "false" && "text-end"}`}>
+                <div className={`mt-[1.875rem] mb-[1.875rem] xl:mb-12 | text-[1rem] xl:text-[1.375rem] leading-[140%] xl:leading-[160%] |  | ${language("isEnglish") === "false" && "text-end"}`}>
                     <MotionH5 
                         initial={{ x: language("isEnglish") === "true" ? "-10%" : "10%", opacity: 0 }}
                         whileInView={{ x: "0%", opacity: 1 }}
@@ -85,8 +86,8 @@ const CategoryInfo = ({ category, locale }: { category: CategoryParamsType, loca
                     </MotionP>
                 </div>
 
-                <div className={` |  |  | `}>
-                    {/* <ArtistInfoCountUp artist={artist} /> */}
+                <div className={`mb-8 md:mb-12 xl:mb-14 |  |  | `}>
+                    <CategoryInfoCountUp category={category} />
                 </div>
             </div>
         </SectionToScroll>

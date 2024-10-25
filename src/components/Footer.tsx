@@ -13,7 +13,7 @@ const Footer = ({ locale }: { locale: string }) => {
     const language = useTranslations("language");
 
     return (
-        <FooterToScroll className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg | flex flex-col | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+        <FooterToScroll className={`w-full px-8 md:px-[4.5rem] py-10 | bg-nftCustom-footer-bg selection:text-nftCustom-cta selection:bg-nftCustom-text | flex flex-col | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <div className={`xl:w-[66rem] xl:mx-auto |  | flex flex-col xl:justify-between xl:items-center  | ${language("isEnglish") === "true" ? "xl:flex-row" : "xl:flex-row-reverse"}`}>
                 <div className={`max-xl:mb-8 xl:w-[18rem] xl:mb-auto |  | flex flex-col justify-start items-start | `}>
                     <Link 

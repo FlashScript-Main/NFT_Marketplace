@@ -3891,7 +3891,7 @@ export const marketplaceNFTsTabInfo = [
     {
         id: 14,
         href: "/",
-        image: "nft-43.jpeg",
+        image: "nft-30.jpeg",
         titleEn: "Celestial Night Sky",
         titleFa: "آسمان شب آسمانی",
         artistName: "FlashScript",
@@ -5079,7 +5079,7 @@ export const marketplaceNFTsTabInfo = [
     {
         id: 122,
         href: "/",
-        image: "nft-43.jpeg",
+        image: "nft-44.jpeg",
         titleEn: "Frozen River Escape",
         titleFa: "فرار از رودخانه یخ‌زده",
         artistName: "FlashScript",

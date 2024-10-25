@@ -44,7 +44,7 @@ const Header = ({ locale }: { locale: string }) => {
             height="3.375rem"
             className={`py-2 lg:py-6 | bg-nftCustom-background |  | ${language("isEnglish") === "false" && `${iranSans}`}`}
         >
-            <div className={`w-full md:w-[95%] lg:max-w-[74rem] mx-auto |  | flex justify-between items-center | `}>
+            <div className={`w-full md:w-[95%] lg:max-w-[74rem] mx-auto | selection:text-nftCustom-cta selection:bg-nftCustom-text | flex justify-between items-center | `}>
                 <Link href={`/${locale}/`} className={` |  |  | group ${language("isEnglish") === "false" && "order-last"}`}>
                     <MotionDiv
                         initial={{ y: "-20px", opacity: 0 }}

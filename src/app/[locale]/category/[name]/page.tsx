@@ -17,7 +17,6 @@ const CategoryPage = ({ params: { name, locale } }: NFTPagePropsType) => {
             <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
                 <CategoryInfo 
                     category={category} 
-                    locale={locale}
                 />
                 <CategoryNFTs 
                     category={category} 
