@@ -536,9 +536,9 @@ export const topCollectionUsers = [
     },
     {
         id: 8,
-        value: "proof-moonbirds",
-        name: "Moonbirds",
-        avatar: "proof-moonbirds.png",
+        value: "veefriends",
+        name: "VeeFriends",
+        avatar: "veefriends.png",
         volume: "361K",
     },
     {
@@ -557,9 +557,9 @@ export const topCollectionUsers = [
     },
     {
         id: 11,
-        value: "bored-ape-kennel-club",
-        name: "Bored Ape Kennel Club",
-        avatar: "bored-ape-kennel-club.png",
+        value: "topia-worlds",
+        name: "HYTOPIA Worlds",
+        avatar: "topia-worlds.png",
         volume: "288K",
     },
     {

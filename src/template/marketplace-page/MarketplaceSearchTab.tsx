@@ -1,14 +1,15 @@
 "use client";
 
-import { MotionDiv } from "@/animations/motion-provider";
+import { MotionDiv, MotionSpan } from "@/animations/motion-provider";
 import { DivToScroll } from "@/animations/ScrollAnimations";
 import { topCollectionUsers } from "@/constant";
 import useNFTCollections from "@/hooks/useNFTCollections";
 import { spaceMono } from "@/utils/fonts";
-import { Autocomplete, AutocompleteItem, Avatar, Button, CircularProgress } from "@nextui-org/react";
+import { Autocomplete, AutocompleteItem, Avatar, CircularProgress } from "@nextui-org/react";
 import { SearchIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import { Key, useCallback, useState } from "react";
 
 const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
@@ -27,6 +28,8 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
 
     const { isLoading, isFetched } = useNFTCollections(selectedKey, setFetchedNFTs);
 
+    console.log(fetchedNFTs);
+    
     return (
         <div className={`mt-[3.5rem] |  |  | `}>
             <div>
@@ -112,7 +115,7 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
             </div>
             
             {isLoading ? (
-                <div className={`w-full | text-nftCustom-text | grid place-content-center | `}>
+                <div className={`w-full mt-4 md:mt-8 xl:mt-10 | text-nftCustom-text | grid place-content-center | `}>
                     <CircularProgress 
                         classNames={{
                             svg: "w-12 h-12 drop-shadow-md",
@@ -148,24 +151,24 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                                         />
                                     </div>
 
-                                    <div className={`w-full h-[5.75rem] relative | bg-nftCustom-background | flex flex-col justify-center items-center gap-[1.5625rem] | `}>
+                                    <div className={`w-full h-[5rem] xl:h-[5.75rem] relative | bg-nftCustom-background | flex flex-col justify-center items-center gap-[1.5625rem] | `}>
                                         <div className={` |  |  | group-hover:opacity-0 opacity-100 transition-all`}>
                                             <MotionDiv
                                                 initial={{ x: "-20%", opacity: 0 }}
                                                 whileInView={{ x: "0%", opacity: 1 }}
                                                 viewport={{ once: true, margin: "-50px" }}
                                                 transition={{ staggerChildren: 0.02, delay: 0.025 * (index + 0.075), duration: 0.5 }} 
-                                                className={` |  | flex items-center justify-center gap-3 | ${language("isEnglish") === "true" ? "justify-start" : "justify-end"}`}
+                                                className={`px-4 |  | flex items-center justify-center gap-3 | ${language("isEnglish") === "true" ? "justify-start" : "justify-end"}`}
                                             >
                                                 <Image 
                                                     src={`/${card.collection}.png`}
                                                     alt={`${card.collection} Avatar`}
                                                     width={300}
                                                     height={300}
-                                                    className={`w-10 h-10 xl:w-14 xl:h-14 object-cover rounded-full |  |  | `}
+                                                    className={`w-10 h-10 object-cover rounded-full |  |  | `}
                                                 />
 
-                                                <span className={` | text-nftCustom-text text-base xl:text-lg font-normal ${spaceMono} |  | `}>
+                                                <span className={` | text-nftCustom-text text-base xl:text-lg font-normal ${spaceMono} line-clamp-1 |  | `}>
                                                     {(topCollectionUsers.find(user => user.value === selectedKey))?.name}
                                                 </span>
                                             </MotionDiv>
@@ -182,6 +185,19 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                         )
                     )}
                 </DivToScroll>
+
+                <DivToScroll className={`hidden | text-center |  | border-2 border-rose-400`}>
+                    <Link href={`/${locale}/`}>
+                        <MotionSpan
+                            initial={{ y: "20%", opacity: 0, }}
+                            whileInView={{ y: "0%", opacity: 1, }}
+                            transition={{ delay: 10,duration: 0.5, ease: "easeInOut", }}
+                            viewport={{ once: true, margin: "-50px" }}
+                        >
+                            {language("isEnglish") === "true" ? "See More NFTs" : "مشاهده توکن های بیشتر"}
+                        </MotionSpan>
+                    </Link>
+                </DivToScroll>
                 </>
             )}
         </div>
@@ -190,39 +206,3 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
 }
 
 export default MarketplaceSearchTab
-
-/*
-Slots
-base: The main wrapper of the autocomplete. This wraps the input and popover components.
-listboxWrapper: The wrapper of the listbox. This wraps the listbox component, this slot is used on top of the scroll shadow component.
-listbox: The listbox component. This is the component that wraps the autocomplete items.
-popoverContent: The popover content slot. Use this to modify the popover content styles.
-endContentWrapper: The wrapper of the end content. This wraps the clear button and selector button.
-clearButton: The clear button slot.
-selectorButton: The selector button slot.
-Data Attributes
-Autocomplete has the following attributes on the base element:
-
-data-invalid: When the autocomplete is invalid. Based on isInvalid prop.
-data-open: Indicates if the autocomplete's popover is open.
-Autocomplete has the following attributes on the selectorButton element:
-
-data-open: Indicates if the autocomplete's popover is open.
-Autocomplete has the following attributes on the clearButton element:
-
-data-visible: Indicates if the autocomplete's clear button is visible. By default it is visible when hovering the autocomplete and when the autocomplete has a value (desktop), or when the autocomplete has a value (mobile).
-AutocompleteItem has the following attributes on the base element:
-
-data-disabled: When the autocomplete item is disabled. Based on autocomplete disabledKeys prop.
-data-selected: When the autocomplete item is selected. Based on autocomplete selectedKey prop.
-data-hover: When the autocomplete item is being hovered. Based on useHover
-data-pressed: When the autocomplete item is pressed. Based on usePress
-data-focus: When the autocomplete item is being focused. Based on useFocusRing.
-data-focus-visible: When the autocomplete item is being focused with the keyboard. Based on useFocusRing.
-*/
-
-
-/*
-<div className={`mt-[3.5rem] |  |  | `}>
-            <DivToScroll className={` |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[1.875rem] | `}>
-*/
