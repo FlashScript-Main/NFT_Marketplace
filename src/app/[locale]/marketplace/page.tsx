@@ -12,7 +12,7 @@ const MarketplacePage = ({ params: { locale } }: MarketplacePagePropsType) => {
     const language = useTranslations("language");
 
     return (
-        <GlobalMotionMain className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+        <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <SectionToScroll className={`py-10 md:py-[3.75rem] xl:py-20 |  |  | border-b border-b-nftCustom-background_secondary`}>
                 <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | ${language("isEnglish") === "false" && "text-end"}`}>
                     <MotionH1 

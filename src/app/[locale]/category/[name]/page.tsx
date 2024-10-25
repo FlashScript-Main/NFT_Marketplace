@@ -1,26 +1,26 @@
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
-import { nfts } from "@/constant/nft-database";
-import MoreNFTSFromArtist from "@/template/nft-page/MoreNFTSFromArtist";
-import NFTInfo from "@/template/nft-page/NFTInfo";
-import NFTNotFound from "@/template/nft-page/NFTNotFound";
+import { categories } from "@/constant/nft-database";
+import CategoryInfo from "@/template/category-page/CategoryInfo";
+import CategoryNFTs from "@/template/category-page/CategoryNFTs";
+import CategoryNotFound from "@/template/category-page/CategoryNotFound";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 
-const NFTPage = ({ params: { name, locale } }: NFTPagePropsType) => {
+const CategoryPage = ({ params: { name, locale } }: NFTPagePropsType) => {
 
     const language = useTranslations("language");
     
-    const nft = nfts.find(nft => nft.paramsName === name);
+    const category = categories.find(category => category.paramsName === name);
 
-    if (nft) {
+    if (category) {
         return (
             <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
-                <NFTInfo 
-                    nft={nft} 
+                <CategoryInfo 
+                    category={category} 
                     locale={locale}
                 />
-                <MoreNFTSFromArtist 
-                    nft={nft} 
+                <CategoryNFTs 
+                    category={category} 
                     locale={locale}
                 />
             </GlobalMotionMain>
@@ -28,7 +28,7 @@ const NFTPage = ({ params: { name, locale } }: NFTPagePropsType) => {
     } 
     else {
         return (
-            <NFTNotFound 
+            <CategoryNotFound 
               name={name} 
               locale={locale} 
             />
@@ -37,4 +37,4 @@ const NFTPage = ({ params: { name, locale } }: NFTPagePropsType) => {
 
 }
 
-export default NFTPage
+export default CategoryPage

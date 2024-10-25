@@ -27,7 +27,7 @@ export default async function RootLayout({
 
     return (
         <html lang={locale} className={` |  |  | scroll-smooth overflow-x-hidden`}>
-            <body className={`relative | bg-nftCustom-background ${workSans} |  | `}>
+            <body className={`relative | bg-nftCustom-background ${workSans} |  | nft-scrollbar`}>
                 {/* <FixHydrationFailure> */}
                 <NextIntlClientProvider messages={messages}>
                     <ThemeProvider 

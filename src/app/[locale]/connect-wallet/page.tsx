@@ -8,7 +8,7 @@ const ConnectWallet = () => {
     const language = useTranslations("language");
     
     return (
-        <GlobalMotionMain className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+        <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <ConnectWalletSection />
         </GlobalMotionMain>
     )

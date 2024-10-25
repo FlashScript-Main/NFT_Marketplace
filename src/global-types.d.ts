@@ -150,3 +150,30 @@ type FetchedNFTsDataType = {
     metadata_url: string;
     opensea_url: string;
 }
+
+type CategoryParamsType = {
+    paramsName: string;
+    categoryNameEn: string;
+    categoryNameFa: string;
+    descriptionEn: string;
+    descriptionFa: string;
+    topImage: string;
+    achievements: {
+        tage: number;
+        usage: number;
+        account: number;
+    }
+    nfts: CategoryNFTsType[];
+}
+
+type CategoryNFTsType = {
+    id: number;
+    href: string;
+    image: string;
+    titleEn: string;
+    titleFa: string;
+    artistName: string;
+    artistAvatar: string;
+    price: string;
+    highestBid: string;
+}

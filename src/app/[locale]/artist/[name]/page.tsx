@@ -14,7 +14,7 @@ const ArtistPage = ({ params: { name, locale } }: ArtistPagePropsType) => {
 
     if (artist) {
         return (
-            <GlobalMotionMain className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+            <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
                 <ArtistInfo artist={artist} />
                 <ArtistTabs artist={artist} />
             </GlobalMotionMain>

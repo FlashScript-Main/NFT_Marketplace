@@ -28,8 +28,6 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
 
     const { isLoading, isFetched } = useNFTCollections(selectedKey, setFetchedNFTs);
 
-    console.log(fetchedNFTs);
-    
     return (
         <div className={`mt-[3.5rem] |  |  | `}>
             <div>
