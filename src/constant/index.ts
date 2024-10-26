@@ -5,6 +5,10 @@ import ArtistOwnedTab from "@/template/artist-page/ArtistOwnedTab";
 import MarketplaceCollectionsTab from "@/template/marketplace-page/MarketplaceCollectionsTab";
 import MarketplaceNFTsTab from "@/template/marketplace-page/MarketplaceNFTsTab";
 import MarketplaceSearchTab from "@/template/marketplace-page/MarketplaceSearchTab";
+import RankingsAllTimeTab from "@/template/rankings-page/RankingsAllTimeTab";
+import RankingsThisMonthTab from "@/template/rankings-page/RankingsThisMonthTab";
+import RankingsThisWeekTab from "@/template/rankings-page/RankingsThisWeekTab";
+import RankingsTodayTab from "@/template/rankings-page/RankingsTodayTab";
 
 export const homeInfo = [
     { key: "title", value: "Landing page", className: "text-nftCustom-text" },
@@ -625,4 +629,39 @@ export const topCollectionUsers = [
         avatar: "0n1-force.png",
         volume: "87K",
     },
+];
+
+export const rankingsTabsDetails = [
+    {
+        id: 1,
+        titleEn_sm: "1d",
+        titleEn_big: "Today",
+        titleFa_sm: "روز",
+        titleFa_big: "امروز",
+        content: RankingsTodayTab
+    },
+    {
+        id: 2,
+        titleEn_sm: "7d",
+        titleEn_big: "This Week",
+        titleFa_sm: "هفته",
+        titleFa_big: "این هفته",
+        content: RankingsThisWeekTab
+    },
+    {
+        id: 3,
+        titleEn_sm: "30d",
+        titleEn_big: "This Month",
+        titleFa_sm: "ماه",
+        titleFa_big: "این ماه",
+        content: RankingsThisMonthTab
+    },
+    {
+        id: 4,
+        titleEn_sm: "All Time",
+        titleEn_big: "All Time",
+        titleFa_sm: "همه زمان ها",
+        titleFa_big: "همه زمان ها",
+        content: RankingsAllTimeTab
+    }
 ];

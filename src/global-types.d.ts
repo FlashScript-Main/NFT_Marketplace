@@ -183,3 +183,14 @@ type CategoryNFTsType = {
     price: string;
     highestBid: string;
 }
+
+type NFTRankingsUser = {
+    id: number;
+    name: string;
+    age: number;
+};
+  
+type SortConfig = {
+    key: keyof NFTRankingsUser;
+    direction: "ascending" | "descending";
+};
