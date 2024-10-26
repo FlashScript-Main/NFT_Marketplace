@@ -1,13 +1,14 @@
 "use client";
 
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
-import { ArrowUpIcon } from "lucide-react";
 import { useState } from "react";
 import { DivToScroll } from "@/animations/ScrollAnimations";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 const RankingsTodayTab = ({ locale }: { locale: string }) => {
 
+    // ! Note 👉🏻 Put this inside a new Component called "RankingsTable" and Delete Components Like "RankingsTodayTab.tsx"
     const language = useTranslations("language");
 
     const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "name", direction: "ascending" });
@@ -47,24 +48,58 @@ const RankingsTodayTab = ({ locale }: { locale: string }) => {
                     removeWrapper 
                     isHeaderSticky
                     aria-label="User Table with Sorting"
+                    classNames={{
+                        // base: "w-full border-2 border-green-500",
+                        wrapper: "border-2 border-yellow-500 mt-10",
+                        table: "border-2 border-yellow-500 w-full",
+                        thead: "border-2 border-cyan-500",
+                        tbody: "border-2 border-amber-500 mt-10",
+                        tr: "border-2 border-lime-500",
+                        th: "border-2 border-blue-500 bg-rose-500 text-white",
+                        td: "border-2 border-fuchsia-500 mt-10",
+                    }}
+                    className={`w-full |  |  | border-2 border-rose-600`}
                 >
-                    <TableHeader>
-                        <TableColumn 
-                            onClick={() => handleSort("name")}
-                        >
-                            Name {sortConfig.direction === "ascending" && <ArrowUpIcon />}
+                    <TableHeader className={`w-full |  |  | border-2 border-cyan-500`}>
+                        <TableColumn>
+                            <span>
+                                #
+                            </span>
                         </TableColumn>
 
                         <TableColumn 
-                            onClick={() => handleSort("age")}
+                            onClick={() => handleSort("name")}
+                            className={`${sortConfig.key === "name" ? "text-nftCustom-cta" : "inherit"} cursor-pointer |  |  | `}
                         >
+                            <motion.span
+                                initial={{ y: "-20%", opacity: 0 }}
+                                whileInView={{ y: "0%", opacity: 1 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: 0.25, duration: 0.5 }}
+                            >
+                                Name
+                            </motion.span>
+                        </TableColumn>
+
+                        <TableColumn onClick={() => handleSort("age")}>
                             Age
                         </TableColumn>
                     </TableHeader>
 
-                    <TableBody>
+                    <TableBody className={`mt-10 |  |  | `}>
                         {sortedData.map((user) => (
                             <TableRow key={user.id}>
+                                <TableCell>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </TableCell>
                                 <TableCell>{user.name}</TableCell>
                                 <TableCell>{user.age}</TableCell>
                             </TableRow>
@@ -78,75 +113,3 @@ const RankingsTodayTab = ({ locale }: { locale: string }) => {
 }
 
 export default RankingsTodayTab
-
-/* -------------------------------------------------------------------------------------------------------------- */
-
-// import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue} from "@nextui-org/react";
-
-// const rows = [
-//     {
-//       key: "1",
-//       name: "Tony Reichert",
-//       role: "CEO",
-//       status: "Active",
-//     },
-//     {
-//       key: "2",
-//       name: "Zoey Lang",
-//       role: "Technical Lead",
-//       status: "Paused",
-//     },
-//     {
-//       key: "3",
-//       name: "Jane Fisher",
-//       role: "Senior Developer",
-//       status: "Active",
-//     },
-//     {
-//       key: "4",
-//       name: "William Howard",
-//       role: "Community Manager",
-//       status: "Vacation",
-//     },
-//   ];
-  
-//   const columns = [
-//     {
-//       key: "name",
-//       label: "NAME",
-//     },
-//     {
-//       key: "role",
-//       label: "ROLE",
-//     },
-//     {
-//       key: "status",
-//       label: "STATUS",
-//     },
-//   ];
-
-// const RankingsTodayTab = ({ locale }: { locale: string }) => {
-
-//     return (
-//     <Table 
-//         removeWrapper 
-//         isHeaderSticky
-//         aria-label="Example table with dynamic content"
-//     >
-//       <TableHeader columns={columns}>
-//         {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
-//       </TableHeader>
-
-//       <TableBody items={rows}>
-//         {(item) => (
-//           <TableRow key={item.key}>
-//             {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
-//           </TableRow>
-//         )}
-//       </TableBody>
-//     </Table>
-//   );
-
-// }
-
-// export default RankingsTodayTab
