@@ -24,7 +24,7 @@ import { useTranslations } from 'next-intl';
   
 // }
 
-const Home = ({ locale }: { locale: string }) => {
+const Home = ({ params: { locale } }: MainPagePropsType) => {
 
     // const translateHome = useTranslations('Home-Discover');
     const language = useTranslations("language");

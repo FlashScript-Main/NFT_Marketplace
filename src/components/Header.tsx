@@ -72,7 +72,7 @@ const Header = ({ locale }: { locale: string }) => {
                                 transition={{ delay: 0.25 * index, }}
                             >
                                 <Link 
-                                    href={link.href} 
+                                    href={`/${locale}/${link.href}`} 
                                     className={` | text-base text-nftCustom-text hover:text-nftCustom-cta font-semibold |  | main-transition-color`}
                                 >
                                     {translateHeader(link.language)}

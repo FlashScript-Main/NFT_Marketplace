@@ -237,7 +237,7 @@ export const topCreatorsInfo = [
 export const categories = [
     {
         id: 1,
-        href: "/",
+        href: "art",
         blurImage: "art-category.jpg",
         iconImage: "paint-brush.png",
         titleEn: "Art",
@@ -245,7 +245,7 @@ export const categories = [
     },
     {
         id: 2,
-        href: "/",
+        href: "collectibles",
         blurImage: "icecream-ape.jpg",
         iconImage: "swatches.png",
         titleEn: "Collectibles",
@@ -253,7 +253,7 @@ export const categories = [
     },
     {
         id: 3,
-        href: "/",
+        href: "music",
         blurImage: "music-category.jpg",
         iconImage: "music-notes.png",
         titleEn: "Music",
@@ -261,7 +261,7 @@ export const categories = [
     },
     {
         id: 4,
-        href: "/",
+        href: "photography",
         blurImage: "photography-category.jpg",
         iconImage: "camera.png",
         titleEn: "Photography",
@@ -269,7 +269,7 @@ export const categories = [
     },
     {
         id: 5,
-        href: "/",
+        href: "video",
         blurImage: "video-category.jpg",
         iconImage: "video-camera.png",
         titleEn: "Video",
@@ -277,7 +277,7 @@ export const categories = [
     },
     {
         id: 6,
-        href: "/",
+        href: "utility",
         blurImage: "utility-category.jpg",
         iconImage: "magicwand.png",
         titleEn: "Utility",
@@ -285,7 +285,7 @@ export const categories = [
     },
     {
         id: 7,
-        href: "/",
+        href: "sport",
         blurImage: "sport-category.jpg",
         iconImage: "basketball.png",
         titleEn: "Sport",
@@ -293,7 +293,7 @@ export const categories = [
     },
     {
         id: 8,
-        href: "/",
+        href: "virtual-worlds",
         blurImage: "virtualworlds-category.jpg",
         iconImage: "planet.png",
         titleEn: "Virtual Worlds",

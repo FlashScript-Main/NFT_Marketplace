@@ -1,5 +1,11 @@
 // type TodoType = any;
 
+type MainPagePropsType = {
+    params: { 
+        locale: string;
+    };
+}
+
 type CustomButtonType = {
     locale: string;
     translateButton: string;

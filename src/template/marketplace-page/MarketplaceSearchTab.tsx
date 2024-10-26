@@ -4,7 +4,7 @@ import { MotionDiv, MotionSpan } from "@/animations/motion-provider";
 import { DivToScroll } from "@/animations/ScrollAnimations";
 import { topCollectionUsers } from "@/constant";
 import useNFTCollections from "@/hooks/useNFTCollections";
-import { spaceMono } from "@/utils/fonts";
+import { iranSans, spaceMono } from "@/utils/fonts";
 import { Autocomplete, AutocompleteItem, Avatar, CircularProgress } from "@nextui-org/react";
 import { SearchIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -54,6 +54,9 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                     }}
                     listboxProps={{
                         hideSelectedIcon: true,
+                        emptyContent: <div className={` |  |  | ${language("isEnglish") === "true" ? "text-sm md:text-base font-semibold" : `text-base font-semibold text-end ${iranSans}`}`}>
+                            {language("isEnglish") === "true" ? "No results found" : "نتیجه ای یافت نشد"}
+                        </div>,
                         itemClasses: {
                             base: [
                                 "rounded-medium",

@@ -41,7 +41,7 @@ const CategoriesSection = ({ locale }: { locale: string }) => {
                         transition={{ staggerChildren: 0.02, delay: 0.2 * (index + 0.25), duration: 0.25, ease: "easeInOut" }}
                     >
                         <Link 
-                            href={`/${locale}/${category.href}`}
+                            href={`/${locale}/category/${category.href}`}
                             className={`overflow-hidden | flex flex-col |  | rounded-[20px] group`}
                         >
                             <div className={`relative overflow-hidden inline-block h-[142px] w-[147.5] xl:h-[240px] xl:w-full  |  |  | `}>
