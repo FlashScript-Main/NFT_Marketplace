@@ -5424,11 +5424,11 @@ export const rankingsUsers = [
     },
     { 
         id: 17, 
-        avatar: "music-category.jpg",
-        artist: "Catch 22", 
-        change: 1.01,
-        sold_nfts: 234,
-        volume: 16.8,
+        avatar: "animakid-avatar.png",
+        artist: "Animakid", 
+        change: 8.01,
+        sold_nfts: 981,
+        volume: 49.8,
     },
     { 
         id: 18, 

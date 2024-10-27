@@ -14,7 +14,9 @@ const RankingsTable = ({ locale }: { locale: string }) => {
 
     const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "id", direction: "ascending" });
 
-    const sortedData = [...rankingsUsers].sort((a, b) => {
+    const resultSorted = rankingsUsers.sort(() => Math.random() - 0.5);
+
+    const sortedData = [...resultSorted].sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
             return sortConfig.direction === "ascending" ? -1 : 1;
         }
@@ -41,15 +43,15 @@ const RankingsTable = ({ locale }: { locale: string }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-          if (divRef.current) {
-            const { top } = divRef.current.getBoundingClientRect();
-            setIsSticky(top <= 20); 
-          }
+            if (divRef.current) {
+                const { top } = divRef.current.getBoundingClientRect();
+                setIsSticky(top <= 20); 
+            }
         };
     
         window.addEventListener("scroll", handleScroll);
         return () => {
-          window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
       }, []);
 
@@ -80,14 +82,14 @@ const RankingsTable = ({ locale }: { locale: string }) => {
                     </div>
 
                     <div className={`mt-10 |  | flex flex-col | `}>
-                        {sortedData.map((user) => (
+                        {sortedData.map((user, index) => (
                             <div key={user.id} className={`flex justify-between items-center |  |  | `}>
                                 <div>
                                     <motion.span
                                         initial={{ y: "-20%", opacity: 0 }}
                                         whileInView={{ y: "0%", opacity: 1 }}
                                         viewport={{ once: true, margin: "-20px" }}
-                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                        transition={{ delay: 0.025 * (index + 0.025), duration: 0.5 }}
                                     >
                                         {user.id}
                                     </motion.span>
@@ -98,12 +100,12 @@ const RankingsTable = ({ locale }: { locale: string }) => {
                                         alt={`${user.artist} Avatar`}
                                         width={40} 
                                         height={40} 
-                                        className="rounded-full"
+                                        className="rounded-full object-cover"
                                     />
                                 </div>
                                 <div>{user.artist}</div>
-                                <div>{user.change}</div>
-                                <div>{user.sold_nfts}</div>
+                                <div className={`max-md:hidden |  |  | `}>{user.change}</div>
+                                <div className={`max-xl:hidden |  |  | `}>{user.sold_nfts}</div>
                                 <div>{user.volume}</div>
                             </div>
                         ))}
