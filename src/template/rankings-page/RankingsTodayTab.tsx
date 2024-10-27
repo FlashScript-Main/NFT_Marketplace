@@ -44,6 +44,239 @@ const RankingsTodayTab = ({ locale }: { locale: string }) => {
     return (
         <div className={`mt-10 |  |  | `}>
             <DivToScroll>
+                <div 
+                    className={`w-full |  |  | border-2 border-rose-600`}
+                >
+                    <div className={`w-full sticky top-5 z-10 |  | flex justify-between items-center | border-2 border-cyan-500`}>
+                        <div>
+                            <span>
+                                #
+                            </span>
+                        </div>
+
+                        <div 
+                            onClick={() => handleSort("name")}
+                            className={`${sortConfig.key === "name" ? "text-nftCustom-cta" : "inherit"} cursor-pointer |  |  | `}
+                        >
+                            <motion.span
+                                initial={{ y: "-20%", opacity: 0 }}
+                                whileInView={{ y: "0%", opacity: 1 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: 0.25, duration: 0.5 }}
+                            >
+                                Name
+                            </motion.span>
+                        </div>
+
+                        <div onClick={() => handleSort("age")}>
+                            Age
+                        </div>
+                    </div>
+
+                    <div className={`mt-10 |  | flex flex-col | `}>
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                        {sortedData.map((user) => (
+                            <div key={user.id} className={`flex justify-between items-center |  |  | `}>
+                                <div>
+                                    <motion.span
+                                        initial={{ y: "-20%", opacity: 0 }}
+                                        whileInView={{ y: "0%", opacity: 1 }}
+                                        viewport={{ once: true, margin: "-20px" }}
+                                        transition={{ delay: 0.025 * (user.id + 0.025), duration: 0.5 }}
+                                    >
+                                        {user.id}
+                                        
+                                    </motion.span>
+                                </div>
+                                <div>{user.name}</div>
+                                <div>{user.age}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </DivToScroll>
+        </div>
+    )
+
+}
+
+export default RankingsTodayTab
+
+
+
+/*
+return (
+        <div className={`mt-10 |  |  | `}>
+            <DivToScroll>
                 <Table 
                     removeWrapper 
                     isHeaderSticky
@@ -109,7 +342,4 @@ const RankingsTodayTab = ({ locale }: { locale: string }) => {
             </DivToScroll>
         </div>
     )
-
-}
-
-export default RankingsTodayTab
+*/

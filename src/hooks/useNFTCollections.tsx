@@ -8,17 +8,17 @@ const useNFTCollections = (selectedKey: string | number | bigint | null, setFetc
 
     const [shouldFetch, setShouldFetch] = useState(false);
 
-    const options = {
-        method: 'GET',
-        url: `https://opensea15.p.rapidapi.com/api/v2/collection/${selectedKey}/nfts`,
-        params: { 
-            limit: '20' 
-        },
-        headers: {
-            'x-rapidapi-key': '88f17c7fd9mshe18ea503c69e611p12142fjsnb2616e3983be',
-            'x-rapidapi-host': 'opensea15.p.rapidapi.com'
-        }
-    };
+    // const options = {
+    //     method: 'GET',
+    //     url: `https://opensea15.p.rapidapi.com/api/v2/collection/${selectedKey}/nfts`,
+    //     params: { 
+    //         limit: '20' 
+    //     },
+    //     headers: {
+    //         'x-rapidapi-key': process.env.NEXT_PUBLIC_RAPID_API_KEY,
+    //         'x-rapidapi-host': 'opensea15.p.rapidapi.com'
+    //     }
+    // };
 
     const shouldFetchMemo = useMemo(() => {
         return selectedKey !== null;
@@ -33,8 +33,8 @@ const useNFTCollections = (selectedKey: string | number | bigint | null, setFetc
     return useQuery({
         queryKey: [selectedKey],
         queryFn: async () => {
-            const response = await axios.request(options);
-            const nfts = response.data.nfts;
+            const response = await axios.get(`/api/fetch-nfts?key=${selectedKey}`);
+            const nfts = response.data;
             setFetchedNFTs(nfts);
       
             return nfts;

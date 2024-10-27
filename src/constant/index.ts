@@ -6,8 +6,8 @@ import MarketplaceCollectionsTab from "@/template/marketplace-page/MarketplaceCo
 import MarketplaceNFTsTab from "@/template/marketplace-page/MarketplaceNFTsTab";
 import MarketplaceSearchTab from "@/template/marketplace-page/MarketplaceSearchTab";
 import RankingsAllTimeTab from "@/template/rankings-page/RankingsAllTimeTab";
+import RankingsTable from "@/template/rankings-page/RankingsTable";
 import RankingsThisMonthTab from "@/template/rankings-page/RankingsThisMonthTab";
-import RankingsThisWeekTab from "@/template/rankings-page/RankingsThisWeekTab";
 import RankingsTodayTab from "@/template/rankings-page/RankingsTodayTab";
 
 export const homeInfo = [
@@ -638,7 +638,7 @@ export const rankingsTabsDetails = [
         titleEn_big: "Today",
         titleFa_sm: "روز",
         titleFa_big: "امروز",
-        content: RankingsTodayTab
+        content: RankingsTable
     },
     {
         id: 2,
@@ -646,7 +646,7 @@ export const rankingsTabsDetails = [
         titleEn_big: "This Week",
         titleFa_sm: "هفته",
         titleFa_big: "این هفته",
-        content: RankingsThisWeekTab
+        content: RankingsTodayTab
     },
     {
         id: 3,
