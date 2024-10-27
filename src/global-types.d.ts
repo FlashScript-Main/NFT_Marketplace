@@ -186,11 +186,22 @@ type CategoryNFTsType = {
 
 type NFTRankingsUser = {
     id: number;
-    name: string;
-    age: number;
+    avatar: string;
+    artist: string, 
+    change: number;
+    sold_nfts: number;
+    volume: number;
 };
   
 type SortConfig = {
     key: keyof NFTRankingsUser;
     direction: "ascending" | "descending";
 };
+
+type RankingsHeaderTitleType = {
+    id: number;
+    titleEn: string;
+    titleFa: string;
+    handleSort: keyof NFTRankingsUser;
+    className: string;
+}

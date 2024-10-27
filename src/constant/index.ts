@@ -665,3 +665,41 @@ export const rankingsTabsDetails = [
         content: RankingsAllTimeTab
     }
 ];
+
+export const rankingsHeaderTitles: RankingsHeaderTitleType[] = [
+    {
+        id: 1,
+        titleEn: "#",
+        titleFa: "#",
+        handleSort: "id",
+        className: ""
+    },
+    {
+        id: 2,
+        titleEn: "Artist",
+        titleFa: "هنرمند",
+        handleSort: "artist",
+        className: ""
+    },
+    {
+        id: 3,
+        titleEn: "Change",
+        titleFa: "تغییرات",
+        handleSort: "change",
+        className: "max-md:hidden",
+    },
+    {
+        id: 4,
+        titleEn: "NFTs Sold",
+        titleFa: "توکن های فروخته شده",
+        handleSort: "sold_nfts",
+        className: "max-xl:hidden",
+    },
+    {
+        id: 5,
+        titleEn: "Volume",
+        titleFa: "مجموع کاربران",
+        handleSort: "volume",
+        className: "",
+    }
+];
