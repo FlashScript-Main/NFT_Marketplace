@@ -2,58 +2,22 @@
 
 import { DivToScroll } from "@/animations/ScrollAnimations";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion';
 import { rankingsUsers } from "@/constant/nft-database";
 import { rankingsHeaderTitles } from "@/constant";
 import Image from "next/image";
+import useSortConfig from "@/hooks/useSortConfig";
+import useSticky from "@/hooks/useSticky";
 
 const RankingsTable = ({ locale }: { locale: string }) => {
 
     const language = useTranslations("language");
 
-    const [sortConfig, setSortConfig] = useState<SortConfig>({ key: "id", direction: "ascending" });
+    const { sortedData, sortConfig, handleSort } = useSortConfig(rankingsUsers);
 
-    const resultSorted = rankingsUsers.sort(() => Math.random() - 0.5);
+    const { divRef, isSticky } = useSticky();
 
-    const sortedData = [...resultSorted].sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
-            return sortConfig.direction === "ascending" ? -1 : 1;
-        }
-
-        if (a[sortConfig.key] > b[sortConfig.key]) {
-            return sortConfig.direction === "ascending" ? 1 : -1;
-        }
-
-        return 0;
-    });
-
-    const handleSort = (key: keyof NFTRankingsUser) => {
-        let direction: "ascending" | "descending" = "ascending";
-
-        if (sortConfig.key === key && sortConfig.direction === "ascending") {
-            direction = "descending";
-        }
-
-        setSortConfig({ key, direction });
-    };
-
-    const [isSticky, setIsSticky] = useState(false);
-    const divRef = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (divRef.current) {
-                const { top } = divRef.current.getBoundingClientRect();
-                setIsSticky(top <= 20); 
-            }
-        };
     
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-      }, []);
 
     return (
         <div className={`mt-10 |  |  | `}>

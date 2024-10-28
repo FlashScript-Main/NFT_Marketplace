@@ -3,6 +3,7 @@
 import { rankingsTabsDetails } from "@/constant";
 import { Tab, Tabs } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
+import RankingsTable from "./RankingsTable";
 
 const RankingsTabs = ({ locale }: { locale: string }) => {
 
@@ -39,6 +40,7 @@ const RankingsTabs = ({ locale }: { locale: string }) => {
                         }
                   >
                       <item.content locale={locale} />
+                      <RankingsTable locale={locale} />
                   </Tab>
                 )}
             </Tabs>

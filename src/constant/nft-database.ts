@@ -5293,7 +5293,7 @@ export const categories = [
     }
 ];
 
-export const rankingsUsers = [
+export const rankingsUsers: NFTRankingsUser[] = [
     { 
         id: 1, 
         avatar: "mr-fox-avatar.jpg",
