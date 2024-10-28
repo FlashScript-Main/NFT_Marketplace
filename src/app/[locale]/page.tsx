@@ -59,7 +59,7 @@ const Home = ({ params: { locale } }: MainPagePropsType) => {
     
     // initial={{ x: language("isEnglish") === "true" ? "-10%" : "10%", opacity: 0 }}
     // whileInView={{ x: "0%", opacity: 1 }}
-    // viewport={{ once: true, margin: "-200px" }}
+    // viewport={{ once: true, margin: "-50px" }}
     // transition={{ delay: 0.5, duration: 0.5 }}
 
     return (

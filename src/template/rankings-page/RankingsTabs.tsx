@@ -4,13 +4,14 @@ import { rankingsTabsDetails } from "@/constant";
 import { Tab, Tabs } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import RankingsTable from "./RankingsTable";
+import { motion } from 'framer-motion';
 
 const RankingsTabs = ({ locale }: { locale: string }) => {
 
     const language = useTranslations("language");
 
     return (
-        <section className={`pb-[3.5rem] mt-2 max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto | bg-nftCustom-background_secondary |  | `}>
+        <section className={`pb-[3.5rem] mt-2 max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto | bg-nftCustom-background |  | `}>
             <Tabs 
                 aria-label="Options" 
                 items={rankingsTabsDetails}
@@ -28,7 +29,13 @@ const RankingsTabs = ({ locale }: { locale: string }) => {
                   <Tab 
                       key={item.id} 
                       title={
-                          <div className={` |  | flex gap-4 items-center |  | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
+                          <motion.div 
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true, margin: "-20px" }}
+                            transition={{ delay: 0.25 * (item.id * 0.5), duration: 0.5, ease: "easeInOut" }}
+                            className={` |  | flex gap-4 items-center |  | ${language("isEnglish") === "false" && "flex-row-reverse"}`}
+                          >
                             <span className={`md:hidden | text-[1rem] xl:text-[1.375rem] leading-[140%] font-semibold |  | `}>
                                 {language("isEnglish") === "true" ? item.titleEn_sm : item.titleFa_sm}
                             </span>
@@ -36,10 +43,9 @@ const RankingsTabs = ({ locale }: { locale: string }) => {
                             <span className={`max-md:hidden | text-[1rem] xl:text-[1.375rem] leading-[140%] font-semibold |  | `}>
                                 {language("isEnglish") === "true" ? item.titleEn_big : item.titleFa_big}
                             </span>
-                          </div>
+                          </motion.div>
                         }
                   >
-                      <item.content locale={locale} />
                       <RankingsTable locale={locale} />
                   </Tab>
                 )}

@@ -33,6 +33,8 @@ const config: Config = {
 
 				create_account_svg: "var(--nft-create-account-svg)",
 
+				rankings_change: "var(--nft-rankings-change)"
+
 			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
