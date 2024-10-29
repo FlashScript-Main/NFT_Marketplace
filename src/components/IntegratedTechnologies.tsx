@@ -1,63 +1,103 @@
+import { MotionA } from "@/animations/motion-provider"
+import { Tooltip } from "@nextui-org/react"
+import Image from "next/image"
 
 const IntegratedTechnologies = () => {
 
     return (
-        <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto relative h-[50vh] |  |  | border-2 border-indigo-500`}>
+        <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto relative h-[70vh] mb-[1.875rem] md:mb-10 xl:mb-20 |  |  | border-2 border-indigo-500`}>
             <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 | text-white |  | w-full h-full border-2 border-rose-500 `}>
                 {/* {} */}
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] |  |  | w-24 h-24 bg-blue-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] |  |  | w-40 h-40 bg-blue-500 rounded-full`}>
                     FlashScript
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform translate-x-[50%] translate-y-[50%] |  |  | w-24 h-24 bg-blue-500 rounded-full`}>
+                    <Tooltip 
+                        showArrow={true} 
+                        content="Next JS"
+                        placement="top"
+                        // offset={-15} // Only use This for "FlashScript"
+                        classNames={{
+                            base: "before:bg-nftCustom-cta",
+                            content: "text-nftCustom-text bg-nftCustom-cta"
+                        }}
+                    >
+                        <MotionA 
+                            href="https://nextjs.org/"
+                            target="_blank"
+                            className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[9.5rem] overflow-hidden cursor-pointer | bg-white |  | w-24 h-24 group border-4 border-nftCustom-text hover:border-nftCustom-cta rounded-full main-transition-color`}
+                        >
+                            <Image 
+                                src="/integrated/nextjs.svg"
+                                alt="Next JS"
+                                width={100}  
+                                height={100}
+                                className={`w-full h-full object-cover |  |  | group-hover:scale-110 duration-500 transition-transform`}
+                            />
+                        </MotionA>
+                    </Tooltip>
+
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[7rem] ml-[7rem] |  |  | w-24 h-24 bg-yellow-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform translate-x-[50%] -translate-y-[50%] |  |  | w-24 h-24 bg-blue-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[7rem] -ml-[7rem] |  |  | w-24 h-24 bg-rose-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] translate-y-[50%] |  |  | w-24 h-24 bg-blue-500 rounded-full`}>
-                    Next.js
-                </div>
-                
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-rose-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] -mt-[7rem] -ml-[7rem] |  |  | w-24 h-24 bg-rose-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-rose-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] -mt-[9.5rem] |  |  | w-24 h-24 bg-rose-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] -translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-green-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] -mt-[7rem] ml-[7rem] |  |  | w-24 h-24 bg-blue-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-green-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[0rem] ml-[9.5rem] |  |  | w-24 h-24 bg-green-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] translate-y-[50%] |  | grid place-content-center | w-24 h-24 bg-purple-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[0rem] -ml-[9.5rem] |  |  | w-24 h-24 bg-green-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] translate-y-[50%] |  | grid place-content-center | w-24 h-24 bg-purple-500 rounded-full`}>
-                    Next.js
-                </div>
-                
-                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] -translate-y-[50%] |  | grid place-content-center | w-24 h-24 bg-purple-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[0rem] -ml-[9.5rem] |  |  | w-24 h-24 bg-green-400 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform translate-x-[50%] translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-green-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[6rem] -ml-[14rem] |  |  | w-24 h-24 bg-purple-600 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform translate-x-[50%] -translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-green-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[6rem] ml-[14rem] |  |  | w-24 h-24 bg-purple-600 rounded-full`}>
                     Next.js
                 </div>
 
-                <div className={`absolute top-[50%] left-[50%] transform translate-x-[0%] -translate-y-[240%] |  | grid place-content-center | w-24 h-24 bg-orange-500 rounded-full`}>
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] -mt-[6rem] ml-[14rem] |  |  | w-24 h-24 bg-purple-600 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] -mt-[6rem] -ml-[14rem] |  |  | w-24 h-24 bg-purple-600 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] -mt-[14rem] -ml-[6rem] |  |  | w-24 h-24 bg-red-700 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] -mt-[14rem] ml-[6rem] |  |  | w-24 h-24 bg-red-700 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[14rem] ml-[6rem] |  |  | w-24 h-24 bg-red-700 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-[50%] mt-[14rem] -ml-[6rem] |  |  | w-24 h-24 bg-red-700 rounded-full`}>
                     Next.js
                 </div>
             </div>
@@ -78,7 +118,6 @@ ShadCN
 Next UI
 Next Themes
 Next Intl
-Polypane
 Rapid API
 Zustand
 Axios
