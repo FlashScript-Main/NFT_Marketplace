@@ -40,6 +40,26 @@ const IntegratedTechnologies = () => {
                 <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] translate-y-[50%] |  | grid place-content-center | w-24 h-24 bg-purple-500 rounded-full`}>
                     Next.js
                 </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] translate-y-[50%] |  | grid place-content-center | w-24 h-24 bg-purple-500 rounded-full`}>
+                    Next.js
+                </div>
+                
+                <div className={`absolute top-[50%] left-[50%] transform -translate-x-[150%] -translate-y-[50%] |  | grid place-content-center | w-24 h-24 bg-purple-500 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform translate-x-[50%] translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-green-500 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform translate-x-[50%] -translate-y-[150%] |  | grid place-content-center | w-24 h-24 bg-green-500 rounded-full`}>
+                    Next.js
+                </div>
+
+                <div className={`absolute top-[50%] left-[50%] transform translate-x-[0%] -translate-y-[240%] |  | grid place-content-center | w-24 h-24 bg-orange-500 rounded-full`}>
+                    Next.js
+                </div>
             </div>
         </div>
     )
@@ -49,6 +69,7 @@ const IntegratedTechnologies = () => {
 export default IntegratedTechnologies
 
 /*
+FlashScript
 Next.js 14
 TypeScript
 Tailwind CSS
