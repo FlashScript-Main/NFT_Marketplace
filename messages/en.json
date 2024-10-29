@@ -158,5 +158,9 @@
         "tab-week": "This Week",
         "tab-month": "This Month",
         "tab-time": "All Time"
+    },
+    "FlashScript": {
+        "title": "Technologies Behind This Website",
+        "description": "This page highlights the technologies integrated to build this website, including Next.js for the framework, Tailwind CSS for styling, and TypeScript for type safety. Discover the tools and methods that power this Project."
     }
 }
