@@ -6,9 +6,9 @@ import Image from "next/image"
 const IntegratedTechnologies = () => {
 
     return (
-        <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto relative md:h-[75vh] xl:h-[90vh] mb-[1.875rem] md:mb-10 xl:mb-20 |  |  | border-2 border-indigo-500`}>
-            <div className={`md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 | text-white | max-md:grid max-md:grid-cols-2 max-md:place-content-center max-md:gap-4 | w-full h-full border-2 border-rose-500 `}>
-                {integratedTechnologiesInfo.map((tech) => (
+        <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto relative md:h-[75vh] xl:h-[80vh] mb-[1.875rem] md:mb-10 xl:mb-20 |  |  | `}>
+            <div className={`md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 | text-white | max-md:grid max-md:grid-cols-2 max-md:place-content-center max-md:gap-4 | w-full h-full`}>
+                {integratedTechnologiesInfo.map((tech, index) => (
                     <Tooltip 
                     key={tech.id}
                     showArrow={true} 
@@ -24,6 +24,10 @@ const IntegratedTechnologies = () => {
                     <MotionA 
                         href={tech.href}
                         target="_blank"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, margin: "-20px" }}
+                        transition={{ staggerChildren: 0.02, delay: 0.05 * (index + 0.25), duration: 0.25, ease: "easeInOut" }}
                         className={`
                             md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] 
                             ${tech.classNames} overflow-hidden cursor-pointer | bg-white |  | 

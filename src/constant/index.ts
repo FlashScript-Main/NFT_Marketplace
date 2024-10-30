@@ -757,13 +757,13 @@ export const integratedTechnologiesInfo = [
         id: 9,
         tooltipContent: "Next Intl",
         href: "https://next-intl-docs.vercel.app/",
-        classNames: "md:mt-[0rem] md:-ml-[9.5rem] xl:-ml-[11rem]",
+        classNames: "md:-mt-[14rem] md:ml-[6rem] xl:-mt-[16.5rem] xl:ml-[7rem]",
         imageSrc: "next-intl.png",
     },
     {
         id: 10,
         tooltipContent: "Rapid API",
-        href: "https://rapidapi.com/hub",
+        href: "https://rapidapi.com/openseatools/api/openblur/playground",
         classNames: "md:mt-[0rem] md:-ml-[9.5rem] xl:-ml-[11rem]",
         imageSrc: "rapid-api.ico",
     },
@@ -778,7 +778,7 @@ export const integratedTechnologiesInfo = [
         id: 12,
         tooltipContent: "Axios",
         href: "https://axios-http.com/",
-        classNames: "md:mt-[6rem] md:ml-[14rem] xl:mt-[7rem] xl:ml-[16.5rem]",
+        classNames: "md:mt-[0rem] md:-ml-[9.5rem] xl:-ml-[11rem] md:hidden",
         imageSrc: "axios.svg",
     },
     {
@@ -820,7 +820,7 @@ export const integratedTechnologiesInfo = [
         id: 18,
         tooltipContent: "Polypane",
         href: "https://polypane.app/",
-        classNames: "md:-mt-[14rem] md:ml-[6rem] xl:-mt-[16.5rem] xl:ml-[7rem]",
+        classNames: "md:mt-[6rem] md:ml-[14rem] xl:mt-[7rem] xl:ml-[16.5rem]",
         imageSrc: "polypane.jpg",
     },
 ];
