@@ -1,4 +1,5 @@
 import { MotionA } from "@/animations/motion-provider"
+import { integratedTechnologiesInfo } from "@/constant"
 import { Tooltip } from "@nextui-org/react"
 import Image from "next/image"
 
@@ -7,8 +8,41 @@ const IntegratedTechnologies = () => {
     return (
         <div className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto relative md:h-[75vh] xl:h-[90vh] mb-[1.875rem] md:mb-10 xl:mb-20 |  |  | border-2 border-indigo-500`}>
             <div className={`md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 | text-white | max-md:grid max-md:grid-cols-2 max-md:place-content-center max-md:gap-4 | w-full h-full border-2 border-rose-500 `}>
-                {/* {} */}
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] |  | max-md:col-span-2 | max-md:w-full max-md:h-full md:w-40 md:h-40 md:xl:w-48 xl:h-48 bg-blue-500 md:rounded-full`}>
+                {integratedTechnologiesInfo.map((tech) => (
+                    <Tooltip 
+                    key={tech.id}
+                    showArrow={true} 
+                    content={tech.tooltipContent}
+                    placement="top"
+                    offset={-15}
+                    classNames={{
+                        base: "before:bg-nftCustom-cta max-md:before:invisible",
+                        content: "text-nftCustom-text bg-nftCustom-cta"
+                    }}
+                    className={`max-md:hidden |  |  | `}
+                >
+                    <MotionA 
+                        href={tech.href}
+                        target="_blank"
+                        className={`
+                            md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] 
+                            ${tech.classNames} overflow-hidden cursor-pointer | bg-white |  | 
+                            ${tech.tooltipContent === "FlashScript" ? "max-md:w-20 max-md:h-20 md:w-40 md:h-40 md:xl:w-48 xl:h-48" : "max-md:w-20 max-md:h-20 max-md:mx-auto md:w-24 md:h-24 xl:w-28 xl:h-28"} 
+                            group border-4 border-nftCustom-text hover:border-nftCustom-cta rounded-full main-transition-color
+                        `}
+                    >
+                        <Image 
+                            src={`/integrated/${tech.imageSrc}`}
+                            alt={tech.tooltipContent}
+                            width={500}  
+                            height={500}
+                            className={`w-full h-full object-cover |  |  | group-hover:scale-110 duration-500 transition-transform`}
+                        />
+                    </MotionA>
+                </Tooltip>
+                ))}
+
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] |  |  | bg-blue-500 md:rounded-full`}>
                     FlashScript
                 </div>
 
@@ -26,7 +60,7 @@ const IntegratedTechnologies = () => {
                         <MotionA 
                             href="https://nextjs.org/"
                             target="_blank"
-                            className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[9.5rem] xl:mt-[11rem] overflow-hidden cursor-pointer | bg-white |  | max-md:w-20 max-md:h-20 max-md:mx-auto md:w-24 md:h-24 xl:w-28 xl:h-28 group border-4 border-nftCustom-text hover:border-nftCustom-cta rounded-full main-transition-color`}
+                            className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] overflow-hidden cursor-pointer | bg-white |  | max-md:w-20 max-md:h-20 max-md:mx-auto md:w-24 md:h-24 xl:w-28 xl:h-28 group border-4 border-nftCustom-text hover:border-nftCustom-cta rounded-full main-transition-color`}
                         >
                             <Image 
                                 src="/integrated/nextjs.svg"
@@ -36,71 +70,71 @@ const IntegratedTechnologies = () => {
                                 className={`w-full h-full object-cover |  |  | group-hover:scale-110 duration-500 transition-transform`}
                             />
                         </MotionA>
-                    </Tooltip>
+                    </Tooltip> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[7rem] md:ml-[7rem] xl:mt-[8.5rem] xl:ml-[8.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-yellow-400 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-yellow-400 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[7rem] md:-ml-[7rem] xl:mt-[8.5rem] xl:-ml-[8.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-fuchsia-700 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-fuchsia-700 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:-mt-[7rem] md:-ml-[7rem] xl:-mt-[8.5rem] xl:-ml-[8.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-rose-400 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-green-900 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:-mt-[9.5rem] xl:-mt-[11rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-rose-400 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-rose-400 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:-mt-[7rem] md:ml-[7rem] xl:-mt-[8.5rem] xl:ml-[8.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-blue-400 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-blue-400 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[0rem] md:ml-[9.5rem] xl:ml-[11rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-green-400 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-green-400 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[0rem] md:-ml-[9.5rem] xl:-ml-[11rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-green-400 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-green-400 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[0rem] md:-ml-[9.5rem] xl:-ml-[11rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-green-400 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-green-400 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[6rem] md:-ml-[14rem] xl:mt-[7rem] xl:-ml-[16.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-white rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-white rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[6rem] md:ml-[14rem] xl:mt-[7rem] xl:ml-[16.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-purple-600 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-purple-600 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:-mt-[6rem] md:ml-[14rem] xl:-mt-[7rem] xl:ml-[16.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-purple-600 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-purple-600 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:-mt-[6rem] md:-ml-[14rem] xl:-mt-[7rem] xl:-ml-[16.5rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-purple-600 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-purple-600 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:-mt-[14rem] md:-ml-[6rem] xl:-mt-[16.5rem] xl:-ml-[7rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-white rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-white rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:-mt-[14rem] md:ml-[6rem] xl:-mt-[16.5rem] xl:ml-[7rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-red-700 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-red-700 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[14rem] md:ml-[6rem] xl:mt-[16.5rem] xl:ml-[7rem] |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-red-700 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  |  | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-red-700 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
 
-                <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%] md:mt-[14rem] md:-ml-[6rem] xl:mt-[16.5rem] xl:-ml-[7rem] |  | max-md:col-span-2 | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-red-700 rounded-full`}>
+                {/* <div className={`md:absolute md:top-[50%] md:left-[50%] md:transform md:-translate-x-[50%] md:-translate-y-[50%]  |  | max-md:col-span-2 | md:w-24 md:h-24 xl:w-28 xl:h-28 bg-red-700 rounded-full`}>
                     Next.js
-                </div>
+                </div> */}
             </div>
         </div>
     )
