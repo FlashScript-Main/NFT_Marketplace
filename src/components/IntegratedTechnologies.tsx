@@ -15,6 +15,7 @@ const IntegratedTechnologies = () => {
                     content={tech.tooltipContent}
                     placement="top"
                     offset={-15}
+                    closeDelay={0}
                     classNames={{
                         base: "before:bg-nftCustom-cta max-md:before:invisible",
                         content: "text-nftCustom-text bg-nftCustom-cta"

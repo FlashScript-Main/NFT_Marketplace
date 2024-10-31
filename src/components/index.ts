@@ -5,6 +5,7 @@ import CustomButton from "./CustomButton";
 import CountDownTimer from "./CountDownTimer";
 import JoinUsSubscribeForm from "./JoinUsSubscribeForm";
 import IntegratedTechnologies from "./IntegratedTechnologies";
+import MoreOptions from "./MoreOptions";
 
 export {
     Header,
@@ -13,5 +14,6 @@ export {
     CustomButton,
     CountDownTimer,
     JoinUsSubscribeForm,
-    IntegratedTechnologies
+    IntegratedTechnologies,
+    MoreOptions,
 }

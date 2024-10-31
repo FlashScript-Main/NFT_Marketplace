@@ -24,6 +24,11 @@ const config: Config = {
 				blue_accent: "var(--nft-blue-accent)",
 				red_accent: "var(--nft-red-accent)",
 				
+				// Header
+				header: {
+					bg: "var(--nft-header-bg)",
+				},
+
 				// Footer
 				footer: {
 					bg: "var(--nft-footer-bg)",

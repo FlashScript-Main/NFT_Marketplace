@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 import { iranSans } from "@/utils/fonts";
 import { MotionDiv, MotionLi } from "@/animations/motion-provider";
+import MoreOptions from "./MoreOptions";
 
 const Header = ({ locale }: { locale: string }) => {
 
@@ -39,10 +40,10 @@ const Header = ({ locale }: { locale: string }) => {
         <NextUINavbar 
             onMenuOpenChange={setIsMenuOpen} 
             position="sticky" 
-            shouldHideOnScroll 
+            shouldHideOnScroll
             maxWidth="full"
             height="3.375rem"
-            className={`py-2 lg:py-6 | bg-nftCustom-background |  | ${language("isEnglish") === "false" && `${iranSans}`}`}
+            className={`py-2 lg:py-6 | bg-nftCustom-header-bg  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}
         >
             <div className={`w-full md:w-[95%] lg:max-w-[74rem] mx-auto | selection:text-nftCustom-cta selection:bg-nftCustom-text | flex justify-between items-center | `}>
                 <Link href={`/${locale}/`} className={` |  |  | group ${language("isEnglish") === "false" && "order-last"}`}>
@@ -61,6 +62,15 @@ const Header = ({ locale }: { locale: string }) => {
                         </span>
                     </MotionDiv>
                 </Link>
+                
+                <MotionDiv 
+                    initial={{ y: "-20px", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    transition={{ duration: 0.5, ease: "easeInOut", delay: 1 }}
+                    className={` |  |  | ${language("isEnglish") === "true" ? "ml-auto mr-4 md:mr-7" : "mr-auto ml-4 md:ml-7 order-2"}`}
+                >
+                    <MoreOptions />
+                </MotionDiv>
 
                 <div className={`max-lg:hidden |  | flex justify-between items-center gap-7 | `}>
                     <ul className={` |  | flex justify-center items-center gap-7 | ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
@@ -99,7 +109,7 @@ const Header = ({ locale }: { locale: string }) => {
                     </MotionDiv>
                 </div>
 
-                <NextUINavbarMenu className={`lg:hidden pt-6 | bg-nftCustom-background |  | overflow-hidden`}>
+                <NextUINavbarMenu className={`lg:hidden pt-6 z-50 | bg-nftCustom-header-bg |  | overflow-hidden`}>
                     {menuItems.map((item, index) => (
                         <NextUINavbarItem key={`${item}-${index}`}>
                             <Link

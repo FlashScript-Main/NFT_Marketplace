@@ -1,4 +1,3 @@
-// import ThemeSwitcher from "@/theme/ThemeSwitcher"
 import { GlobalMotionMain } from '@/animations/MotionAnimations';
 import { CategoriesSection, DiscoverMoreSection, DiscoverSection, HowItWorksSection, JoinUsSection, MagicMashroomsSection, TopCreatorsSection, TrendingSection } from '@/template/home-page';
 import { iranSans } from '@/utils/fonts';
@@ -83,8 +82,6 @@ const Home = ({ params: { locale } }: MainPagePropsType) => {
 
                 <JoinUsSection />
             </div>
-
-            {/* <ThemeSwitcher locale={locale} /> */}
         </GlobalMotionMain>
     )
 
