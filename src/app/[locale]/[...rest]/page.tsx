@@ -1,9 +1,10 @@
-import { MotionH1, MotionP, MotionSpan } from "@/animations/motion-provider";
+import { MotionDiv, MotionH1, MotionH2, MotionP, MotionSpan } from "@/animations/motion-provider";
 import { charVariants } from "@/animations/motion-variants";
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
 import { SectionToScroll } from "@/animations/ScrollAnimations";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const NotFoundPage = () => {
 
@@ -13,7 +14,17 @@ const NotFoundPage = () => {
     return (
         <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <SectionToScroll className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto py-[1.875rem] md:py-10 xl:py-20 |  |  | ${language("isEnglish") === "false" && "text-end"}`}>
-                <MotionH1 
+                <MotionH1
+                    initial={{ y: "20%", opacity: 0 }}
+                    whileInView={{ y: "0%", opacity: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.75, ease: "easeInOut" }}
+                    className={`mb-8 md:mb-10 xl:mb-12 | text-center text-nftCustom-cta text-6xl md:text-7xl xl:text-9xl font-semibold |  | `}
+                >
+                    404
+                </MotionH1>
+
+                <MotionH2 
                     initial="hidden"
                     whileInView="reveal"
                     viewport={{ once: true, margin: "-50px" }}
@@ -29,7 +40,7 @@ const NotFoundPage = () => {
                             {char}
                         </MotionSpan>
                     ))}
-                </MotionH1>
+                </MotionH2>
 
                 <MotionP 
                     initial="hidden"
@@ -48,6 +59,15 @@ const NotFoundPage = () => {
                         </MotionSpan>
                     ))}
                 </MotionP>
+
+                <MotionDiv>
+                    <Link
+                        href={`/${language("isEnglish") === "true" ? "en" : "fa"}/`}
+                        className={` | text-nftCustom-cta text-xl md:text-2xl xl:text-3xl font-semibold |  | main-transition-color`}
+                    >
+                        {translateNotFound("button")}
+                    </Link>
+                </MotionDiv>
             </SectionToScroll>
         </GlobalMotionMain>
     )
