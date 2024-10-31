@@ -8,6 +8,7 @@ import { Footer, Header } from "@/components";
 import { workSans } from "@/utils/fonts";
 import { Toaster } from "@/components/ui/toaster"
 import TanstackProvider from "@/providers/TanstackProvider";
+import NFTLoadingSuspense from "@/components/NFTLoadingSuspense";
 // import FixHydrationFailure from "@/components/FixHydrationFailure";
 
 export const metadata: Metadata = {
@@ -39,12 +40,12 @@ export default async function RootLayout({
                     >
                         <Providers>
                             <TanstackProvider>
-                                <div>
+                                <NFTLoadingSuspense>
                                     <Header locale={locale} />
-                                    {children}
+                                        {children}
                                     <Footer locale={locale} />
                                     <Toaster />
-                                </div>
+                                </NFTLoadingSuspense>
                             </TanstackProvider>
                         </Providers>
                     </ThemeProvider>

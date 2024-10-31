@@ -60,10 +60,16 @@ const NotFoundPage = () => {
                     ))}
                 </MotionP>
 
-                <MotionDiv>
+                <MotionDiv
+                    initial={{ x: "20%", opacity: 0 }}
+                    whileInView={{ x: "0%", opacity: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.75, ease: "easeInOut" }}
+                    className={`mb-4 |  |  | ${language("isEnglish") === "true" ? "mt-8" : "max-md:mt-8 mt-12"}`}
+                >
                     <Link
                         href={`/${language("isEnglish") === "true" ? "en" : "fa"}/`}
-                        className={` | text-nftCustom-cta text-xl md:text-2xl xl:text-3xl font-semibold |  | main-transition-color`}
+                        className={`mx-auto w-fit px-4 xl:px-5 py-3 xl:py-4 | text-nftCustom-cta hover:text-nftCustom-text text-lg xl:text-xl font-semibold bg-nftCustom-text hover:bg-nftCustom-cta | grid | rounded-[20px] main-transition-color`}
                     >
                         {translateNotFound("button")}
                     </Link>
