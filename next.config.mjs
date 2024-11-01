@@ -1,9 +1,15 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import withPWA from 'next-pwa';
+
+/** @type {import('next').NextConfig} */
 
 const withNextIntl = createNextIntlPlugin();
 
-/** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
+    reactStrictMode: true,
+
     // Disable "eslint" & "typescript" rules if "i18n" type was NOT detected
     // eslint: {
     //     ignoreDuringBuilds: true,
@@ -73,4 +79,6 @@ const nextConfig = {
     }
 };
 
-export default withNextIntl(nextConfig);
+export default isProduction ? withNextIntl(withPWA({
+    dest: 'public',
+})(nextConfig)) : withNextIntl(nextConfig);

@@ -5,6 +5,7 @@ import { Settings } from "lucide-react";
 // import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
+import InstallPWA from "./InstallPWA";
 
 const MoreOptions = () => {
 
@@ -89,6 +90,12 @@ const MoreOptions = () => {
                         {themeOption.name}
                     </DropdownItem>
                 ))}
+              </DropdownSection>
+
+              <DropdownSection title="PWA">
+                <DropdownItem>
+                  <InstallPWA />
+                </DropdownItem>
               </DropdownSection>
 
 
