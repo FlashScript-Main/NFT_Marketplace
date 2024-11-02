@@ -15,7 +15,7 @@ import { useState } from "react";
 import { iranSans } from "@/utils/fonts";
 import { MotionDiv, MotionLi } from "@/animations/motion-provider";
 import MoreOptions from "./MoreOptions";
-import ThemeSwitcher from "@/themes/ThemeSwitcher";
+import MoreOptionsThis from '@/components/include/MoreOptions';
 
 const Header = ({ locale }: { locale: string }) => {
 
@@ -71,7 +71,7 @@ const Header = ({ locale }: { locale: string }) => {
                     className={` |  |  | ${language("isEnglish") === "true" ? "ml-auto mr-4 md:mr-7" : "mr-auto ml-4 md:ml-7 order-2"}`}
                 >
                     <MoreOptions />
-                    <ThemeSwitcher />
+                    <MoreOptionsThis />
                 </MotionDiv>
 
                 <div className={`max-lg:hidden |  | flex justify-between items-center gap-7 | `}>

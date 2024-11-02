@@ -5,7 +5,7 @@ import { Settings } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
-import InstallPWA from "./InstallPWA";
+import InstallPWA from "./include/InstallPWA";
 import { customThemes } from "@/constant";
 
 const MoreOptions = () => {

@@ -6,7 +6,6 @@ import CountDownTimer from "./CountDownTimer";
 import JoinUsSubscribeForm from "./JoinUsSubscribeForm";
 import IntegratedTechnologies from "./IntegratedTechnologies";
 import MoreOptions from "./MoreOptions";
-import InstallPWA from "./InstallPWA";
 
 export {
     Header,
@@ -17,5 +16,4 @@ export {
     JoinUsSubscribeForm,
     IntegratedTechnologies,
     MoreOptions,
-    InstallPWA
 }
