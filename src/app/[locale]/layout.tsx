@@ -9,6 +9,7 @@ import { workSans } from "@/utils/fonts";
 import { Toaster } from "@/components/ui/toaster"
 import TanstackProvider from "@/providers/TanstackProvider";
 import NFTLoadingSuspense from "@/components/NFTLoadingSuspense";
+import { nftMarketplaceThemes } from "@/constant";
 // import FixHydrationFailure from "@/components/FixHydrationFailure";
 
 export const metadata: Metadata = {
@@ -45,7 +46,7 @@ export default async function RootLayout({
                         disableTransitionOnChange
                         defaultTheme="nftDefault"
                         enableSystem={false}
-                        themes={["nftDefault", "red", "green", "blue"]}
+                        themes={nftMarketplaceThemes}
                     >
                         <Providers>
                             <TanstackProvider>

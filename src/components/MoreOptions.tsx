@@ -2,26 +2,20 @@
 
 import { Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger } from "@nextui-org/dropdown"
 import { Settings } from "lucide-react";
-// import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import InstallPWA from "./InstallPWA";
+import { customThemes } from "@/constant";
 
 const MoreOptions = () => {
 
-  // const language = useTranslations("language");
+  const language = useTranslations("language");
 
   const pathName = usePathname();
     const router = useRouter();
   
     const path = pathName.split("/").slice(2).join("/");
-
-    const customThemes = [
-      { name: "nftDefault", color: "bg-purple-500" },
-      { name: "red", color: "bg-red-500" },
-      { name: "blue", color: "bg-blue-500" },
-      { name: "green", color: "bg-green-500" },
-  ]
 
   const { setTheme } = useTheme();
 
@@ -49,7 +43,7 @@ const MoreOptions = () => {
             backdrop="blur" 
             classNames={{
                 trigger: "outline-none",
-                base: "border-2 border-rose-500 w-[50rem] ml-40"
+                base: "border-2 border-rose-500 w-[50rem]"
             }}
         >
             <DropdownTrigger>
@@ -58,10 +52,7 @@ const MoreOptions = () => {
                 </button>
             </DropdownTrigger>
 
-            <DropdownMenu items={items} className={`relative |  |  | border-2 border-blue-500`}
-            classNames={{
-              base: "grid grid-cols-2",
-            }}>
+            <DropdownMenu items={items} className={`relative  |  |  | border-2 border-blue-500`}>
               <DropdownSection title="Language" classNames={{heading: "text-4xl"}} className={`absolute inset-0 ml-[40rem] h-fit w-fit |  |  | border-2 border-orange-500`}>  
                 <DropdownItem
                     key="new"
@@ -83,11 +74,11 @@ const MoreOptions = () => {
               <DropdownSection title="Theme">
               {customThemes.map((themeOption) => (
                     <DropdownItem 
-                        key={themeOption.name} 
-                        className={`${themeOption.color}`} 
-                        onClick={() => setTheme(themeOption.name)}
+                        key={themeOption.value} 
+                        className={`${themeOption.textColor} ${themeOption.bgColor} !font-semibold z-[100] absolute inset-0 ml-28 h-fit w-fit mt-10`} 
+                        onClick={() => setTheme(themeOption.value)}
                     >
-                        {themeOption.name}
+                        {language("isEnglish") === "true" ? themeOption.nameEn : themeOption.nameFa}
                     </DropdownItem>
                 ))}
               </DropdownSection>
