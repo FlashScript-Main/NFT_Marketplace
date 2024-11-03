@@ -85,7 +85,7 @@ const MoreOptions = () => {
 
               <DropdownSection title="PWA">
                 <DropdownItem>
-                  <InstallPWA />
+                  {/* <InstallPWA /> */}
                 </DropdownItem>
               </DropdownSection>
 

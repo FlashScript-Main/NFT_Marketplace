@@ -6,6 +6,7 @@ import { Settings } from "lucide-react";
 import { useTranslations } from "next-intl";
 import AnimateMotionButton from "./AnimateMotionButton";
 import ThemeSwitcher from "@/themes/ThemeSwitcher";
+import InstallPWA from "./InstallPWA";
 
 const MoreOptions = () => {
 
@@ -39,15 +40,10 @@ const MoreOptions = () => {
                         </ModalHeader>
 
                         <ModalBody>
-                            <div className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text | flex flex-col | border-2 border-rose-500`}>
-                                <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text |  | rounded-[20px] border-2 border-green-500`}>
-                                    <ThemeSwitcher onClose={onClose} />
-                                </div>
-
+                            <div className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text | flex flex-col gap-4 | border-2 border-rose-500`}>
+                                {/* <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text ${language("isEnglish") === "false" && `${iranSans}`} |  | rounded-[20px]`}> */}
                                 <div>
-                                    <div>
-                                        {/* <InstallPWA /> */}
-                                    </div>
+                                    <InstallPWA onClose={onClose} />
 
                                     <div>
                                         {/* <ChangeLanguage /> */}
@@ -56,6 +52,10 @@ const MoreOptions = () => {
                                     <div>
                                         <AnimateMotionButton />
                                     </div>
+                                </div>
+
+                                <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text |  | rounded-[20px]`}>
+                                    <ThemeSwitcher onClose={onClose} />
                                 </div>
                             </div>
                         </ModalBody>
