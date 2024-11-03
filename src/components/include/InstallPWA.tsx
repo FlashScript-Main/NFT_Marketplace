@@ -1,7 +1,7 @@
 "use client";
 
 import { iranSans } from '@/utils/fonts';
-import { CircleCheck, MonitorSmartphone } from 'lucide-react';
+import { MonitorSmartphone } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
@@ -11,48 +11,49 @@ interface BeforeInstallPromptEvent extends Event {
 }
 
 const InstallPWA = ({ onClose }: { onClose: () => void }) => {
-    const [installPromptEvent, setInstallPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
 
     const language = useTranslations("language");
 
+    const [installPromptEvent, setInstallPromptEvent] = useState<BeforeInstallPromptEvent | null>(null);
+
     useEffect(() => {
-        const handleBeforeInstallPrompt = (e: Event) => {
-            // Cast the event to BeforeInstallPromptEvent type
-            const promptEvent = e as BeforeInstallPromptEvent;
-            
-            // Prevent the mini-info bar from appearing on mobile
-            promptEvent.preventDefault();
-            // Store the event so it can be triggered later
-            setInstallPromptEvent(promptEvent);
-        };
-
-        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-        return () => {
-            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-        };
+      const handleBeforeInstallPrompt = (e: Event) => {
+        // Cast the event to BeforeInstallPromptEvent type
+        const promptEvent = e as BeforeInstallPromptEvent;
+        
+        // Prevent the mini-info bar from appearing on mobile
+        promptEvent.preventDefault();
+        // Store the event so it can be triggered later
+        setInstallPromptEvent(promptEvent);
+      };
+  
+      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+  
+      return () => {
+        window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      };
     }, []);
-
+  
     const handleInstallClick = async () => {
-        if (!installPromptEvent) return;
+      if (!installPromptEvent) return;
+  
+      // Show the install prompt
+      installPromptEvent.prompt();
+  
+      // Wait for the user's response
+      const choiceResult = await installPromptEvent.userChoice;
+      console.log(`User response to the install prompt: ${choiceResult.outcome}`);
+  
+      // Clear the saved prompt event
+      setInstallPromptEvent(null);
 
-        // Show the install prompt
-        installPromptEvent.prompt();
-
-        // Wait for the user's response
-        const choiceResult = await installPromptEvent.userChoice;
-        console.log(`User response to the install prompt: ${choiceResult.outcome}`);
-
-        // Clear the saved prompt event
-        setInstallPromptEvent(null);
-
-        onClose();
+      onClose();
     };
 
     return (
-        <div className={` | ${language("isEnglish") === "false" && `${iranSans}`} |  | `}>
-            {installPromptEvent ? (
-              <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text | flex items-center gap-2 | rounded-[20px] ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
+        <div className={`${installPromptEvent && "mb-4 mx-auto"} | ${language("isEnglish") === "false" && `${iranSans}`} |  | `}>
+            {installPromptEvent && (
+              <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text | flex items-center max-md:justify-between gap-2 | rounded-[20px] ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
                   <h5 className={`my-auto | text-nftCustom-background text-base md:text-lg font-medium |  | `}>
                     <span className={`max-md:hidden |  |  | `}>
                       {language("isEnglish") === "true" ? "Install NFT Marketplace Application" : "بازار توکن دیجیتال را نصب کنید"}
@@ -70,8 +71,9 @@ const InstallPWA = ({ onClose }: { onClose: () => void }) => {
                     <MonitorSmartphone />
                   </button>
               </div>
-            ) : (
-              <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text | flex items-center gap-2 | rounded-[20px] ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
+            )}
+            {/* : (
+              <div className={`py-3 md:py-4 px-4 md:px-6 |  | flex items-center gap-2 | rounded-[20px] ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
                   <h5 className={`my-auto | text-nftCustom-background text-base md:text-lg font-medium |  | `}>
                     <span className={`max-md:hidden |  |  | `}>
                       {language("isEnglish") === "true" ? "NFT Marketplace Application Installed Successfully" : "بازار توکن دیجیتال با موفقیت نصب شد"}
@@ -86,7 +88,7 @@ const InstallPWA = ({ onClose }: { onClose: () => void }) => {
                     <CircleCheck />
                   </span>
               </div>
-            )}
+            )} */}
         </div>
     )
 

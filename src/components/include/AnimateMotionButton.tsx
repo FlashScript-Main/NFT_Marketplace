@@ -2,8 +2,12 @@
 
 import { useEffect } from 'react';
 import useMotionAnimations from '@/stores/useMotionAnimations';
+import { useTranslations } from 'next-intl';
+import { iranSans } from '@/utils/fonts';
 
-const AnimateMotionButton = () => {
+const AnimateMotionButton = ({ onClose }: { onClose: () => void }) => {
+
+    const language = useTranslations("language");
 
     const { wantAnimations, setWantAnimations } = useMotionAnimations();
 
@@ -11,18 +15,31 @@ const AnimateMotionButton = () => {
         useMotionAnimations.persist.rehydrate();
     }, []);
 
-    const handleClick = () => {
+    const handleAnimationStatus = () => {
         setWantAnimations(!wantAnimations);
         window.location.reload(); // refresh the current page
+        onClose();
     }
+
     return (
-        <button 
-            onClick={handleClick}
-            className={`mx-auto mt-[2rem] py-2 px-3 | 
-                text-2xl text-rose-600 bg-rose-300 hover:bg-rose-400 | grid | rounded-md`}
-        >
-            Toggle Value
-        </button>
+        <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text ${language("isEnglish") === "false" && `${iranSans}`} | ${language("isEnglish") === "false" && `col-start-1 row-start-1`} | rounded-[20px]`}>
+            <div className={` |  | flex items-center justify-between gap-2 ${language("isEnglish") === "false" && "flex-row-reverse"} | `}>
+                <h5 className={`my-auto | text-nftCustom-background text-base md:text-lg font-medium |  | ${language("isEnglish") === "false" && `${iranSans} text-end`}`}>
+                    {language("isEnglish") === "true" ? "Animations" : "انیمیشن‌ها"}
+                </h5>
+
+                <button 
+                    onClick={handleAnimationStatus}
+                    className={`p-2 px-4 | text-nftCustom-text hover:text-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text | grid place-content-center | border-2 border-nftCustom-cta rounded-[20px] main-transition-color`}
+                >
+                    {
+                        wantAnimations ? 
+                        language("isEnglish") === "true" ? "Disable" : "غیر فعال" : 
+                        language("isEnglish") === "true" ? "Enable" : "فعال"
+                    }
+                </button>
+            </div>
+        </div>
     )
 
 }
