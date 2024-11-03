@@ -5,6 +5,7 @@ import { Modal, ModalBody, ModalContent, ModalHeader, useDisclosure } from "@nex
 import { Settings } from "lucide-react";
 import { useTranslations } from "next-intl";
 import AnimateMotionButton from "./AnimateMotionButton";
+import ThemeSwitcher from "@/themes/ThemeSwitcher";
 
 const MoreOptions = () => {
 
@@ -13,7 +14,7 @@ const MoreOptions = () => {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     return (
-        <div className={` |  |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+        <div>
             <button 
                 onClick={onOpen}
                 className={`px-1 py-1 xl:py-2 xl:px-2 my-auto | text-nftCustom-text hover:text-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text | grid | rounded-full main-transition-color`}
@@ -31,22 +32,30 @@ const MoreOptions = () => {
                 className={` | bg-nftCustom-background |  | border-2 border-nftCustom-cta`}
             >
                 <ModalContent>
-                    {() => (
+                    {(onClose) => (
                         <>
-                        <ModalHeader className={` | text-center text-nftCustom-text text-base xl:text-xl font-normal xl:font-semibold | flex flex-col gap-1 | border-2 border-indigo-500`}>
+                        <ModalHeader className={` | text-center text-nftCustom-text text-lg md:text-xl xl:text-2xl font-normal xl:font-semibold ${language("isEnglish") === "false" && `${iranSans}`} selection:text-nftCustom-cta selection:bg-nftCustom-text | flex flex-col gap-1 | border-2 border-indigo-500`}>
                             {language("isEnglish") === "true" ? "More Options" : "گزینه های بیشتر"}
                         </ModalHeader>
 
                         <ModalBody>
-                            <div className={` |  | grid grid-cols-2 | border-2 border-rose-500`}>
-                                <div>
-                                    {/* <ThemeSwitcher /> */}
+                            <div className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text | flex flex-col | border-2 border-rose-500`}>
+                                <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text |  | rounded-[20px] border-2 border-green-500`}>
+                                    <ThemeSwitcher onClose={onClose} />
                                 </div>
 
                                 <div>
-                                    {/* <InstallPWA /> */}
-                                    {/* <ChangeLanguage /> */}
-                                    <AnimateMotionButton />
+                                    <div>
+                                        {/* <InstallPWA /> */}
+                                    </div>
+
+                                    <div>
+                                        {/* <ChangeLanguage /> */}
+                                    </div>
+
+                                    <div>
+                                        <AnimateMotionButton />
+                                    </div>
                                 </div>
                             </div>
                         </ModalBody>

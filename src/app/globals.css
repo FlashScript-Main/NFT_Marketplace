@@ -71,7 +71,7 @@
 @layer utilities {
   /* Custom Scrollbar */
   .nft-scrollbar::-webkit-scrollbar {
-    @apply w-3;
+    @apply w-3 max-md:hidden;
   }
   .nft-scrollbar::-webkit-scrollbar-track {
     @apply bg-nftCustom-background;
