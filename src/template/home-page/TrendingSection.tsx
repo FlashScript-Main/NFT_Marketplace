@@ -17,7 +17,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
             <MotionH2 
                 initial="hidden"
                 whileInView="reveal"
-                viewport={{ once: true, margin: "-200px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ staggerChildren: 0.02, delay: 1 }}
                 className={` | text-nftCustom-text text-[1.75rem] xl:text-[2.375rem] font-semibold capitalize |  | ${language("isEnglish") === "false" && "text-end"}`}
             >
@@ -35,7 +35,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
             <MotionP 
                 initial="hidden"
                 whileInView="reveal"
-                viewport={{ once: true, margin: "-200px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ staggerChildren: 0.02, delay: 1 }}
                 className={`mt-2 mb-10 xl:mb-12 | text-nftCustom-text text-base xl:text-[1.375rem] font-light |  | ${language("isEnglish") === "false" && "text-end"}`}
             >
@@ -59,7 +59,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                         <MotionDiv
                             initial={{ y: "10%", opacity: 0 }}
                             whileInView={{ y: "0%", opacity: 1 }}
-                            viewport={{ once: true, margin: "-200px" }}
+                            viewport={{ once: true, margin: "-50px" }}
                             transition={{ staggerChildren: 0.02, delay: 0.25 * index, duration: 0.5 }}
                         >
                             <Image 
@@ -75,7 +75,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                             <MotionDiv
                                 initial={{ y: "20%", opacity: 0 }}
                                 whileInView={{ y: "0%", opacity: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 0.5), duration: 0.25 }}
                             >
                                 <Image 
@@ -90,7 +90,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                             <MotionDiv
                                 initial={{ y: "20%", opacity: 0 }}
                                 whileInView={{ y: "0%", opacity: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 1), duration: 0.25 }}
                             >
                                 <Image 
@@ -103,13 +103,13 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                             </MotionDiv>
                             
                             <Link 
-                                href={`/${locale}/${trend.href}`}
+                                href={`/${locale}/artist/${trend.href}`}
                                 // className={`w-[95px] h-[95px] md:w-[100px] md:h-[100px] | bg-nftCustom-cta hover:bg-nftCustom-text | grid place-content-center | border-4 border-nftCustom-cta rounded-[20px] group main-transition-color`}
                             >
                                 <MotionDiv
                                     initial={{ y: "20%", opacity: 0 }}
                                     whileInView={{ y: "0%", opacity: 1 }}
-                                    viewport={{ once: true, margin: "-100px" }}
+                                    viewport={{ once: true, margin: "-50px" }}
                                     transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 1.5), duration: 0.25 }}
                                     className={`w-[95px] h-[95px] md:w-[100px] md:h-[100px] | bg-nftCustom-cta hover:bg-nftCustom-text | grid place-content-center | border-4 border-nftCustom-cta rounded-[20px] group main-transition-color`}
                                 >
@@ -124,7 +124,7 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                             <MotionH5 
                                 initial={{ x: "20%", opacity: 0 }}
                                 whileInView={{ x: "0%", opacity: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 transition={{ staggerChildren: 0.02, delay: 0.25 * index, duration: 0.5 }}
                                 className={`mb-2 | text-nftCustom-text text-[1.375rem] font-medium |  | ${language("isEnglish") === "false" && "text-end" }`}
                             >
@@ -134,11 +134,11 @@ const TrendingSection = ({ locale }: { locale: string }) => {
                             <MotionDiv
                                 initial={{ y: "20%", opacity: 0 }}
                                 whileInView={{ y: "0%", opacity: 1 }}
-                                viewport={{ once: true, margin: "-100px" }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 transition={{ staggerChildren: 0.02, delay: 0.5 * (index + 1), duration: 0.25 }}
                             >
                                 <Link 
-                                    href={`/${locale}/${trend.href}`} 
+                                    href={`/${locale}/artist/${trend.href}`} 
                                     className={`w-fit |  | flex items-center gap-3 | group ${language("isEnglish") === "true" ? "justify-start" : "ml-auto"}`}
                                 >
                                     <Image 

@@ -65,10 +65,7 @@ const MoreNFTSFromArtist = ({ nft, locale }: { nft: NFTParamsType; locale: strin
                                 key={moreNFT.id}
                                 className={`overflow-hidden |  |  | rounded-[20px] group `}
                             >
-                                <Link 
-                                    href={`/${moreNFT.href}`}
-                                    // href={`/${locale}/${moreNFT.href}`}
-                                >
+                                <Link href={`/${locale}/${nft.artistHref}`}>
                                     <div className={`w-[19.6875rem] h-[14.875rem] md:w-[20.625rem] md:h-[18.4375rem] overflow-hidden |  |  | `}>
                                         <Image 
                                             src={`/${moreNFT.image}`}

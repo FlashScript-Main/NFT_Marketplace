@@ -20,11 +20,10 @@ const ArtistCollectionTab = ({ artist }: { artist: ArtistParamsType }) => {
                         transition={{ delay: 0.025 * (index + 0.025), duration: 0.5, ease: "easeInOut", }}
                     >
                         <Link 
-                            href={`${collection.href}`}
-                            // href={`/${locale}/${category.href}`}
+                            href={`${language("isEnglish") === "true" ? `/en/${collection.href}` : `/fa/${collection.href}`}`}
                             className={`overflow-hidden | flex flex-col |  | rounded-[20px] group`}
                         >
-                            <div className={`relative overflow-hidden inline-block  |  |  | `}>
+                            <div className={`relative overflow-hidden inline-block max-md:h-[16rem] md:h-[20rem] |  |  | `}>
                                 <Image 
                                     src={`/${collection.imageMain}`}
                                     alt={`${collection.titleEn} Category`}

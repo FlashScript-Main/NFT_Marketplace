@@ -18,6 +18,7 @@ import MoreOptions from '@/components/include/MoreOptions';
 import useUserStore from "@/stores/useUserStore";
 import UserSignedUp from "./UserSignedUp";
 import NFTHamburgerButton from "./NFTHamburgerButton";
+import { motion } from "framer-motion";
 
 const Header = ({ locale }: { locale: string }) => {
 
@@ -27,19 +28,6 @@ const Header = ({ locale }: { locale: string }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const { username } = useUserStore();
-
-    const menuItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
-    ];
 
     return (
         <NextUINavbar 
@@ -119,24 +107,41 @@ const Header = ({ locale }: { locale: string }) => {
                 </div>
 
                 <NextUINavbarMenu className={`lg:hidden pt-6 z-50 | bg-nftCustom-header-bg |  | overflow-hidden`}>
-                    {menuItems.map((item, index) => (
-                        <NextUINavbarItem key={`${item}-${index}`}>
-                            <Link
-                                color={index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"}
-                                className={`w-full | text-nftCustom-text hover:text-nftCustom-cta |  | main-transition-color`}
-                                href="#"
+                    {navbarLinks.map((link, index) => (
+                        <NextUINavbarItem key={`${link}-${index}`}>
+                            <Link 
+                                href={`/${locale}/${link.href}`} 
+                                className={` | text-base md:text-lg text-nftCustom-text hover:text-nftCustom-cta font-semibold |  | main-transition-color ${language("isEnglish") === "false" && `grid text-end ${iranSans}`}`}
                             >
-                                {item}
+                                {translateHeader(link.language)}
                             </Link>
                         </NextUINavbarItem>
                     ))}
-                </NextUINavbarMenu>   
 
-                <NextUINavbarMenuToggle
-                icon={<NFTHamburgerButton />}
-                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className={`lg:hidden w-fit | text-nftCustom-text hover:text-nftCustom-cta |  | rounded-full group main-transition-color`}
-                />
+                    <div className={`w-full h-[0.15rem] my-4 | bg-nftCustom-background_secondary |  | rounded-full`} />
+
+                    <NextUINavbarItem>
+                        <Link 
+                            href={`${username === "" ? `/${locale}/create-account` : `/${locale}/dashboard`}`}
+                            className={`mx-auto w-fit | text-nftCustom-cta md:text-lg hover:text-nftCustom-text font-semibold text-center | grid | main-transition-color`}
+                        >
+                            {username === "" ? translateHeader("button-text") : username}
+                        </Link>
+                    </NextUINavbarItem>
+                </NextUINavbarMenu>   
+                
+                <motion.div
+                    initial={{ y: "-20%", opacity: 0 }}
+                    whileInView={{ y: "0%", opacity: 1 }}
+                    viewport={{ once: true, }}
+                    transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+                >
+                    <NextUINavbarMenuToggle
+                        icon={<NFTHamburgerButton />}
+                        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                        className={`lg:hidden w-fit | text-nftCustom-text hover:text-nftCustom-cta |  | rounded-full group main-transition-color`}
+                    />
+                </motion.div>
             </div>
         </NextUINavbar>
     )

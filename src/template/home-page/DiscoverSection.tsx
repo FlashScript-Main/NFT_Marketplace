@@ -70,7 +70,7 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                     className={`md:hidden overflow-hidden my-6 |  |  | rounded-[20px] group`}
                 >
                     <Link 
-                        href={`/${locale}/`} 
+                        href={`/${locale}/nft/space-walking`} 
                         className={` | flex flex-col |  | `}
                     >
                         <div className={`overflow-hidden inline-block h-fit |  |  | `}>
@@ -125,7 +125,7 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                         locale={locale} 
                         translateButton={translateDiscover("button-text")} 
                         type="link" 
-                        href="sign-up"
+                        href="marketplace"
                         icon="rocket-launch"
                         className={` max-sm:px-20 sm:px-20 md:px-0 md:w-[14rem] md:py-[1rem] md:mb-2 xl:mb-6 border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] py-[1.1875rem] group`}
                         textClass={`text-[1rem] leading-[140%] font-medium group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3" : "mr-3 order-first"}`}
@@ -143,7 +143,7 @@ const DiscoverSection = ({ locale }: { locale: string }) => {
                 className={`max-md:hidden |  |  | md:basis-1/2`}
             >
                 <Link 
-                    href={`/${locale}/`} 
+                    href={`/${locale}/nft/space-walking`} 
                     className={`overflow-hidden my-6 md:my-0 xl:w-[31rem] xl:h-[31rem] | flex flex-col |  | rounded-[20px] group ${language("isEnglish") === "true" ? "xl:ml-auto" : "xl:mr-auto"}`}
                 >
                     <div className={`overflow-hidden inline-block h-fit |  |  | `}>

@@ -21,10 +21,7 @@ const ArtistOwnedTab = ({ artist }: { artist: ArtistParamsType }) => {
                         key={card.id}
                         className={`overflow-hidden |  |  | rounded-[20px] group `}
                     >
-                        <Link 
-                            href={`/${card.href}`}
-                            // href={`/${locale}/${card.href}`}
-                        >
+                        <Link href={`${language("isEnglish") === "true" ? `/en/marketplace` : `/fa/marketplace`}`}>
                             <div className={`w-[19.6875rem] h-[14.875rem] md:w-[20.625rem] md:h-[18.4375rem] overflow-hidden |  |  | `}>
                                 <Image 
                                     src={`/${card.image}`}

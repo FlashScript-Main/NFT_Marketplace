@@ -23,6 +23,8 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     const translateCreateAccount = useTranslations('Create-Account');
     const language = useTranslations("language");
 
+    const { username } = useUserStore();
+
     const zodResolverLangauge = language("isEnglish") === "true" ? createAccountSchemaEn : createAccountSchemaFa;
 
     const setUser = useUserStore((state) => state.setUser);
@@ -48,6 +50,12 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     useEffect(() => {
         useMotionAnimations.persist.rehydrate();
     }, []);
+
+    useEffect(() => {
+        if (username !== "") {
+            router.push(`/${locale}/`);
+        }
+    }, [username, locale, router]);
 
     const { 
         register, 

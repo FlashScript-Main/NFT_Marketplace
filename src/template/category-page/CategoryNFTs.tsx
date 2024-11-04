@@ -32,7 +32,7 @@ const CategoryNFTs = ({ category, locale }: { category: CategoryParamsType, loca
 
                         <div className={`absolute inset-0 w-full h-full group-hover:opacity-100 opacity-0 transition-all z-10 |  | grid place-content-center | main-transition-color`}>
                             <Link 
-                                href={`/${locale}/${nft.href}`}
+                                href={`/${locale}/marketplace`}
                                 className={`py-2 px-4 | bg-nftCustom-text hover:bg-nftCustom-cta text-nftCustom-cta hover:text-nftCustom-text text-base font-normal | flex items-center gap-2 | rounded-[20px] border-4 border-nftCustom-text main-transition-color`}
                             >
                                 {language("isEnglish") === "true" ? "Visit NFT" : "دیدن توکن"}

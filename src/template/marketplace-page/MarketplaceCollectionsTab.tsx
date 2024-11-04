@@ -21,7 +21,7 @@ const MarketplaceCollectionsTab = ({ locale }: { locale: string }) => {
                         transition={{ delay: 0.25 * (index + 0.025), duration: 0.5, ease: "easeInOut", }}
                     >
                         <Link 
-                            href={`/${locale}/nft/${collection.href}`}
+                            href={`/${locale}/category/${collection.href}`}
                             className={`overflow-hidden | flex flex-col |  | rounded-[20px] group`}
                         >
                             <div className={`relative overflow-hidden inline-block max-md:h-[16rem] md:h-[20rem] |  |  | `}>
