@@ -9,13 +9,13 @@ import { workSans } from "@/utils/fonts";
 import { Toaster } from "@/components/ui/toaster"
 import TanstackProvider from "@/providers/TanstackProvider";
 import NFTLoadingSuspense from "@/components/NFTLoadingSuspense";
-import { nftMarketplaceThemes } from "@/constant";
+import { metadataValues, nftMarketplaceThemes } from "@/constant";
 // import FixHydrationFailure from "@/components/FixHydrationFailure";
 
 export const metadata: Metadata = {
     manifest: "/manifest.json",
-    title: 'Your App Name',
-    description: 'Your App Description',
+    title: metadataValues.homeTitleEn,
+    description: metadataValues.homeDescriptionEn,
     icons: {
         icon: '/icons/icon-192x192.png',
         apple: '/icons/icon-512x512.png',

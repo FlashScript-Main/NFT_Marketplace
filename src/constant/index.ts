@@ -179,6 +179,14 @@ export const customThemes = [
       textColor: "text-[#6A0DAD]"
     },
 ];
+
+export const metadataValues = {
+    homeTitleEn: "NFT Marketplace",
+    homeTitleFa: "بازار توکن دیجیتال",
+    homeDescriptionEn: "Welcome to the NFT Marketplace, where you can discover modern and popular NFTs across a wide range of categories. Browse, bid, and buy unique digital assets, each crafted by talented artists from around the world. Experience the future of digital ownership and become part of a vibrant community of NFT enthusiasts.",
+    homeDescriptionFa: "به بازار توکن دیجیتال خوش آمدید، جایی که می‌توانید توکن‌های دیجیتال مدرن و محبوب را در دسته‌بندی‌های مختلف کشف کنید. مرور کنید، پیشنهاد دهید و دارایی‌های دیجیتال منحصر به فرد را خریداری کنید که توسط هنرمندان بااستعداد از سراسر جهان خلق شده‌اند. آینده مالکیت دیجیتال را تجربه کنید و بخشی از جامعه پویای علاقه‌مندان به توکن‌های دیجیتال شوید",
+}
+
 export const homeInfo = [
     { key: "title", value: "Landing page", className: "text-nftCustom-text" },
     { key: "isEnglish", value: "true", className: "text-nftCustom-text" }

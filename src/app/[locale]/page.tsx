@@ -1,33 +1,34 @@
 import { GlobalMotionMain } from '@/animations/MotionAnimations';
+import { metadataValues } from '@/constant';
 import { CategoriesSection, DiscoverMoreSection, DiscoverSection, HowItWorksSection, JoinUsSection, MagicMashroomsSection, TopCreatorsSection, TrendingSection } from '@/template/home-page';
 import { iranSans } from '@/utils/fonts';
 import { useTranslations } from 'next-intl';
-// import { getMessages } from 'next-intl/server';
+import { redirect } from 'next/navigation';
 
-// export const dynamicParams = false;
+export const generateMetadata = async ({ params: { locale } }: MainPagePropsType) => {
 
-// export const generateStaticParams = () => {
-//   return ["en", "fa"].map(locale => ({ locale }))
-// }
-
-// export const generateMetadata = async ({ params: { locale } }: { params: { locale: string } }) => {
-
-//     const messages: TodoType = await getMessages({ locale });
-    
-//     const title = messages.NavbarLinks.homeTitle;
+    return {
+        title: locale === "en" ? metadataValues.homeTitleEn : metadataValues.homeTitleFa,
+        description: locale === "en" ? metadataValues.homeDescriptionEn : metadataValues.homeDescriptionFa,
+    }
   
-//     return {
-//       title,
-//       description: `Home page in ${locale} locale`,
-//     }
-  
-// }
+}
 
 const Home = ({ params: { locale } }: MainPagePropsType) => {
 
-    // const translateHome = useTranslations('Home-Discover');
     const language = useTranslations("language");
-    // language("isEnglish") === "true"
+
+    const validLocales = ['en', 'fa'];
+    
+    // Redirect to Home if the locale is invalid
+    if (!validLocales.includes(locale)) {
+        if (language("isEnglish") === "true") {
+            redirect('/en/');
+        }
+        else {
+            redirect('/fa/');
+        }
+    }
 
     // 🔥 Basic 🔥
     // ${language("isEnglish") === "true" ? "flex-row" : "flex-row-reverse"}

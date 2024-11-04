@@ -15,6 +15,8 @@ import { useState } from "react";
 import { iranSans } from "@/utils/fonts";
 import { MotionDiv, MotionLi } from "@/animations/motion-provider";
 import MoreOptions from '@/components/include/MoreOptions';
+import useUserStore from "@/stores/useUserStore";
+import UserSignedUp from "./UserSignedUp";
 
 const Header = ({ locale }: { locale: string }) => {
 
@@ -22,6 +24,8 @@ const Header = ({ locale }: { locale: string }) => {
     const language = useTranslations("language");
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const { username } = useUserStore();
 
     const menuItems = [
         "Profile",
@@ -97,15 +101,19 @@ const Header = ({ locale }: { locale: string }) => {
                         transition={{ delay: 1, }}
                         className={` |  |  | ${language("isEnglish") === "false" && "order-first"}`}
                     >
-                    <CustomButton 
-                        translateButton={translateHeader("button-text")} 
-                        locale={locale} 
-                        className={`border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-3xl px-[1.4rem] py-[1rem] group ${language("isEnglish") === "false" && "order-first"}`}
-                        textClass={`text-[1rem] leading-[140%] group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3 font-semibold" : "mr-3 font-bold order-first"}`}
-                        type="link"
-                        href="sign-up"
-                        icon="user"
-                    />
+                        {username === "" ? (
+                            <CustomButton 
+                                translateButton={translateHeader("button-text")} 
+                                locale={locale} 
+                                className={`border-4 border-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-3xl px-[1.4rem] py-[1rem] group ${language("isEnglish") === "false" && "order-first"}`}
+                                textClass={`text-[1rem] leading-[140%] group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3 font-semibold" : "mr-3 font-bold order-first"}`}
+                                type="link"
+                                href="create-account"
+                                icon="user"
+                            />
+                        ) : (
+                            <UserSignedUp />
+                        )}
                     </MotionDiv>
                 </div>
 
