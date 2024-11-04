@@ -62,15 +62,15 @@ const UserSignedUp = () => {
     return (
         <Link href={`/${language("isEnglish") === "true" ? "en" : "fa"}/dashboard`}>
             <motion.button
-                whileHover={{
-                    scale: 1.025,
-                }}
-                whileTap={{
-                    scale: 0.975,
-                }}
+                // whileHover={{
+                //     scale: 1.025,
+                // }}
+                // whileTap={{
+                //     scale: 0.975,
+                // }}
                 onMouseEnter={scramble}
                 onMouseLeave={stopScramble}
-                className={`px-4 py-2 relative overflow-hidden | bg-nftCustom-text hover:bg-nftCustom-cta text-nftCustom-cta hover:text-nftCustom-text uppercase font-semibold ${spaceMono} |  | rounded-[20px] border-4 border-nftCustom-text hover:border-nftCustom-cta group transition-colors`}
+                className={`px-4 py-2 relative overflow-hidden | bg-nftCustom-text hover:bg-nftCustom-cta text-nftCustom-cta hover:text-nftCustom-text uppercase font-semibold ${spaceMono} |  | rounded-[20px] border-4 border-nftCustom-text group transition-colors`}
             >
                 <div className="relative z-10 flex items-center gap-2">
                     <span>{text}</span>

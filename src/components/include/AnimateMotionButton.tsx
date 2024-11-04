@@ -22,7 +22,7 @@ const AnimateMotionButton = ({ onClose }: { onClose: () => void }) => {
     }
 
     return (
-        <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text ${language("isEnglish") === "false" && `${iranSans}`} | ${language("isEnglish") === "false" && `col-start-1 row-start-1`} | rounded-[20px]`}>
+        <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text ${language("isEnglish") === "false" && `${iranSans}`} | ${language("isEnglish") === "false" && `md:col-start-1 md:row-start-1`} | rounded-[20px]`}>
             <div className={` |  | flex items-center justify-between gap-2 ${language("isEnglish") === "false" && "flex-row-reverse"} | `}>
                 <h5 className={`my-auto | text-nftCustom-background text-base md:text-lg font-medium |  | ${language("isEnglish") === "false" && `${iranSans} text-end`}`}>
                     {language("isEnglish") === "true" ? "Animations" : "انیمیشن‌ها"}

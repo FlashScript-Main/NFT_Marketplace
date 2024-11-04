@@ -17,6 +17,7 @@ import { MotionDiv, MotionLi } from "@/animations/motion-provider";
 import MoreOptions from '@/components/include/MoreOptions';
 import useUserStore from "@/stores/useUserStore";
 import UserSignedUp from "./UserSignedUp";
+import NFTHamburgerButton from "./NFTHamburgerButton";
 
 const Header = ({ locale }: { locale: string }) => {
 
@@ -132,8 +133,9 @@ const Header = ({ locale }: { locale: string }) => {
                 </NextUINavbarMenu>   
 
                 <NextUINavbarMenuToggle
+                icon={<NFTHamburgerButton />}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className={`lg:hidden py-2 px-4 | text-nftCustom-text hover:text-nftCustom-cta |  | main-transition-color`}
+                    className={`lg:hidden w-fit | text-nftCustom-text hover:text-nftCustom-cta |  | rounded-full group main-transition-color`}
                 />
             </div>
         </NextUINavbar>

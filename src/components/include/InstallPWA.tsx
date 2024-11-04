@@ -51,7 +51,7 @@ const InstallPWA = ({ onClose }: { onClose: () => void }) => {
     };
 
     return (
-        <div className={`${installPromptEvent && "mb-4 mx-auto"} | ${language("isEnglish") === "false" && `${iranSans}`} |  | `}>
+        <div className={`${installPromptEvent && "mb-4 md:mx-auto"} | ${language("isEnglish") === "false" && `${iranSans}`} |  | `}>
             {installPromptEvent && (
               <div className={`py-3 md:py-4 px-4 md:px-6 | bg-nftCustom-text | flex items-center max-md:justify-between gap-2 | rounded-[20px] ${language("isEnglish") === "false" && "flex-row-reverse"}`}>
                   <h5 className={`my-auto | text-nftCustom-background text-base md:text-lg font-medium |  | `}>
