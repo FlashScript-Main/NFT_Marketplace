@@ -1,6 +1,15 @@
 import { GlobalMotionMain } from '@/animations/MotionAnimations';
 import { metadataValues } from '@/constant';
-import { CategoriesSection, DiscoverMoreSection, DiscoverSection, HowItWorksSection, JoinUsSection, MagicMashroomsSection, TopCreatorsSection, TrendingSection } from '@/template/home-page';
+import { 
+    CategoriesSection, 
+    DiscoverMoreSection, 
+    DiscoverSection, 
+    HowItWorksSection, 
+    JoinUsSection, 
+    MagicMashroomsSection, 
+    TopCreatorsSection, 
+    TrendingSection 
+} from '@/template/home-page';
 import { iranSans } from '@/utils/fonts';
 import { useTranslations } from 'next-intl';
 import { redirect } from 'next/navigation';
