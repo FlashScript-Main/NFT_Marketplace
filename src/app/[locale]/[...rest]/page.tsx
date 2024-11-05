@@ -2,9 +2,18 @@ import { MotionDiv, MotionH1, MotionH2, MotionP, MotionSpan } from "@/animations
 import { charVariants } from "@/animations/motion-variants";
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
 import { SectionToScroll } from "@/animations/ScrollAnimations";
+import { metadataValues } from "@/constant";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+
+export const generateMetadata = async ({ params: { locale } }: MainPagePropsType) => {
+
+    return {
+        title: locale === "en" ? metadataValues.notFoundTitleEn : metadataValues.notFoundTitleFa,
+    }
+  
+}
 
 const NotFoundPage = () => {
 

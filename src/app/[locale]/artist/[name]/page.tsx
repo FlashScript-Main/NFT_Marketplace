@@ -1,10 +1,28 @@
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
+import { metadataValues } from "@/constant";
 import { artists } from "@/constant/nft-database";
 import ArtistInfo from "@/template/artist-page/ArtistInfo";
 import ArtistNotFound from "@/template/artist-page/ArtistNotFound";
 import ArtistTabs from "@/template/artist-page/ArtistTabs";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
+
+export const generateMetadata = async ({ params: { name, locale } }: ArtistPagePropsType) => {
+
+  const artist = artists.find(artist => artist.paramsName === name);
+
+  if (artist) {
+      return {
+          title: locale === "en" ? `${metadataValues.artistTitleEn}${artist.artistNameEn}` : `${metadataValues.artistTitleFa}${artist.artistNameFa}`,
+      }
+  } 
+  else {
+      return {
+          title: locale === "en" ? "Artist Not Found" : "هنرمند پیدا نشد",
+      }
+  }
+
+}
 
 const ArtistPage = ({ params: { name, locale } }: ArtistPagePropsType) => {
 

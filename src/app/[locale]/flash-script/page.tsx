@@ -3,8 +3,17 @@ import { charVariants } from "@/animations/motion-variants";
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
 import { SectionToScroll } from "@/animations/ScrollAnimations";
 import { IntegratedTechnologies } from "@/components";
+import { metadataValues } from "@/constant";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
+
+export const generateMetadata = async ({ params: { locale } }: MainPagePropsType) => {
+
+    return {
+        title: locale === "en" ? metadataValues.flashScriptTitleEn : metadataValues.flashScriptTitleFa,
+    }
+  
+}
 
 const FlashScriptPage = () => {
 

@@ -2,9 +2,18 @@ import { MotionH1, MotionP, MotionSpan } from "@/animations/motion-provider";
 import { charVariants } from "@/animations/motion-variants";
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
 import { SectionToScroll } from "@/animations/ScrollAnimations";
+import { metadataValues } from "@/constant";
 import RankingsTabs from "@/template/rankings-page/RankingsTabs";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
+
+export const generateMetadata = async ({ params: { locale } }: MainPagePropsType) => {
+
+    return {
+        title: locale === "en" ? metadataValues.rankingsTitleEn : metadataValues.rankingsTitleFa,
+    }
+  
+}
 
 const RankingsPage = ({ params: { locale } }: MainPagePropsType) => {
 

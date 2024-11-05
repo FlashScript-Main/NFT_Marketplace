@@ -1,7 +1,16 @@
 import { GlobalMotionMain } from "@/animations/MotionAnimations";
+import { metadataValues } from "@/constant";
 import ConnectWalletSection from "@/template/connect-wallet-page/ConnectWalletSection";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
+
+export const generateMetadata = async ({ params: { locale } }: MainPagePropsType) => {
+
+    return {
+        title: locale === "en" ? metadataValues.connectWalletTitleEn : metadataValues.connectWalletTitleFa,
+    }
+  
+}
 
 const ConnectWallet = () => {
 

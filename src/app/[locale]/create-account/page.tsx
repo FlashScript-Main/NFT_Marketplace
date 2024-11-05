@@ -1,7 +1,16 @@
 import { GlobalMotionMain } from "@/animations/MotionAnimations"
+import { metadataValues } from "@/constant";
 import CreateAccountSection from "@/template/create-acount-page/CreateAccountSection";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
+
+export const generateMetadata = async ({ params: { locale } }: MainPagePropsType) => {
+
+    return {
+        title: locale === "en" ? metadataValues.createAccountTitleEn : metadataValues.createAccountTitleFa,
+    }
+  
+}
 
 const CreateAccount = ({ params: {locale} }: { params: {locale: string} }) => {
 
