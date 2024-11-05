@@ -186,6 +186,7 @@ type CategoryNFTsType = {
 
 type NFTRankingsUser = {
     id: number;
+    href: string;
     avatar: string;
     artist: string, 
     change: number;

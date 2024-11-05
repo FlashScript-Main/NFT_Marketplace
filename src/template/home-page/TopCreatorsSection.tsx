@@ -65,7 +65,7 @@ const TopCreatorsSection = ({ locale }: { locale: string }) => {
                         locale={locale} 
                         translateButton={translateTopCreators("button-text")} 
                         type="link" 
-                        href="sign-up"
+                        href="rankings"
                         icon="rocket-launch-rankings"
                         className={`py-[1.1875rem] max-md:max-w-[315px] md:max-w-[247px] max-md:mx-auto border-4 border-nftCustom-cta bg-nftCustom-background hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] group ${language("isEnglish") === "true" ? "md:ml-auto" : "md:mr-auto"}`}
                         textClass={`text-[1rem] leading-[140%] font-medium text-nftCustom-text group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3" : "mr-3 order-first"}`}
@@ -84,7 +84,7 @@ const TopCreatorsSection = ({ locale }: { locale: string }) => {
                         className={` |  |  | ${top.className}`}
                     >
                     <Link 
-                        href={`/${locale}/${top.href}`}
+                        href={`/${locale}/artist/${top.href}`}
                         className={`px-5 py-5 max-md:mx-auto | bg-nftCustom-background_secondary | flex xl:flex-col justify-between items-center max-md:gap-5 xl:gap-5 | rounded-[20px] group`}
                     >
                         <div className={`relative |  |  | `}>
@@ -140,7 +140,7 @@ const TopCreatorsSection = ({ locale }: { locale: string }) => {
                     locale={locale} 
                     translateButton={translateTopCreators("button-text")} 
                     type="link" 
-                    href="sign-up"
+                    href="rankings"
                     icon="rocket-launch-rankings"
                     className="py-[1.1875rem] max-md:max-w-[315px] md:max-w-[247px] max-md:mx-auto md:ml-auto border-4 border-nftCustom-cta bg-nftCustom-background hover:bg-nftCustom-text text-nftCustom-text flex justify-center items-center rounded-[20px] group"
                     textClass="text-[1rem] leading-[140%] font-medium text-nftCustom-text group-hover:text-nftCustom-cta ml-3"

@@ -67,7 +67,7 @@ const RankingsTable = ({ locale }: { locale: string }) => {
                             transition={{ staggerChildren: 0.02, delay: 0.05 * (index + 0.25), duration: 0.25, ease: "easeInOut" }}
                         >
                             <Link
-                                href={`/${locale}/`}
+                                href={`/${locale}/artist/${user.href}`}
                                 className={`md:h-[3.75rem] xl:h-[5.25rem] py-[0.8125rem] md:py-[0.90625rem] xl:py-3 px-[0.625rem] md:px-5 | bg-nftCustom-background_secondary hover:bg-nftCustom-text | flex items-center | rounded-[20px] group main-transition-color ${language("isEnglish") === "false" && "flex-row-reverse"}`}
                             >
                                 <motion.span

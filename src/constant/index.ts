@@ -331,7 +331,7 @@ export const topCreatorsInfo = [
         avatarImage: "keepitreal-avatar.jpg",
         avatarName: "Keepitreal",
         className: "",
-        href: "/",
+        href: "keepitreal",
         numberSales: 34.53,
     },
     {
@@ -340,7 +340,7 @@ export const topCreatorsInfo = [
         avatarImage: "digilab-avatar.jpg",
         avatarName: "DigiLab",
         className: "",
-        href: "/",
+        href: "digilab",
         numberSales: 32.13,
     },
     {
@@ -349,7 +349,7 @@ export const topCreatorsInfo = [
         avatarImage: "gravityone-avatar.jpg",
         avatarName: "GravityOne",
         className: "",
-        href: "/",
+        href: "gravityone",
         numberSales: 28.93,
     },
     {
@@ -358,7 +358,7 @@ export const topCreatorsInfo = [
         avatarImage: "juanie-avatar.jpg",
         avatarName: "Juanie",
         className: "",
-        href: "/",
+        href: "juanie",
         numberSales: 25.30,
     },
     {
@@ -367,7 +367,7 @@ export const topCreatorsInfo = [
         avatarImage: "bluewhale-avatar.jpg",
         avatarName: "BlueWhale",
         className: "",
-        href: "/",
+        href: "bluewhale",
         numberSales: 22.22,
     },
     {
@@ -376,7 +376,7 @@ export const topCreatorsInfo = [
         avatarImage: "mr-fox-avatar.jpg",
         avatarName: "Mr Fox",
         className: "max-md:hidden",
-        href: "/",
+        href: "mrfox",
         numberSales: 19.28,
     },
     {
@@ -385,7 +385,7 @@ export const topCreatorsInfo = [
         avatarImage: "shroomie-avatar.jpg",
         avatarName: "Shroomie",
         className: "max-xl:hidden",
-        href: "/",
+        href: "shroomie",
         numberSales: 18.75,
     },
     {
@@ -394,7 +394,7 @@ export const topCreatorsInfo = [
         avatarImage: "robotica-avatar.jpg",
         avatarName: "Robotica",
         className: "max-xl:hidden",
-        href: "/",
+        href: "robotica",
         numberSales: 16.21,
     },
     {
@@ -403,7 +403,7 @@ export const topCreatorsInfo = [
         avatarImage: "rustyrobot-avatar.jpg",
         avatarName: "RustyRobot",
         className: "max-xl:hidden",
-        href: "/",
+        href: "rustyrobot",
         numberSales: 15.88,
     },
     {
@@ -412,7 +412,7 @@ export const topCreatorsInfo = [
         avatarImage: "animakid-avatar.png",
         avatarName: "Animakid",
         className: "max-xl:hidden",
-        href: "/",
+        href: "animakid",
         numberSales: 15.25,
     },
     {
@@ -421,7 +421,7 @@ export const topCreatorsInfo = [
         avatarImage: "dotgu-avatar.jpg",
         avatarName: "Dotgu",
         className: "max-xl:hidden",
-        href: "/",
+        href: "dotgu",
         numberSales: 14.01,
     },
     {
@@ -430,7 +430,7 @@ export const topCreatorsInfo = [
         avatarImage: "ghiblier-avatar.jpg",
         avatarName: "Ghiblier",
         className: "max-xl:hidden",
-        href: "/",
+        href: "ghiblier",
         numberSales: 13.86,
     }
 ];

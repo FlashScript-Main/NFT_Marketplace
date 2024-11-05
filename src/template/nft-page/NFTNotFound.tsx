@@ -1,3 +1,4 @@
+import { MotionDiv } from "@/animations/motion-provider";
 import { iranSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -7,7 +8,13 @@ const NFTNotFound = ({ name, locale }: { name: string; locale: string }) => {
     const language = useTranslations("language");
 
     return (
-        <div className={`py-20 | text-center | flex flex-col | `}>
+        <MotionDiv 
+            initial={{ y: "20%", opacity: 0 }}
+            whileInView={{ y: "0%", opacity: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{delay: 0.25, duration: 0.5, ease: "easeInOut" }}
+            className={`py-20 lg:h-[70vh] | text-center | flex flex-col lg:justify-center lg:items-center | `}
+        >
             <h1 className={`max-md:w-3/4 mx-auto | text-nftCustom-text text-2xl md:text-4xl xl:text-5xl font-bold |  | ${language("isEnglish") === "false" && "hidden"}`}>
                 There is No NFTs with the 
                 <span className={` | text-nftCustom-cta |  | `}>
@@ -16,7 +23,7 @@ const NFTNotFound = ({ name, locale }: { name: string; locale: string }) => {
                 Name
             </h1>
 
-            <h1 className={`mx-auto | text-nftCustom-text text-2xl md:text-4xl xl:text-5xl font-bold ${iranSans} | flex flex-row-reverse gap-2 | ${language("isEnglish") === "true" && "hidden"}`}>
+            <h1 className={`mx-auto | text-nftCustom-text text-2xl md:text-4xl xl:text-5xl font-bold ${iranSans} | flex flex-row-reverse gap-2 | ${language("isEnglish") === "true" ? "hidden" : "max-md:flex max-md:flex-col"}`}>
                 <span>
                     هیچ توکن دیجیتالی با نام
                 </span>
@@ -30,11 +37,11 @@ const NFTNotFound = ({ name, locale }: { name: string; locale: string }) => {
 
             <Link 
                 href={`/${locale}/`}
-                className={`mt-10 xl:mt-20 w-fit mx-auto py-2 xl:py-3 px-4 xl:px-5 | text-nftCustom-text hover:text-nftCustom-cta text-base xl:text-[1.375rem] bg-nftCustom-background_secondary hover:bg-nftCustom-text |  | rounded-[20px] border-4 border-nftCustom-background_secondary hover:border-nftCustom-cta main-transition-color`}
+                className={`mt-10 xl:mt-20 w-fit mx-auto py-2 xl:py-3 px-4 xl:px-5 | text-nftCustom-text hover:text-nftCustom-cta text-base xl:text-[1.375rem] bg-nftCustom-background_secondary hover:bg-nftCustom-text ${language("isEnglish") === "false" && `${iranSans}`} |  | rounded-[20px] border-4 border-nftCustom-background_secondary hover:border-nftCustom-cta main-transition-color`}
             >
                 {language("isEnglish") === "true" ? "Go back to Home" : "برگرد به صفحه اصلی"}
             </Link>
-        </div>
+        </MotionDiv>
     )
 
 }
