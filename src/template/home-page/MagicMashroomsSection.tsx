@@ -26,7 +26,7 @@ const MagicMashroomsSection = ({ locale }: { locale: string }) => {
                         className={`w-[9.4375rem] | bg-nftCustom-background_secondary hover:bg-nftCustom-text |  | rounded-[20px] group main-transition-color ${language("isEnglish") === "false" && "ml-auto"}`}
                     >
                         <Link 
-                            href={`/${locale}/`}
+                            href={`/${locale}/artist/shroomie`}
                             className={`py-[0.625rem] |  | flex justify-center items-center gap-3 | `}
                         >
                             <Image 
@@ -72,7 +72,7 @@ const MagicMashroomsSection = ({ locale }: { locale: string }) => {
                             locale={locale} 
                             translateButton={translateMagicMashrooms("button-text")} 
                             type="link" 
-                            href="sign-up"
+                            href="nft/magic-mashrooms"
                             icon="magic-mashrooms-eye"
                             className={`py-[1.1875rem] md:py-[1.1rem] max-md:max-w-[315px] max-md:mx-auto border-4 border-nftCustom-text bg-nftCustom-text hover:border-nftCustom-cta flex justify-center items-center rounded-[20px] group main-transition-color ${language("isEnglish") === "true" ? "md:max-w-[198px]" : "ml-auto md:max-w-[250px]"}`}
                             textClass={`text-[1rem] leading-[140%] font-semibold text-nftCustom-background group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3" : "mr-3 order-first"}`}
@@ -101,7 +101,7 @@ const MagicMashroomsSection = ({ locale }: { locale: string }) => {
                         locale={locale} 
                         translateButton={translateMagicMashrooms("button-text")} 
                         type="link" 
-                        href="sign-up"
+                        href="nft/magic-mashrooms"
                         icon="magic-mashrooms-eye"
                         className="py-[1.1875rem] max-md:max-w-[315px] md:max-w-[247px] max-md:mx-auto border-4 border-nftCustom-text bg-nftCustom-text hover:border-nftCustom-cta flex justify-center items-center rounded-[20px] group main-transition-color"
                         textClass={`text-[1rem] leading-[140%] font-semibold text-nftCustom-background group-hover:text-nftCustom-cta ${language("isEnglish") === "true" ? "ml-3" : "mr-3 order-first"}`}

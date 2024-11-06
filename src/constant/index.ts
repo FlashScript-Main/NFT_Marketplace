@@ -517,7 +517,7 @@ export const discoverMoreInfo = [
     },
     {
         id: 2,
-        href: "/",
+        href: "life-on-edena",
         image: "life-on-edena.jpg",
         titleEn: "Life on Edena",
         titleFa: "زندگی در ادنا",
@@ -529,7 +529,7 @@ export const discoverMoreInfo = [
     },
     {
         id: 3,
-        href: "/",
+        href: "astrofiction",
         image: "astro-fiction.jpg",
         titleEn: "AstroFiction",
         titleFa: "داستان فضایی",
