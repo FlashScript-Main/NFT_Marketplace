@@ -1,4 +1,8 @@
+import { GlobalMotionMain } from "@/animations/MotionAnimations";
 import { metadataValues } from "@/constant"
+import DashboardSection from "@/template/dashboard-page/DashboardSection";
+import { iranSans } from "@/utils/fonts";
+import { useTranslations } from "next-intl";
 
 export const generateMetadata = async ({ params: { locale } }: MainPagePropsType) => {
 
@@ -10,8 +14,12 @@ export const generateMetadata = async ({ params: { locale } }: MainPagePropsType
 
 const DashboardPage = () => {
 
+    const language = useTranslations("language");
+    
     return (
-        <div>DashboardPage</div>
+        <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+            <DashboardSection />
+        </GlobalMotionMain>
     )
 
 }

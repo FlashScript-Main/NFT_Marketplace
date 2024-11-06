@@ -159,6 +159,10 @@
         "tab-month": "This Month",
         "tab-time": "All Time"
     },
+    "Dashboard": {
+        "title": "This page is a work in progress. Please check back SOON!",
+        "description": "Welcome to your NFT Dashboard, where you can explore your digital assets, track market trends, and manage your collections in one place."
+    },
     "FlashScript": {
         "title": "Technologies Behind This Website",
         "description": "This page highlights the technologies integrated to build this website, including Next.js for the framework, Tailwind CSS for styling, and TypeScript for type safety. Discover the tools and methods that power this Project."
