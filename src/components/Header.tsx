@@ -31,6 +31,7 @@ const Header = ({ locale }: { locale: string }) => {
 
     return (
         <NextUINavbar 
+            isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen} 
             position="sticky" 
             shouldHideOnScroll
@@ -108,7 +109,7 @@ const Header = ({ locale }: { locale: string }) => {
 
                 <NextUINavbarMenu className={`lg:hidden pt-6 z-50 | bg-nftCustom-header-bg |  | overflow-hidden`}>
                     {navbarLinks.map((link, index) => (
-                        <NextUINavbarItem key={`${link}-${index}`}>
+                        <NextUINavbarItem key={`${link}-${index}`} onClick={() => setIsMenuOpen(false)}>
                             <Link 
                                 href={`/${locale}/${link.href}`} 
                                 className={` | text-base md:text-lg text-nftCustom-text hover:text-nftCustom-cta font-semibold |  | main-transition-color ${language("isEnglish") === "false" && `grid text-end ${iranSans}`}`}
@@ -120,7 +121,7 @@ const Header = ({ locale }: { locale: string }) => {
 
                     <div className={`w-full h-[0.15rem] my-4 | bg-nftCustom-background_secondary |  | rounded-full`} />
 
-                    <NextUINavbarItem>
+                    <NextUINavbarItem onClick={() => setIsMenuOpen(false)}>
                         <Link 
                             href={`${username === "" ? `/${locale}/create-account` : `/${locale}/dashboard`}`}
                             className={`mx-auto w-fit | text-nftCustom-cta md:text-lg hover:text-nftCustom-text font-semibold text-center | grid | main-transition-color`}
@@ -137,7 +138,7 @@ const Header = ({ locale }: { locale: string }) => {
                     transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
                 >
                     <NextUINavbarMenuToggle
-                        icon={<NFTHamburgerButton />}
+                        icon={<NFTHamburgerButton isMenuOpen={isMenuOpen} />}
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         className={`lg:hidden w-fit | text-nftCustom-text hover:text-nftCustom-cta |  | rounded-full group main-transition-color`}
                     />

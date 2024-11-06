@@ -1,14 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { MotionConfig, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-const NFTHamburgerButton = () => {
+type NFTHamburgerButtonProps = {
+    isMenuOpen: boolean,
+}
+
+const NFTHamburgerButton = ({ isMenuOpen }: NFTHamburgerButtonProps) => {
 
     const language = useTranslations("language");
 
-    const [active, setActive] = useState(false);
+    // const [active, setActive] = useState(false);
 
     const VARIANTS = {
         top: {
@@ -54,8 +58,8 @@ const NFTHamburgerButton = () => {
         >
             <motion.button
                 initial={false}
-                animate={active ? "open" : "closed"}
-                onClick={() => setActive((pv) => !pv)}
+                animate={isMenuOpen ? "open" : "closed"}
+                // onClick={() => setActive((pv) => !pv)}
                 className="relative h-10 w-10 rounded-full bg-white/0 transition-colors group"
             >
                 <motion.span
