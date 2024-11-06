@@ -35,7 +35,7 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
     const toggleConfirmPasswordVisibility = () => setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
 
-    const { setIsModalActive } = useCreateAccountModal();
+    const { isModalActive, setIsModalActive } = useCreateAccountModal();
 
     const [isLoaderActive, setisLoaderActive] = useState(false);
     
@@ -52,10 +52,10 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
     }, []);
 
     useEffect(() => {
-        if (username !== "") {
+        if (username !== "" && !isModalActive) {
             router.push(`/${locale}/`);
         }
-    }, [username, locale, router]);
+    }, [username, locale, router, isModalActive]);
 
     const { 
         register, 
@@ -73,15 +73,28 @@ const NewAccountForm = ({ locale }: { locale: string }) => {
         setisLoaderActive(true);
         setIsModalActive(true);
 
-        setTimeout(() => {
-            setIsModalActive(false);
-            setisLoaderActive(false);
-            router.push(`/${locale}/`);
-        }, 5300);
+        // setTimeout(() => {
+        //     setIsModalActive(false);
+        //     setisLoaderActive(false);
+        //     router.push(`/${locale}/`);
+        // }, 5300);
         // }, 6500);
         
         reset();
     };
+
+    useEffect(() => {
+        if (isLoaderActive && isModalActive) {
+            const timer = setTimeout(() => {
+                setIsModalActive(false);
+                setisLoaderActive(false);
+                router.push(`/${locale}/`);
+            }, 5300);
+
+            // Cleanup the timer on component unmount
+            return () => clearTimeout(timer);
+        }
+    }, [router, locale, isLoaderActive, isModalActive, setIsModalActive]);
 
     return (
         <motion.form 

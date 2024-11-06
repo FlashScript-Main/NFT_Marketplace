@@ -83,7 +83,7 @@ const DiscoverMoreSection = ({ locale }: { locale: string }) => {
                         key={card.id}
                         className={`overflow-hidden ${card.className} |  |  | rounded-[20px] group `}
                     >
-                        <Link href={`/${locale}/${card.href}`}>
+                        <Link href={`/${locale}/nft/${card.href}`}>
                             <div className={`overflow-hidden  |  |  | `}>
                                 <Image 
                                     src={`/${card.image}`}

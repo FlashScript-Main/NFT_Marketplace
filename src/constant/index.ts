@@ -505,7 +505,7 @@ export const categories = [
 export const discoverMoreInfo = [
     {
         id: 1,
-        href: "/",
+        href: "distant-galaxy",
         image: "distant-galaxy.jpg",
         titleEn: "Distant Galaxy",
         titleFa: "کهکشان دوردست",
