@@ -32,7 +32,7 @@ const NFTPage = ({ params: { name, locale } }: NFTPagePropsType) => {
 
     if (nft) {
         return (
-            <GlobalMotionMain className={`overflow-x-hidden | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+            <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
                 <NFTInfo 
                     nft={nft} 
                     locale={locale}

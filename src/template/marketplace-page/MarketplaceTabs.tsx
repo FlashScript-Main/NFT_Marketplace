@@ -4,6 +4,9 @@ import { marketplaceTabsDetails } from "@/constant";
 import { spaceMono } from "@/utils/fonts";
 import { Tab, Tabs } from "@nextui-org/react"
 import { useTranslations } from "next-intl";
+import MarketplaceSearchTab from "./MarketplaceSearchTab";
+import MarketplaceNFTsTab from "./MarketplaceNFTsTab";
+import MarketplaceCollectionsTab from "./MarketplaceCollectionsTab";
 
 const MarketplaceTabs = ({ locale }: { locale: string }) => {
 
@@ -40,7 +43,10 @@ const MarketplaceTabs = ({ locale }: { locale: string }) => {
                           </div>
                         }
                   >
-                      <item.content locale={locale} />
+                      {/* <item.content locale={locale} /> */}
+                      {item.titleEn === "NFTs" && ( <MarketplaceNFTsTab locale={locale} /> )}
+                      {item.titleEn === "Collections" && ( <MarketplaceCollectionsTab locale={locale} /> )}
+                      {item.titleEn === "Search" && (<MarketplaceSearchTab locale={locale} /> )}
                   </Tab>
                 )}
             </Tabs>

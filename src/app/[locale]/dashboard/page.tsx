@@ -12,13 +12,13 @@ export const generateMetadata = async ({ params: { locale } }: MainPagePropsType
   
 }
 
-const DashboardPage = () => {
+const DashboardPage = ({ params: { locale } }: MainPagePropsType) => {
 
     const language = useTranslations("language");
     
     return (
         <GlobalMotionMain className={`overflow-x-hidden | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
-            <DashboardSection />
+            <DashboardSection locale={locale} />
         </GlobalMotionMain>
     )
 

@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-const DashboardSection = () => {
+const DashboardSection = ({ locale }: { locale: string }) => {
 
     const translateConnectWallet = useTranslations('Dashboard');
     const language = useTranslations("language");
@@ -20,9 +20,9 @@ const DashboardSection = () => {
 
     useEffect(() => {
         if (username === "") {
-            router.push(`/${language("isEnglish") ? "en" : "fa"}/`);
+            router.push(`/${locale}/`);
         }
-    }, [username, router, language]);
+    }, [username, router, locale]);
 
     return (
         <section className={`xl:h-[40.125rem] |  | flex flex-col md:flex-row gap-[1.875rem] md:gap-10 xl:gap-[3.75rem] | `}>
@@ -87,7 +87,7 @@ const DashboardSection = () => {
                     className={`mt-10 md:mt-12 xl:mt-16 |  |  | `}
                 >
                     <Link
-                        href={`/${language("isEnglish") ? "en" : "fa"}/flash-script`}
+                        href={`/${locale}/flash-script`}
                         className={`w-fit mx-auto | text-nftCustom-cta hover:text-nftCustom-text text-lg xl:text-2xl font-semibold | grid | main-transition-color`}
                     >
                         FlashScript
