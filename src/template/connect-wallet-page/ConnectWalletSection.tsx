@@ -81,8 +81,8 @@ const ConnectWalletSection = () => {
                                 <Image 
                                     src={`/${provider.image}`}
                                     alt={provider.imageAlt}
-                                    width={40}
-                                    height={40}
+                                    width={1000}
+                                    height={1000}
                                     className={`w-8 h-8 xl:w-10 xl:h-10 object-cover |  |  | `}
                                 />
                             </span>

@@ -574,7 +574,7 @@ export const howItWorksInfo = [
 export const connectWalletProviders = [
     {
         id: 1,
-        image: "metamask.png",
+        image: "metamask-logo.png",
         imageAlt: "Metamask",
         title: "Metamask",
     },
@@ -586,7 +586,7 @@ export const connectWalletProviders = [
     },
     {
         id: 3,
-        image: "coinbase.png",
+        image: "coinbase-logo.png",
         imageAlt: "Coinbase",
         title: "Coinbase",
     },

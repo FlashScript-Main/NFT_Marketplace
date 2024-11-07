@@ -72,7 +72,7 @@ const Home = ({ params: { locale } }: MainPagePropsType) => {
     // transition={{ delay: 0.5, duration: 0.5 }}
 
     return (
-        <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+        <GlobalMotionMain className={`overflow-x-hidden | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <div className={`max-md:px-[1.875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto |  |  | `}>
                 <DiscoverSection locale={locale} />
 

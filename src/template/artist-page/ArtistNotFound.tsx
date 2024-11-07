@@ -13,7 +13,7 @@ const ArtistNotFound = ({ name, locale }: { name: string; locale: string }) => {
             whileInView={{ y: "0%", opacity: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{delay: 0.25, duration: 0.5, ease: "easeInOut" }} 
-            className={`py-20 lg:h-[70vh] | text-center | flex flex-col lg:justify-center lg:items-center | `}
+            className={`py-20 lg:h-[70vh] overflow-x-hidden | text-center | flex flex-col lg:justify-center lg:items-center | `}
         >
             <h1 className={`max-md:w-3/4 mx-auto | text-nftCustom-text text-2xl md:text-4xl xl:text-5xl font-bold |  | ${language("isEnglish") === "false" && "hidden"}`}>
                 There is No Artist with the 

@@ -17,7 +17,7 @@ const DashboardPage = () => {
     const language = useTranslations("language");
     
     return (
-        <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
+        <GlobalMotionMain className={`overflow-x-hidden | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
             <DashboardSection />
         </GlobalMotionMain>
     )
