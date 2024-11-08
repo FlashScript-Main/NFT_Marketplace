@@ -8,5 +8,168 @@
         "rankings": "Rankings",
         "connect-wallet": "Connect a wallet",
         "button-text": "Sign Up"
+    },
+    "Home-Discover": {
+        "title": "Discover digital art & Collect NFTs",
+        "description": "NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT artists.",
+        "button-text": "Get Started",
+        "Total Sale": "Total Sale",
+        "Auctions": "Auctions",
+        "Artists": "Artists",
+        "card-title": "Space Walking"
+    },
+    "Home-trend": {
+        "title": "Trending Collection",
+        "description": "Checkout our weekly updated trending collection.",
+        "Animals-trend": "DSGN Animals",
+        "MagicMushrooms-trend": "Magic Mushrooms",
+        "Disco-trend": "Disco Machines"
+    },
+    "Home-top-creators": {
+        "title": "Top Creators",
+        "description": "Checkout Top Rated Creators on the NFT Marketplace",
+        "button-text": "View Rankings",
+        "Total Sales": "Total Sales:"
+    },
+    "Home-Categories": {
+        "title": "Browse Categories",
+        "art": "Art",
+        "collectibles": "Collectibles",
+        "music": "Music",
+        "photography": "Photography",
+        "video": "Video",
+        "utility": "Utility",
+        "sport": "Sport",
+        "virtual-worlds": "Virtual Worlds"
+    },
+    "Home-Discover-More": {
+        "title": "Discover More NFTs",
+        "description": "Explore new trending NFTs",
+        "button-text": "See All",
+        "distant-title": "Distant Galaxy",
+        "life-title": "Life On Edena",
+        "astro-title": "AstroFiction",
+        "price": "Price",
+        "bid": "Highest Bid"
+    },
+    "Home-Magic-Mashrooms": {
+        "title": "Magic Mashrooms",
+        "button-text": "See NFT",
+        "auction-title": "Auction ends in:",
+        "auction-hours": "Hours",
+        "auction-Minutes": "Minutes",
+        "auction-Seconds": "Seconds"
+    },
+    "Home-How-it-works": {
+        "title": "How it works",
+        "description": "Find out how to get started",
+        "setup-title": "Setup Your wallet",
+        "setup-description": "Set up your wallet of choice. Connect it to the Animarket by clicking the wallet icon in the top right corner.",
+        "create-title": "Create Collection",
+        "create-description": "Upload your work and setup your collection. Add a description, social links and floor price.",
+        "start-title": "Start Earning",
+        "mint-description": "Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others."
+    },
+    "Home-Join-Us": {
+        "title": "Join our weekly digest",
+        "description": "Get exclusive promotions & updates straight to your inbox.",
+        "Input-Field": "Enter your email here",
+        "Input-Button": "Subscribe",
+        "Success": "Subscribed successfully!",
+        "Failure": "Invalid Email Address!"
+    },
+    "Footer": {
+        "logo": "NFT Marketplace",
+        "creation": "NFT marketplace created by",
+        "community": "Join our community",
+        "Explore": "Explore",
+        "marketplace": "Marketplace",
+        "rankings": "Rankings",
+        "connect-wallet": "Connect a wallet",
+        "Digest": "Join Our Weekly Digest",
+        "Exclusive": "Get exclusive promotions & updates straight to your inbox.",
+        "Input-Field": "Enter your email here",
+        "Input-Button": "Subscribe",
+        "Success": "Subscribed successfully!",
+        "Failure": "Invalid Email Address!"
+    },
+    "Create-Account": {
+        "title": "Create Account",
+        "description": "Welcome! enter your details and start creating, collecting and selling NFTs.",
+        "Input-username": "Username",
+        "Input-email": "Email Address",
+        "Input-password": "Password",
+        "Input-password-confirm": "Confirm Password",
+        "Input-button": "Create Account",
+        "modal-logedin": "New User Has been Successfully Logged In",
+        "modal-sending": "Sending your informations to the server, please wait...",
+        "modal-authorized": "New User Has been Authorized and Successfully Logged In",
+        "modal-button": "Processing..."
+    },
+    "Create-Wallet": {
+        "title": "Connect Wallet",
+        "description": "Choose a wallet you want to connect. There are several wallet providers.",
+        "wallet-metamask": "Metamask",
+        "wallet-connect": "Wallet Connect",
+        "wallet-coinbase": "Coinbase"
+    },
+    "Artist-Page": {
+        "volume": "Volume",
+        "Sold": "NFTs Sold",
+        "followers": "Followers",
+        "bio": "Bio",
+        "links": "Links",
+        "tab-created": "Created",
+        "tab-owned": "Owned",
+        "tab-collection": "Collection",
+        "price": "Price",
+        "bid": "Highest Bid"
+    },
+    "NFT-Page": {
+        "created-by": "Created By",
+        "description": "Description",
+        "details": "Details",
+        "view-on-etherscan": "View on Etherscan",
+        "view-original": "View Original",
+        "tags": "Tags",
+        "auction-title": "Auction ends in:",
+        "auction-hours": "Hours",
+        "auction-Minutes": "Minutes",
+        "auction-Seconds": "Seconds",
+        "title": "More From This Artist",
+        "button-text": "Go To Artist Page",
+        "price": "Price",
+        "bid": "Highest Bid"
+    },
+    "Marketplace": {
+        "title": "Browse Marketplace",
+        "description": "Browse through more than 50k NFTs on the NFT Marketplace.",
+        "tab-nfts": "NFTs",
+        "tab-collections": "Collections",
+        "tab-search": "Search",
+        "input-search": "Search your favourite NFTs",
+        "price": "Price",
+        "bid": "Highest Bid"
+    },
+    "Rankings": {
+        "title": "Top Creators",
+        "description": "Check out top ranking NFT artists on the NFT Marketplace.",
+        "tab-today": "Today",
+        "tab-week": "This Week",
+        "tab-month": "This Month",
+        "tab-time": "All Time"
+    },
+    "Dashboard": {
+        "title": "This page is a work in progress. Please check back SOON!",
+        "description": "Welcome to your NFT Dashboard, where you can explore your digital assets, track market trends, and manage your collections in one place."
+    },
+    "FlashScript": {
+        "title": "Technologies Behind This Website",
+        "description": "This page highlights the technologies integrated to build this website, including Next.js for the framework, Tailwind CSS for styling, and TypeScript for type safety. Discover the tools and methods that power this Project."
+    },
+    "NotFound": {
+        "title": "Page Not Found",
+        "description": "Sorry, the page you're looking for doesn't exist. Please check the URL or go back to the Homepage.",
+        "button": "Go back to Homepage"
     }
 }

@@ -22,7 +22,7 @@ const RankingsPage = ({ params: { locale } }: MainPagePropsType) => {
 
     return (
         <GlobalMotionMain className={` | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
-            {/* <SectionToScroll className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto py-[1.875rem] md:py-10 xl:py-20 |  |  | ${language("isEnglish") === "false" && "text-end"}`}>
+            <SectionToScroll className={`max-w-[19.6875rem] md:max-w-[43.125rem] xl:max-w-[65.625rem] mx-auto py-[1.875rem] md:py-10 xl:py-20 |  |  | ${language("isEnglish") === "false" && "text-end"}`}>
                 <MotionH1 
                     initial="hidden"
                     whileInView="reveal"
@@ -60,8 +60,7 @@ const RankingsPage = ({ params: { locale } }: MainPagePropsType) => {
                 </MotionP>
             </SectionToScroll>
 
-            <RankingsTabs locale={locale} /> */}
-            <div></div>
+            <RankingsTabs locale={locale} />
         </GlobalMotionMain>
     )
 

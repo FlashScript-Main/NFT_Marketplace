@@ -4,9 +4,10 @@ import { Providers } from "@/providers/next-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 import { workSans } from "@/utils/fonts";
 import { Toaster } from "@/components/ui/toaster"
+import TanstackProvider from "@/providers/TanstackProvider";
 import NFTLoadingSuspense from "@/components/NFTLoadingSuspense";
 import { metadataValues, nftMarketplaceThemes } from "@/constant";
 // import FixHydrationFailure from "@/components/FixHydrationFailure";
@@ -38,6 +39,7 @@ export default async function RootLayout({
     return (
         <html lang={locale} className={` |  |  | scroll-smooth overflow-x-hidden`}>
             <body className={`relative | bg-nftCustom-background ${workSans} |  | nft-scrollbar`}>
+                {/* <FixHydrationFailure> */}
                 <NextIntlClientProvider messages={messages}>
                     <ThemeProvider 
                         attribute="class"
@@ -47,14 +49,18 @@ export default async function RootLayout({
                         themes={nftMarketplaceThemes}
                     >
                         <Providers>
-                            <NFTLoadingSuspense>
-                                {/* <Header locale={locale} /> */}
-                                    {children}
-                                <Toaster />
-                            </NFTLoadingSuspense>
+                            <TanstackProvider>
+                                <NFTLoadingSuspense>
+                                    <Header locale={locale} />
+                                        {children}
+                                    <Footer locale={locale} />
+                                    <Toaster />
+                                </NFTLoadingSuspense>
+                            </TanstackProvider>
                         </Providers>
                     </ThemeProvider>
                 </NextIntlClientProvider>
+                {/* </FixHydrationFailure> */}
             </body>
         </html>
     );

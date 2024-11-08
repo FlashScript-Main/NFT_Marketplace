@@ -3,7 +3,7 @@
 import { MotionDiv, MotionSpan } from "@/animations/motion-provider";
 import { DivToScroll } from "@/animations/ScrollAnimations";
 import { topCollectionUsers } from "@/constant";
-// import useNFTCollections from "@/hooks/useNFTCollections";
+import useNFTCollections from "@/hooks/useNFTCollections";
 import { iranSans, spaceMono } from "@/utils/fonts";
 import { Autocomplete, AutocompleteItem, Avatar, CircularProgress } from "@nextui-org/react";
 import { SearchIcon } from "lucide-react";
@@ -26,14 +26,14 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
         }
     }, []);
 
-    // const { isLoading, isFetched } = useNFTCollections(selectedKey, setFetchedNFTs);
+    const { isLoading, isFetched } = useNFTCollections(selectedKey, setFetchedNFTs);
 
     return (
         <div className={`mt-[3.5rem] |  |  | `}>
             <div>
                 <Autocomplete
                     placeholder={`${language("isEnglish") === "true" ? "Search Top Collections" : "مجموعه های برتر را جستجو کنید"}`}
-                    // isDisabled={isLoading}
+                    isDisabled={isLoading}
                     radius="lg"
                     variant="faded"
                     startContent={<SearchIcon className={`text-nftCustom-cta ${language("isEnglish") === "false" && "max-md:hidden md:absolute md:right-3 xl:right-3"}`} strokeWidth={2.5} size={20} />}
@@ -115,7 +115,7 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                 </Autocomplete>
             </div>
             
-            {true ? (
+            {isLoading ? (
                 <div className={`w-full mt-4 md:mt-8 xl:mt-10 | text-nftCustom-text | grid place-content-center | `}>
                     <CircularProgress 
                         classNames={{
@@ -128,7 +128,7 @@ const MarketplaceSearchTab = ({ locale }: { locale: string }) => {
                 ) : (
                 <>
                 <DivToScroll className={`mt-4 md:mt-8 xl:mt-10 |  | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[1.875rem] | `}>
-                    {fetchedNFTs?.map((card, index) => 
+                    {fetchedNFTs && isFetched && fetchedNFTs.map((card, index) => 
                         card.image_url && (
                             <MotionDiv
                                 initial={{ y: "20%", opacity: 0, }}
