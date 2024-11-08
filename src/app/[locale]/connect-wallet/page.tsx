@@ -18,7 +18,8 @@ const ConnectWallet = () => {
     
     return (
         <GlobalMotionMain className={`overflow-x-hidden | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
-            <ConnectWalletSection />
+            {/* <ConnectWalletSection /> */}
+            <div></div>
         </GlobalMotionMain>
     )
 

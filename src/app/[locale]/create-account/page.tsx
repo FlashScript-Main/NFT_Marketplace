@@ -18,7 +18,8 @@ const CreateAccount = ({ params: {locale} }: { params: {locale: string} }) => {
     
     return (
         <GlobalMotionMain className={`overflow-x-hidden | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
-            <CreateAccountSection locale={locale} />
+            {/* <CreateAccountSection locale={locale} /> */}
+            <div></div>
         </GlobalMotionMain>
     )
 

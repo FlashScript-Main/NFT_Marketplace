@@ -33,13 +33,14 @@ const CategoryPage = ({ params: { name, locale } }: NFTPagePropsType) => {
     if (category) {
         return (
             <GlobalMotionMain className={`overflow-x-hidden | selection:text-nftCustom-cta selection:bg-nftCustom-text |  | ${language("isEnglish") === "false" && `${iranSans}`}`}>
-                <CategoryInfo 
+                {/* <CategoryInfo 
                     category={category} 
                 />
                 <CategoryNFTs 
                     category={category} 
                     locale={locale}
-                />
+                /> */}
+                <div></div>
             </GlobalMotionMain>
         )
     } 
