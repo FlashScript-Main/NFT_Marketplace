@@ -1,6 +1,6 @@
 "use client";
 
-import { iranSans } from "@/utils/fonts";
+import { iranSans, workSans } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -32,7 +32,7 @@ const ChangeLanguageToggle = ({ onClose }: { onClose: () => void }) => {
 
                 <button 
                     onClick={handleLanguageChange}
-                    className={`p-2 px-4 | text-nftCustom-text hover:text-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text ${language("isEnglish") === "true" && `${iranSans}`} | grid place-content-center | border-2 border-nftCustom-cta rounded-[20px] main-transition-color`}
+                    className={`p-2 px-4 | text-nftCustom-text hover:text-nftCustom-cta bg-nftCustom-cta hover:bg-nftCustom-text ${language("isEnglish") === "true" ? `${iranSans}` : `${workSans}`} | grid place-content-center | border-2 border-nftCustom-cta rounded-[20px] main-transition-color`}
                 >
                     {language("isEnglish") === "true" ? "فارسی" : "English"}
                 </button>
